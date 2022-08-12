@@ -9,7 +9,7 @@ class NavbarController extends Controller
 {
      public function nav()
     {
-        return view('rgbnavbar');
+        return view('rgbinternal');
     }
 
 }
