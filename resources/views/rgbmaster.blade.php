@@ -9,6 +9,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
 
 
@@ -233,26 +234,26 @@
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h4 class="text-uppercase mb-4 font-weight-bold text-danger">Contact us</h4>
                     <p>
-                        <i class='bx bxs-home-alt-2' style='color:#12e290'></i>Pakistan,Punjab,Gujranwala
+                        <i class='bx bxs-home-alt-2' style='color:black'></i>Pakistan,Punjab,Gujranwala
 
 
                     </p>
 
                     <p>
-                        <i class='bx bxs-phone' style='color:#f311c2'  ></i></i>03085693307
+                        <i class='bx bxs-phone' style='color:black'  ></i></i>03085693307
 
 
                     </p>
 
                     <p>
-                        <i class='bx bxl-gmail' style='color:#0ac8dc'></i>rgbpoultryroom@gmail.com
+                        <i class='bx bxl-gmail' style='color:black'></i>rgbpoultryroom@gmail.com
 
 
                     </p>
 
 
                     <p>
-                        <i class='bx bxl-skype' style='color:#12e4c0'  ></i>03085693307
+                        <i class='bx bxl-skype' style='color:black'  ></i>03085693307
 
 
                     </p>

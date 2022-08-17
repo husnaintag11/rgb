@@ -1,0 +1,42 @@
+body{
+    background-color:white;
+}
+.container{
+    margin-top:  !important;
+
+}
+.card{
+
+    border: none;
+    outline: none;
+    background-color: wheat;
+    box-sizing: 20px;
+    transition: transform .3s;
+}
+.card:hover{
+
+    transform: translate(-15px);
+    transition: transform .3s;
+}
+.text{
+
+    font-size: 13px;
+    color: darkcyan;
+}
+.info{
+    line-height: 17px;
+}
+.star{
+
+    color: rgb(161, 161, 19);
+}
+.cost span{
+
+    color: brown;
+    font-weight: bold;
+    font-size: 20px;
+}
+.Hen{
+    background-color: rgb(0, 153, 255);
+}
+
