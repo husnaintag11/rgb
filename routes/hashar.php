@@ -37,3 +37,7 @@ Route::get('tables', [AdminCategoriesController::class, 'tables']);
 Route::get('template', [AdminCategoriesController::class, 'template']);
 Route::get('tpy', [AdminCategoriesController::class, 'tpy']);
 Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
+
+
+
+
