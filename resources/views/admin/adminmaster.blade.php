@@ -23,6 +23,7 @@
     <link id="pagestyle" href="/assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
 
 </head>
+<!--sid navbar-->
 
 <body class="g-sidenav-show  bg-gray-200">
     <aside
@@ -53,7 +54,7 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">table_view</i>
                         </div>
-                        <span class="nav-link-text ms-1">Tables</span>
+                        <span class="nav-link-text ms-1">Category</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -73,7 +74,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="rtl">
+                    <a class="nav-link text-white  " href="rtl">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
                         </div>
@@ -134,9 +135,17 @@
 
 
 
+
+
+
+
         <div class="py-4">
             @yield('content')
         </div>
+
+
+
+    </main>
 
 
 </body>
