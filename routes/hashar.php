@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\admin\Sub_CategoryController;
+use App\Http\Controllers\admin\AdminCategoriesController;
 use App\Http\Controllers\admin\CategoryController;
 
 /*
@@ -52,6 +53,25 @@ Route::prefix('categories')->group(function(){
     Route::post('/update/{id}',[CategoryController::class,'update'])->name('cat.update');
 
     Route::get('/delete/{id}',[CategoryController::class,'delete'])->name('cat.delete');
+
+
+});
+
+
+
+
+Route::prefix('sub_categories')->group(function(){
+    Route::get('/',[Sub_CategoryController::class,'index'])->name('sub_cat.index');
+
+    Route::get('/create',[Sub_CategoryController::class,'create'])->name('sub_cat.create');
+
+    Route::post('/store',[Sub_CategoryController::class,'store'])->name('sub_cat.store');
+
+    Route::get('/edit/{id}',[Sub_CategoryController::class,'edit'])->name('sub_cat.edit');
+
+    Route::post('/update/{id}',[Sub_CategoryController::class,'update'])->name('sub_cat.update');
+
+    Route::get('/delete/{id}',[Sub_CategoryController::class,'delete'])->name('sub_cat.delete');
 
 
 });

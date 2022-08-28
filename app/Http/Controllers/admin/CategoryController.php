@@ -52,4 +52,6 @@ $Category->delete();
 return redirect()->route('cat.index');
 
 }
+
+
 }
