@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class AdminCategoriesController extends Controller
 {
-    public function view(){
-        return view('admin.admincategories');
+
+    public function index(){
+        return view('admin..category.index');
     }
 
     public function dashboard(){
@@ -38,9 +39,8 @@ class AdminCategoriesController extends Controller
     public function sign_up(){
         return view('admin.sign-up');
     }
-    public function tables(){
-        return view('admin.tables');
-    }
+
+
     public function template(){
         return view('admin.template');
     }

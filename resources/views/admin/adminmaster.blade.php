@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:8000/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="http://127.0.0.1:8000/assets/img/favicon.png">
     <title>
-        Material Dashboard 2 by Creative Tim
+        Pottery Page
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="tables">
+                    <a class="nav-link text-white " href="index">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">table_view</i>
                         </div>

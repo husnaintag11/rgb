@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\AdminCategoriesController;
+
+use App\Http\Controllers\admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,11 +34,24 @@ Route::get('profile', [AdminCategoriesController::class, 'profile']);
 Route::get('rtl', [AdminCategoriesController::class, 'rtl']);
 Route::get('sign_in', [AdminCategoriesController::class, 'sign_in']);
 Route::get('sign_up', [AdminCategoriesController::class, 'sign_up']);
-Route::get('tables', [AdminCategoriesController::class, 'tables']);
+
 Route::get('template', [AdminCategoriesController::class, 'template']);
 Route::get('tpy', [AdminCategoriesController::class, 'tpy']);
 Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
 
+Route::prefix('categories')->group(function(){
+    Route::get('/',[CategoryController::class,'index'])->name('cat.index');
+
+    Route::get('/create',[CategoryController::class,'create'])->name('cat.create');
+
+    Route::post('/store',[CategoryController::class,'store'])->name('cat.store');
+
+    Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('cat.edit');
+
+    Route::post('/update/{id}',[CategoryController::class,'update'])->name('cat.update');
+
+    Route::get('/delete/{id}',[CategoryController::class,'delete'])->name('cat.delete');
 
 
+});
