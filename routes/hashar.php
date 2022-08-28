@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\CountryController;
 use App\Http\Controllers\admin\Sub_CategoryController;
 use App\Http\Controllers\admin\AdminCategoriesController;
 use App\Http\Controllers\admin\CategoryController;
@@ -75,3 +76,23 @@ Route::prefix('sub_categories')->group(function(){
 
 
 });
+
+
+
+Route::prefix('country')->group(function(){
+    Route::get('/',[CountryController::class,'index'])->name('cout.index');
+
+    Route::get('/create',[CountryController::class,'create'])->name('cout.create');
+
+    Route::post('/store',[CountryController::class,'store'])->name('cout.store');
+
+    Route::get('/edit/{id}',[CountryController::class,'edit'])->name('cout.edit');
+
+    Route::post('/update/{id}',[CountryController::class,'update'])->name('cout.update');
+
+    Route::get('/delete/{id}',[CountryController::class,'delete'])->name('cout.delete');
+
+
+});
+
+
