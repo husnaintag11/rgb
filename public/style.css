@@ -2,15 +2,15 @@ body{
     background-color:white;
 }
 .container{
-    margin-top:  !important;
+    margin-top: 0px !important;
 
 }
 .card{
 
     border: none;
     outline: none;
-    background-color: wheat;
-    box-sizing: 20px;
+    background-color: rgba(128, 128, 128, 0.253);
+
     transition: transform .3s;
 }
 .card:hover{
@@ -29,14 +29,20 @@ body{
 .star{
 
     color: rgb(161, 161, 19);
+    font-size: xx-small;
 }
 .cost span{
 
     color: brown;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
 }
 .Hen{
     background-color: rgb(0, 153, 255);
 }
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
 

@@ -2,386 +2,632 @@
 
 @section('content')
 
-<div class="container mb-5 mt-5">
+<div class=" container mb-5 mt-5">
+
     <div class="row">
+
 
         <!--card1-->
 
-        <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="product-1 aligen-items-center p-2 text-center">
-                    <img src="rgbpics/HEN.jpg" alt="" class="rounded" width="160">
-                    <h5>HEN</h5>
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
 
                     <!--cardinfo-->
-                    <div class="mt-3 info">
+                    <div class="mt-1 info">
                         <span class="text1 d-block">This hens is silver sbright</span>
-                        <span class="text">Hen for sale</span>
-
-                    </div>
-                    <div class="cost mt-3 text-dark">
-                        <span>RS.2500 PRK</span>
-                        <div class="star mt-3 align-items-center">
+                        <div class="star mt-0 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-
                         </div>
 
                     </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
 
-                     <!-- cardinfo end here-->
-
+                    </div>
                 </div>
 
-                  <!--button for card-->
-
-                <div class="p-3 Hen text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
-
-                </div>
 
             </div>
 
         </div>
 
-          <!--card1-->
+        <!--card1-->
 
-          <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="product-1 aligen-items-center p-2 text-center">
-                    <img src="rgbpics/HEN.jpg" alt="" class="rounded" width="160">
-                    <h5>HEN</h5>
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
 
                     <!--cardinfo-->
-                    <div class="mt-3 info">
+                    <div class="mt-1 info">
                         <span class="text1 d-block">This hens is silver sbright</span>
-                        <span class="text">Hen for sale</span>
-
-                    </div>
-                    <div class="cost mt-3 text-dark">
-                        <span>RS.2500 PRK</span>
-                        <div class="star mt-3 align-items-center">
+                        <div class="star mt-0 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-
                         </div>
 
                     </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
 
-                     <!-- cardinfo end here-->
-
+                    </div>
                 </div>
 
-                  <!--button for card-->
-
-                <div class="p-3 Hen text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
-
-                </div>
 
             </div>
 
         </div>
 
-          <!--card1-->
 
-          <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="product-1 aligen-items-center p-2 text-center">
-                    <img src="rgbpics/HEN.jpg" alt="" class="rounded" width="160">
-                    <h5>HEN</h5>
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
 
                     <!--cardinfo-->
-                    <div class="mt-3 info">
+                    <div class="mt-1 info">
                         <span class="text1 d-block">This hens is silver sbright</span>
-                        <span class="text">Hen for sale</span>
-
-                    </div>
-                    <div class="cost mt-3 text-dark">
-                        <span>RS.2500 PRK</span>
-                        <div class="star mt-3 align-items-center">
+                        <div class="star mt-0 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-
                         </div>
 
                     </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
 
-                     <!-- cardinfo end here-->
-
+                    </div>
                 </div>
 
-                  <!--button for card-->
-
-                <div class="p-3 Hen text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
-
-                </div>
 
             </div>
 
         </div>
 
-          <!--card1-->
+        <!--card1-->
 
-          <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="product-1 aligen-items-center p-2 text-center">
-                    <img src="rgbpics/HEN.jpg" alt="" class="rounded" width="160">
-                    <h5>HEN</h5>
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
 
                     <!--cardinfo-->
-                    <div class="mt-3 info">
+                    <div class="mt-1 info">
                         <span class="text1 d-block">This hens is silver sbright</span>
-                        <span class="text">Hen for sale</span>
-
-                    </div>
-                    <div class="cost mt-3 text-dark">
-                        <span>RS.2500 PRK</span>
-                        <div class="star mt-3 align-items-center">
+                        <div class="star mt-0 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-
                         </div>
 
                     </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
 
-                     <!-- cardinfo end here-->
-
+                    </div>
                 </div>
 
-                  <!--button for card-->
-
-                <div class="p-3 Hen text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
-
-                </div>
 
             </div>
 
         </div>
 
-          <!--card1-->
 
-          <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="product-1 aligen-items-center p-2 text-center">
-                    <img src="rgbpics/HEN.jpg" alt="" class="rounded" width="160">
-                    <h5>HEN</h5>
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
 
                     <!--cardinfo-->
-                    <div class="mt-3 info">
+                    <div class="mt-1 info">
                         <span class="text1 d-block">This hens is silver sbright</span>
-                        <span class="text">Hen for sale</span>
-
-                    </div>
-                    <div class="cost mt-3 text-dark">
-                        <span>RS.2500 PRK</span>
-                        <div class="star mt-3 align-items-center">
+                        <div class="star mt-0 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-
                         </div>
 
                     </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
 
-                     <!-- cardinfo end here-->
-
+                    </div>
                 </div>
 
-                  <!--button for card-->
-
-                <div class="p-3 Hen text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
-
-                </div>
 
             </div>
 
         </div>
 
-          <!--card1-->
 
-          <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="product-1 aligen-items-center p-2 text-center">
-                    <img src="rgbpics/HEN.jpg" alt="" class="rounded" width="160">
-                    <h5>HEN</h5>
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
 
                     <!--cardinfo-->
-                    <div class="mt-3 info">
+                    <div class="mt-1 info">
                         <span class="text1 d-block">This hens is silver sbright</span>
-                        <span class="text">Hen for sale</span>
-
-                    </div>
-                    <div class="cost mt-3 text-dark">
-                        <span>RS.2500 PRK</span>
-                        <div class="star mt-3 align-items-center">
+                        <div class="star mt-0 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-
                         </div>
 
                     </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
 
-                     <!-- cardinfo end here-->
-
+                    </div>
                 </div>
 
-                  <!--button for card-->
-
-                <div class="p-3 Hen text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
-
-                </div>
 
             </div>
 
         </div>
 
-          <!--card1-->
 
-          <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="product-1 aligen-items-center p-2 text-center">
-                    <img src="rgbpics/HEN.jpg" alt="" class="rounded" width="160">
-                    <h5>HEN</h5>
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
 
                     <!--cardinfo-->
-                    <div class="mt-3 info">
+                    <div class="mt-1 info">
                         <span class="text1 d-block">This hens is silver sbright</span>
-                        <span class="text">Hen for sale</span>
-
-                    </div>
-                    <div class="cost mt-3 text-dark">
-                        <span>RS.2500 PRK</span>
-                        <div class="star mt-3 align-items-center">
+                        <div class="star mt-0 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-
                         </div>
 
                     </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
 
-                     <!-- cardinfo end here-->
-
+                    </div>
                 </div>
 
-                  <!--button for card-->
-
-                <div class="p-3 Hen text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
-
-                </div>
 
             </div>
 
         </div>
 
-          <!--card1-->
 
-          <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="product-1 aligen-items-center p-2 text-center">
-                    <img src="rgbpics/HEN.jpg" alt="" class="rounded" width="160">
-                    <h5>HEN</h5>
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
 
                     <!--cardinfo-->
-                    <div class="mt-3 info">
+                    <div class="mt-1 info">
                         <span class="text1 d-block">This hens is silver sbright</span>
-                        <span class="text">Hen for sale</span>
-
-                    </div>
-                    <div class="cost mt-3 text-dark">
-                        <span>RS.2500 PRK</span>
-                        <div class="star mt-3 align-items-center">
+                        <div class="star mt-0 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-
                         </div>
 
                     </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
 
-                     <!-- cardinfo end here-->
-
+                    </div>
                 </div>
 
-                  <!--button for card-->
-
-                <div class="p-3 Hen text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
-
-                </div>
 
             </div>
 
         </div>
 
-          <!--card1-->
 
-          <div class="col-md-4">
-            <div class="card mt-3">
-                <div class="product-1 aligen-items-center p-2 text-center">
-                    <img src="rgbpics/HEN.jpg" alt="" class="rounded" width="160">
-                    <h5>HEN</h5>
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
 
                     <!--cardinfo-->
-                    <div class="mt-3 info">
+                    <div class="mt-1 info">
                         <span class="text1 d-block">This hens is silver sbright</span>
-                        <span class="text">Hen for sale</span>
-
-                    </div>
-                    <div class="cost mt-3 text-dark">
-                        <span>RS.2500 PRK</span>
-                        <div class="star mt-3 align-items-center">
+                        <div class="star mt-0 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-
                         </div>
 
                     </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
 
-                     <!-- cardinfo end here-->
-
+                    </div>
                 </div>
 
-                  <!--button for card-->
-
-                <div class="p-3 Hen text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
-
-                </div>
 
             </div>
 
         </div>
+
+
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
+
+                    <!--cardinfo-->
+                    <div class="mt-1 info">
+                        <span class="text1 d-block">This hens is silver sbright</span>
+                        <div class="star mt-0 align-items-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                    </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
+
+                    <!--cardinfo-->
+                    <div class="mt-1 info">
+                        <span class="text1 d-block">This hens is silver sbright</span>
+                        <div class="star mt-0 align-items-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                    </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
+
+                    <!--cardinfo-->
+                    <div class="mt-1 info">
+                        <span class="text1 d-block">This hens is silver sbright</span>
+                        <div class="star mt-0 align-items-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                    </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
+
+                    <!--cardinfo-->
+                    <div class="mt-1 info">
+                        <span class="text1 d-block">This hens is silver sbright</span>
+                        <div class="star mt-0 align-items-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                    </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
+
+                    <!--cardinfo-->
+                    <div class="mt-1 info">
+                        <span class="text1 d-block">This hens is silver sbright</span>
+                        <div class="star mt-0 align-items-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                    </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
+
+                    <!--cardinfo-->
+                    <div class="mt-1 info">
+                        <span class="text1 d-block">This hens is silver sbright</span>
+                        <div class="star mt-0 align-items-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                    </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
+
+                    <!--cardinfo-->
+                    <div class="mt-1 info">
+                        <span class="text1 d-block">This hens is silver sbright</span>
+                        <div class="star mt-0 align-items-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                    </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!--card1-->
+
+        <div class="col-md-2">
+
+            <div class="card mt-3" >
+                <div class="product-1 text-center">
+
+                  <img src="rgbpics/HEN.jpg" alt=""  class="rounded" width="159px" height="120px">
+                    <div class="top-left">
+                        <span class="badge rounded-pill bg-primary">HEN</span>
+                    </div>
+
+                    <!--cardinfo-->
+                    <div class="mt-1 info">
+                        <span class="text1 d-block">This hens is silver sbright</span>
+                        <div class="star mt-0 align-items-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                    </div>
+                    <div class="cost mt-0 text-dark">
+                        <span>RS.2500 PRK</span>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
 

@@ -46,17 +46,17 @@
         <div class="row py-3 bg-warning ">
             <div class="col">
                 <ul class="nav nav-pills nav-fill  ">
-                    <li class="nav-item"><a href="" class="nav-link"><i class='bx bxs-home-alt-2'></i>HOME</a></li>
+                    <li class="nav-item"><a href="/nav" class="nav-link"><i class='bx bxs-home-alt-2'></i>HOME</a></li>
 
 
                     <li class="nav-item dropdown">
                         <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                 class='bx bxs-cat'></i>CATS</a>
                         <div class="dropdown-menu">
-                            <a href="" class="dropdown-item">Persian</a>
-                            <a href="" class="dropdown-item">Saimolus</a>
-                            <a href="" class="dropdown-item">American</a>
-                            <a href="" class="dropdown-item">Somalian</a>
+                            <a href="/persian" class="dropdown-item">Persian</a>
+                            <a href="/siamese" class="dropdown-item">Siamese</a>
+                            <a href="/khaomanee" class="dropdown-item">Khao Manee</a>
+                            <a href="/catkitten" class="dropdown-item">Cats Kittens</a>
                         </div>
                     </li>
 
@@ -64,10 +64,10 @@
                         <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                 class='bx bxs-dog'></i>DOGS</a>
                         <div class="dropdown-menu">
-                            <a href="" class="dropdown-item">German shaphered</a>
-                            <a href="" class="dropdown-item">Labradol</a>
-                            <a href="" class="dropdown-item">Pista</a>
-                            <a href="" class="dropdown-item">HASSKI</a>
+                            <a href="/germanshaphered" class="dropdown-item">German shaphered</a>
+                            <a href="/labrador" class="dropdown-item">Labrador</a>
+                            <a href="/pista" class="dropdown-item">Pista</a>
+
                         </div>
                     </li>
 
@@ -76,10 +76,10 @@
                         <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                 class='bx bxs-dog'></i>BIRDS</a>
                         <div class="dropdown-menu">
-                            <a href="" class="dropdown-item">Australian Parrots</a>
-                            <a href="" class="dropdown-item">Raw Parrots</a>
-                            <a href="" class="dropdown-item">Dove</a>
-                            <a href="" class="dropdown-item">Fancy Pigeons</a>
+                            <a href="/australian" class="dropdown-item">Australian Parrots</a>
+                            <a href="/raw" class="dropdown-item">Raw Parrots</a>
+                            <a href="/dove" class="dropdown-item">Dove</a>
+                            <a href="/fancypigeon" class="dropdown-item">Fancy Pigeons</a>
                         </div>
                     </li>
 
@@ -88,10 +88,10 @@
                                 class='fa-solid fa-crow'></i>HENS </a>
 
                         <div class="dropdown-menu">
-                            <a href="" class="dropdown-item">Bentom</a>
-                            <a href="" class="dropdown-item">Golden Buff</a>
-                            <a href="" class="dropdown-item">Polish</a>
-                            <a href="" class="dropdown-item">Silver Sbright</a>
+                            <a href="/bentom" class="dropdown-item">Bentom</a>
+                            <a href="/goldenbuff" class="dropdown-item">Golden Buff</a>
+                            <a href="/polish" class="dropdown-item">Polish</a>
+                            <a href="/milliflower" class="dropdown-item">Milli Flower</a>
                         </div>
                     </li>
 
