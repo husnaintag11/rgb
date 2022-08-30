@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\CountryController;
+use App\Http\Controllers\admin\AddressController;
 use App\Http\Controllers\admin\Sub_CategoryController;
 use App\Http\Controllers\admin\AdminCategoriesController;
 use App\Http\Controllers\admin\CategoryController;
@@ -96,3 +97,18 @@ Route::prefix('country')->group(function(){
 });
 
 
+Route::prefix('address')->group(function(){
+    Route::get('/',[AddressController::class,'index'])->name('add.index');
+
+    Route::get('/create',[AddressController::class,'create'])->name('add.create');
+
+    Route::post('/store',[AddressController::class,'store'])->name('add.store');
+
+    Route::get('/edit/{id}',[AddressController::class,'edit'])->name('add.edit');
+
+    Route::post('/update/{id}',[AddressController::class,'update'])->name('add.update');
+
+    Route::get('/delete/{id}',[AddressController::class,'delete'])->name('add.delete');
+
+
+});
