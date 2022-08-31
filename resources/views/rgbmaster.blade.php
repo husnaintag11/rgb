@@ -135,19 +135,20 @@
         <a href=""><img src="rgbpics/INSTAGRAM.jpg" alt="" width="300px" height="250px"></a>
         <h1>JOIN OUR INSTAGRAM PAGE</h1>
 
+
     </div>
-    <div class="container">
+    <div class="container text-center">
         <div class="row">
             <div class="col py-5">
-                <a href="" class="btn btn-secondary btn-sm">POLISH</a>
+                <h3>Hen Chicks</h3>
+                <a href="/polishchick" class="btn btn-secondary btn-sm">POLISH</a>
                 <a href="" class="btn btn-secondary btn-sm">BENTOM</a>
-                <a href="" class="btn btn-secondary btn-sm">GOLDEN BUFF</a>
-                <a href="" class="btn btn-secondary btn-sm">MILLI FLOWER</a>
-                <a href="" class="btn btn-secondary btn-sm">ENGLISH GAME</a>
-                <a href="" class="btn btn-secondary btn-sm">SILVER SBRIGHT</a>
-                <a href="" class="btn btn-secondary btn-sm">SHAMO ASEEL</a>
-                <a href="" class="btn btn-secondary btn-sm">GOLDEN MESRI</a>
-                <a href="" class="btn btn-secondary btn-sm">DESI HEN</a>
+                <a href="/goldenbuffchick"class="btn btn-secondary btn-sm">GOLDEN BUFF</a>
+                <a href="/milliflowerchick" class="btn btn-secondary btn-sm">MILLI FLOWER</a>
+                <a href="/englishgamechick" class="btn btn-secondary btn-sm">ENGLISH GAME</a>
+                <a href="/shamoaseelchick" class="btn btn-secondary btn-sm">SHAMO ASEEL</a>
+                <a href="/goldenmesrichick" class="btn btn-secondary btn-sm">GOLDEN MESRI</a>
+                <a href="/desihenchick" class="btn btn-secondary btn-sm">DESI HEN</a>
 
 
 
@@ -240,7 +241,7 @@
                     </p>
 
                     <p>
-                        <i class='bx bxs-phone' style='color:black'  ></i></i>03085693307
+                        <i class='bx bxs-phone' style='color:black'></i></i>03085693307
 
 
                     </p>
@@ -253,7 +254,7 @@
 
 
                     <p>
-                        <i class='bx bxl-skype' style='color:black'  ></i>03085693307
+                        <i class='bx bxl-skype' style='color:black'></i>03085693307
 
 
                     </p>
@@ -303,7 +304,7 @@
 
                     </div>
 
-                    </div>
+                </div>
 
 
 
@@ -319,4 +320,5 @@
     </footer>
 
 </body>
+
 </html>

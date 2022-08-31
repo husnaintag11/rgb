@@ -6,6 +6,7 @@ use App\Http\Controllers\CatController;
 use App\Http\Controllers\DogController;
 use App\Http\Controllers\BirdController;
 use App\Http\Controllers\HenController;
+use App\Http\Controllers\HenchickController;
 
 
 /*
@@ -45,3 +46,12 @@ Route::get('/bentom', [App\Http\Controllers\HenController::class, 'ben']);
 Route::get('/goldenbuff', [App\Http\Controllers\HenController::class, 'golden']);
 Route::get('/polish', [App\Http\Controllers\HenController::class, 'pol']);
 Route::get('/milliflower', [App\Http\Controllers\HenController::class, 'milli']);
+
+Route::get('/polishchick', [App\Http\Controllers\HenchickController::class, 'polchick']);
+Route::get('/goldenbuffchick', [App\Http\Controllers\HenchickController::class, 'golchick']);
+Route::get('/milliflowerchick', [App\Http\Controllers\HenchickController::class, 'millichick']);
+Route::get('/englishgamechick', [App\Http\Controllers\HenchickController::class, 'englishchick']);
+Route::get('/shamoaseelchick', [App\Http\Controllers\HenchickController::class, 'shamochick']);
+Route::get('/goldenmesrichick', [App\Http\Controllers\HenchickController::class, 'mesrichick']);
+Route::get('/desihenchick', [App\Http\Controllers\HenchickController::class, 'desichick']);
+
