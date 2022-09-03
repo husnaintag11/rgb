@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:8000/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="http://127.0.0.1:8000/assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="http://127.0.0.1:8000/assets/img/logo.jpg">
     <title>
-        Pottery Page
+        RGB Pottery
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -34,7 +34,7 @@
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
                 target="_blank">
-                <img src="/assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
+                <img src="/assets/img/logo.jpg" class="rounded-circle" class="navbar-brand-img h-100" alt="main_logo">
                 <span class="ms-1 font-weight-bold text-white">RGB Pottery</span>
             </a>
         </div>
