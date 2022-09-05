@@ -42,7 +42,7 @@
         </div>
 
     </div>
-    <div class="container border border-danger mb-5">
+    <div class="container border border-danger mb-5 sticky-top">
         <div class="row py-3 bg-warning ">
             <div class="col">
                 <ul class="nav nav-pills nav-fill  ">
@@ -130,9 +130,11 @@
 
 
 
-    <div class="text-center">
+    <div class=" col text-center">
 
         <a href=""><img src="rgbpics/INSTAGRAM.jpg" alt="" width="300px" height="250px"></a>
+        <a href=""><img src="rgbpics/Whatsapp.jpg" alt="" width="150px" height="150px"></a>
+
         <h1>JOIN OUR INSTAGRAM PAGE</h1>
 
 
