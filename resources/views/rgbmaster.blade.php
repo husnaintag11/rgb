@@ -170,7 +170,7 @@
     <div class="container">
         <h1>Catagory</h1>
         <br>
-        <div class="row">
+        <div class="row text-center">
             <div class="col-2">
 
         <a href=""><img class="rounded-circle" src="rgbpics/Dog.jpg" alt="" width="100px" height="100px"></a>
