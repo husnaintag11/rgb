@@ -42,7 +42,7 @@
         </div>
 
     </div>
-    <div class="container border border-danger mb-5">
+    <div class="container border border-danger mb-5 sticky-top">
         <div class="row py-3 bg-warning ">
             <div class="col">
                 <ul class="nav nav-pills nav-fill  ">
@@ -130,9 +130,11 @@
 
 
 
-    <div class="text-center">
+    <div class=" col text-center">
 
         <a href=""><img src="rgbpics/INSTAGRAM.jpg" alt="" width="300px" height="250px"></a>
+        <a href=""><img src="rgbpics/Whatsapp.jpg" alt="" width="150px" height="150px"></a>
+
         <h1>JOIN OUR INSTAGRAM PAGE</h1>
 
 
@@ -143,12 +145,12 @@
                 <h3>Hen Chicks</h3>
                 <a href="/polishchick" class="btn btn-secondary btn-sm">POLISH</a>
                 <a href="" class="btn btn-secondary btn-sm">BENTOM</a>
-                <a href="/goldenbuffchick"class="btn btn-secondary btn-sm">GOLDEN BUFF</a>
+                <a href="/goldenbuffchick" class="btn btn-secondary btn-sm">GOLDEN BUFF</a>
                 <a href="/milliflowerchick" class="btn btn-secondary btn-sm">MILLI FLOWER</a>
                 <a href="/englishgamechick" class="btn btn-secondary btn-sm">ENGLISH GAME</a>
                 <a href="/shamoaseelchick" class="btn btn-secondary btn-sm">SHAMO ASEEL</a>
                 <a href="/goldenmesrichick" class="btn btn-secondary btn-sm">GOLDEN MESRI</a>
-                <a href="/desihenchick" class="btn btn-secondary btn-sm">DESI HEN</a>
+                <a href="/dogi" class="btn btn-secondary btn-sm">DESI HEN</a>
 
 
 
@@ -160,164 +162,226 @@
 
     </div>
 
-    <div class="py-4">
+
+
+    <div class=" py-4">
         @yield('content')
+
+</div>
+
+    <div class="container">
+        <h1>Catagory</h1>
+        <br>
+        <div class="row text-center">
+            <div class="col-2">
+
+        <a href=""><img class="rounded-circle" src="rgbpics/Dog.jpg" alt="" width="100px" height="100px"></a>
+       <h5>Dogs</h5>
     </div>
 
-    <footer class="bg-warning text pt-5 pb-4">
-        <div class="container text-center text-md-left">
-            <div class="row text-center text-md-left">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h4 class="text-uppercase mb-4 font-weight-bold text-danger">Company Name</h4>
-                    <p>The company name is RGB POULTRY ROOM.This company is about poultry products.</p>
+    <div class="col-2">
+
+        <a href=""><img class="rounded-circle" src="rgbpics/Hencatg.jpg" alt="" width="100px" height="100px"></a>
+       <h5>Hens</h5>
+    </div>
+
+    <div class="col-2">
+
+        <a href=""><img class="rounded-circle" src="rgbpics/pigeoncatg.jpg" alt="" width="100px" height="100px"></a>
+       <h5>Pigeons</h5>
+    </div>
+
+    <div class="col-2">
+
+        <a href=""><img class="rounded-circle" src="rgbpics/catcatg.jpg" alt="" width="100px" height="100px"></a>
+       <h5>Cats</h5>
+    </div>
+
+    <div class="col-2">
+
+        <a href=""><img class="rounded-circle" src="rgbpics/parrotcatg.jpg" alt="" width="100px" height="100px"></a>
+       <h5>Birds</h5>
+    </div>
+
+    <div class="col-2">
+
+        <a href=""><img class="rounded-circle" src="rgbpics/vacinecatg.jpg" alt="" width="100px" height="100px"></a>
+       <h5>Vacination</h5>
+    </div>
 
 
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h4 class="text-uppercase mb-4 font-weight-bold text-danger">About</h4>
-                    <p>
-                        <a href="" class="text-dark" style="text-decoration: none;">Customers</a>
 
 
-                    </p>
-
-                    <p>
-                        <a href="" class="text-dark" style="text-decoration: none;">Offices</a>
 
 
-                    </p>
-
-                    <p>
-                        <a href="" class="text-dark" style="text-decoration: none;">Careers</a>
 
 
-                    </p>
-
-                    <p>
-                        <a href="" class="text-dark" style="text-decoration: none;">Shipping method</a>
 
 
-                    </p>
 
 
-                </div>
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h4 class="text-uppercase mb-4 font-weight-bold text-danger">Products</h4>
-                    <p>
-                        <a href="" class="text-dark" style="text-decoration: none;">Hens</a>
+    </div>
+    </div>
 
 
-                    </p>
-
-                    <p>
-                        <a href="" class="text-dark" style="text-decoration: none;">Dogs</a>
 
 
-                    </p>
 
-                    <p>
-                        <a href="" class="text-dark" style="text-decoration: none;">Cats</a>
+            <footer class="bg-warning text pt-5 pb-4">
+                <div class="container text-center text-md-left">
+                    <div class="row text-center text-md-left">
+                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h4 class="text-uppercase mb-4 font-weight-bold text-danger">Company Name</h4>
+                            <p>The company name is RGB POULTRY ROOM.This company is about poultry products.</p>
 
-
-                    </p>
-
-                    <p>
-                        <a href="" class="text-dark" style="text-decoration: none;">Birds</a>
-
-
-                    </p>
-
-
-                </div>
-
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h4 class="text-uppercase mb-4 font-weight-bold text-danger">Contact us</h4>
-                    <p>
-                        <i class='bx bxs-home-alt-2' style='color:black'></i>Pakistan,Punjab,Gujranwala
-
-
-                    </p>
-
-                    <p>
-                        <i class='bx bxs-phone' style='color:black'></i></i>03085693307
-
-
-                    </p>
-
-                    <p>
-                        <i class='bx bxl-gmail' style='color:black'></i>rgbpoultryroom@gmail.com
-
-
-                    </p>
-
-
-                    <p>
-                        <i class='bx bxl-skype' style='color:black'></i>03085693307
-
-
-                    </p>
-
-
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h4 class="text-uppercase mb-4 font-weight-bold text-danger">Follow us</h4>
-                    <p>
-                        <a href=""><i class='bx bxl-facebook-circle'></i></a>
-
-
-                    </p>
-
-                    <p>
-                        <a href=""><i class='bx bxl-twitter'></i></a>
-
-
-                    </p>
-
-                    <p>
-                        <a href=""><i class='bx bxl-instagram-alt ' style='color:#de0d44  '></i></a>
-
-
-                    </p>
-
-                    <p>
-                        <a href=""><i class='bx bxl-whatsapp-square' style='color:#19da12'></i></a>
-
-
-                    </p>
-
-
-                </div>
-
-                <hr class="mb-4">
-                <div class="mb-4">
-                    <div class="row align-items-center">
-
-                        <div class="col-md-7 col-lg-8">
-                            <p>Copyright @2022 All rights reserved by:
-                                <a href=""> <strong class="text-danger">RGB WEB DEVELOPERS</strong></a>
-                            </p>
 
                         </div>
 
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h4 class="text-uppercase mb-4 font-weight-bold text-danger">About</h4>
+                            <p>
+                                <a href="" class="text-dark" style="text-decoration: none;">Customers</a>
+
+
+                            </p>
+
+                            <p>
+                                <a href="" class="text-dark" style="text-decoration: none;">Offices</a>
+
+
+                            </p>
+
+                            <p>
+                                <a href="" class="text-dark" style="text-decoration: none;">Careers</a>
+
+
+                            </p>
+
+                            <p>
+                                <a href="" class="text-dark" style="text-decoration: none;">Shipping method</a>
+
+
+                            </p>
+
+
+                        </div>
+
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h4 class="text-uppercase mb-4 font-weight-bold text-danger">Products</h4>
+                            <p>
+                                <a href="" class="text-dark" style="text-decoration: none;">Hens</a>
+
+
+                            </p>
+
+                            <p>
+                                <a href="" class="text-dark" style="text-decoration: none;">Dogs</a>
+
+
+                            </p>
+
+                            <p>
+                                <a href="" class="text-dark" style="text-decoration: none;">Cats</a>
+
+
+                            </p>
+
+                            <p>
+                                <a href="" class="text-dark" style="text-decoration: none;">Birds</a>
+
+
+                            </p>
+
+
+                        </div>
+
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h4 class="text-uppercase mb-4 font-weight-bold text-danger">Contact us</h4>
+                            <p>
+                                <i class='bx bxs-home-alt-2' style='color:black'></i>Pakistan,Punjab,Gujranwala
+
+
+                            </p>
+
+                            <p>
+                                <i class='bx bxs-phone' style='color:black'></i></i>03085693307
+
+
+                            </p>
+
+                            <p>
+                                <i class='bx bxl-gmail' style='color:black'></i>rgbpoultryroom@gmail.com
+
+
+                            </p>
+
+
+                            <p>
+                                <i class='bx bxl-skype' style='color:black'></i>03085693307
+
+
+                            </p>
+
+
+                        </div>
+
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h4 class="text-uppercase mb-4 font-weight-bold text-danger">Follow us</h4>
+                            <p>
+                                <a href=""><i class='bx bxl-facebook-circle'></i></a>
+
+
+                            </p>
+
+                            <p>
+                                <a href=""><i class='bx bxl-twitter'></i></a>
+
+
+                            </p>
+
+                            <p>
+                                <a href=""><i class='bx bxl-instagram-alt ' style='color:#de0d44  '></i></a>
+
+
+                            </p>
+
+                            <p>
+                                <a href=""><i class='bx bxl-whatsapp-square' style='color:#19da12'></i></a>
+
+
+                            </p>
+
+
+                        </div>
+
+                        <hr class="mb-4">
+                        <div class="mb-4">
+                            <div class="row align-items-center">
+
+                                <div class="col-md-7 col-lg-8">
+                                    <p>Copyright @2022 All rights reserved by:
+                                        <a href=""> <strong class="text-danger">RGB WEB DEVELOPERS</strong></a>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
                     </div>
+
 
                 </div>
 
 
 
 
-            </div>
-
-
-        </div>
-
-
-
-
-    </footer>
+            </footer>
 
 </body>
 
