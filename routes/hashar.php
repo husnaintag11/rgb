@@ -31,154 +31,178 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('gst', [AdminCategoriesController::class, 'view']);
 
-Route::get('dash', [AdminCategoriesController::class, 'dashboard']);
-Route::get('bill', [AdminCategoriesController::class, 'billing']);
+
+
 Route::get('icon', [AdminCategoriesController::class, 'icon']);
 Route::get(' map', [AdminCategoriesController::class, 'map']);
 Route::get('notification', [AdminCategoriesController::class, 'notification']);
 Route::get('profile', [AdminCategoriesController::class, 'profile']);
 Route::get('rtl', [AdminCategoriesController::class, 'rtl']);
-Route::get('sign_in', [AdminCategoriesController::class, 'sign_in']);
-Route::get('sign_up', [AdminCategoriesController::class, 'sign_up']);
+
 
 Route::get('template', [AdminCategoriesController::class, 'template']);
 Route::get('tpy', [AdminCategoriesController::class, 'tpy']);
 Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
+Route::prefix('admin')->group(function(){
 
-Route::prefix('categories')->group(function(){
-    Route::get('/',[CategoryController::class,'index'])->name('cat.index');
 
-    Route::get('/create',[CategoryController::class,'create'])->name('cat.create');
+Route::get('icon', [AdminCategoriesController::class, 'icon']);
+Route::get(' map', [AdminCategoriesController::class, 'map']);
+Route::get('notification', [AdminCategoriesController::class, 'notification']);
+Route::get('profile', [AdminCategoriesController::class, 'profile']);
+Route::get('rtl', [AdminCategoriesController::class, 'rtl']);
 
-    Route::post('/store',[CategoryController::class,'store'])->name('cat.store');
 
-    Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('cat.edit');
+Route::get('template', [AdminCategoriesController::class, 'template']);
+Route::get('tpy', [AdminCategoriesController::class, 'tpy']);
+Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
-    Route::post('/update/{id}',[CategoryController::class,'update'])->name('cat.update');
+    Route::get('dash', [AdminCategoriesController::class, 'dashboard']);
 
-    Route::get('/delete/{id}',[CategoryController::class,'delete'])->name('cat.delete');
+    Route::get('bill', [AdminCategoriesController::class, 'billing']);
 
+    Route::get('sign_in', [AdminCategoriesController::class, 'sign_in']);
 
-});
+    Route::get('sign_up', [AdminCategoriesController::class, 'sign_up']);
 
+    Route::get('profile', [AdminCategoriesController::class, 'profile']);
 
+    Route::prefix('categories')->group(function(){
+        Route::get('/',[CategoryController::class,'index'])->name('cat.index');
 
+        Route::get('/create',[CategoryController::class,'create'])->name('cat.create');
 
-Route::prefix('sub_categories')->group(function(){
-    Route::get('/',[Sub_CategoryController::class,'index'])->name('sub_cat.index');
+        Route::post('/store',[CategoryController::class,'store'])->name('cat.store');
 
-    Route::get('/create',[Sub_CategoryController::class,'create'])->name('sub_cat.create');
+        Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('cat.edit');
 
-    Route::post('/store',[Sub_CategoryController::class,'store'])->name('sub_cat.store');
+        Route::post('/update/{id}',[CategoryController::class,'update'])->name('cat.update');
 
-    Route::get('/edit/{id}',[Sub_CategoryController::class,'edit'])->name('sub_cat.edit');
+        Route::get('/delete/{id}',[CategoryController::class,'delete'])->name('cat.delete');
 
-    Route::post('/update/{id}',[Sub_CategoryController::class,'update'])->name('sub_cat.update');
 
-    Route::get('/delete/{id}',[Sub_CategoryController::class,'delete'])->name('sub_cat.delete');
+    });
 
 
-});
 
 
+    Route::prefix('sub_categories')->group(function(){
+        Route::get('/',[Sub_CategoryController::class,'index'])->name('sub_cat.index');
 
-Route::prefix('country')->group(function(){
-    Route::get('/',[CountryController::class,'index'])->name('cout.index');
+        Route::get('/create',[Sub_CategoryController::class,'create'])->name('sub_cat.create');
 
-    Route::get('/create',[CountryController::class,'create'])->name('cout.create');
+        Route::post('/store',[Sub_CategoryController::class,'store'])->name('sub_cat.store');
 
-    Route::post('/store',[CountryController::class,'store'])->name('cout.store');
+        Route::get('/edit/{id}',[Sub_CategoryController::class,'edit'])->name('sub_cat.edit');
 
-    Route::get('/edit/{id}',[CountryController::class,'edit'])->name('cout.edit');
+        Route::post('/update/{id}',[Sub_CategoryController::class,'update'])->name('sub_cat.update');
 
-    Route::post('/update/{id}',[CountryController::class,'update'])->name('cout.update');
+        Route::get('/delete/{id}',[Sub_CategoryController::class,'delete'])->name('sub_cat.delete');
 
-    Route::get('/delete/{id}',[CountryController::class,'delete'])->name('cout.delete');
 
+    });
 
-});
 
 
-Route::prefix('address')->group(function(){
-    Route::get('/',[AddressController::class,'index'])->name('add.index');
+    Route::prefix('country')->group(function(){
+        Route::get('/',[CountryController::class,'index'])->name('cout.index');
 
-    Route::get('/create',[AddressController::class,'create'])->name('add.create');
+        Route::get('/create',[CountryController::class,'create'])->name('cout.create');
 
-    Route::post('/store',[AddressController::class,'store'])->name('add.store');
+        Route::post('/store',[CountryController::class,'store'])->name('cout.store');
 
-    Route::get('/edit/{id}',[AddressController::class,'edit'])->name('add.edit');
+        Route::get('/edit/{id}',[CountryController::class,'edit'])->name('cout.edit');
 
-    Route::post('/update/{id}',[AddressController::class,'update'])->name('add.update');
+        Route::post('/update/{id}',[CountryController::class,'update'])->name('cout.update');
 
-    Route::get('/delete/{id}',[AddressController::class,'delete'])->name('add.delete');
+        Route::get('/delete/{id}',[CountryController::class,'delete'])->name('cout.delete');
 
 
-});
+    });
 
-Route::prefix('product')->group(function(){
-    Route::get('/',[ProductController::class,'index'])->name('pro.index');
 
-    Route::get('/create',[ProductController::class,'create'])->name('pro.create');
+    Route::prefix('address')->group(function(){
+        Route::get('/',[AddressController::class,'index'])->name('add.index');
 
-    Route::post('/store',[ProductController::class,'store'])->name('pro.store');
+        Route::get('/create',[AddressController::class,'create'])->name('add.create');
 
-    Route::get('/edit/{id}',[ProductController::class,'edit'])->name('pro.edit');
+        Route::post('/store',[AddressController::class,'store'])->name('add.store');
 
-    Route::post('/update/{id}',[ProductController::class,'update'])->name('pro.update');
+        Route::get('/edit/{id}',[AddressController::class,'edit'])->name('add.edit');
 
-    Route::get('/delete/{id}',[ProductController::class,'delete'])->name('pro.delete');
+        Route::post('/update/{id}',[AddressController::class,'update'])->name('add.update');
 
+        Route::get('/delete/{id}',[AddressController::class,'delete'])->name('add.delete');
 
-});
 
-Route::prefix('city')->group(function(){
-    Route::get('/',[CityController::class,'index'])->name('sta.index');
+    });
 
-    Route::get('/create',[CityController::class,'create'])->name('sta.create');
+    Route::prefix('product')->group(function(){
+        Route::get('/',[ProductController::class,'index'])->name('pro.index');
 
-    Route::post('/store',[CityController::class,'store'])->name('sta.store');
+        Route::get('/create',[ProductController::class,'create'])->name('pro.create');
 
-    Route::get('/edit/{id}',[CityController::class,'edit'])->name('sta.edit');
+        Route::post('/store',[ProductController::class,'store'])->name('pro.store');
 
-    Route::post('/update/{id}',[CityController::class,'update'])->name('sta.update');
+        Route::get('/edit/{id}',[ProductController::class,'edit'])->name('pro.edit');
 
-    Route::get('/delete/{id}',[CityController::class,'delete'])->name('sta.delete');
+        Route::post('/update/{id}',[ProductController::class,'update'])->name('pro.update');
 
+        Route::get('/delete/{id}',[ProductController::class,'delete'])->name('pro.delete');
 
-});
 
+    });
 
-Route::prefix('state')->group(function(){
-    Route::get('/',[StateController::class,'index'])->name('sa.index');
+    Route::prefix('city')->group(function(){
+        Route::get('/',[CityController::class,'index'])->name('sta.index');
 
-    Route::get('/create',[StateController::class,'create'])->name('sa.create');
+        Route::get('/create',[CityController::class,'create'])->name('sta.create');
 
-    Route::post('/store',[StateController::class,'store'])->name('sa.store');
+        Route::post('/store',[CityController::class,'store'])->name('sta.store');
 
-    Route::get('/edit/{id}',[StateController::class,'edit'])->name('sa.edit');
+        Route::get('/edit/{id}',[CityController::class,'edit'])->name('sta.edit');
 
-    Route::post('/update/{id}',[StateController::class,'update'])->name('sa.update');
+        Route::post('/update/{id}',[CityController::class,'update'])->name('sta.update');
 
-    Route::get('/delete/{id}',[StateController::class,'delete'])->name('sa.delete');
+        Route::get('/delete/{id}',[CityController::class,'delete'])->name('sta.delete');
 
 
-});
+    });
 
-Route::prefix('street')->group(function(){
-    Route::get('/',[StreetController::class,'index'])->name('st.index');
 
-    Route::get('/create',[StreetController::class,'create'])->name('st.create');
+    Route::prefix('state')->group(function(){
+        Route::get('/',[StateController::class,'index'])->name('sa.index');
 
-    Route::post('/store',[StreetController::class,'store'])->name('st.store');
+        Route::get('/create',[StateController::class,'create'])->name('sa.create');
 
-    Route::get('/edit/{id}',[StreetController::class,'edit'])->name('st.edit');
+        Route::post('/store',[StateController::class,'store'])->name('sa.store');
 
-    Route::post('/update/{id}',[StreetController::class,'update'])->name('st.update');
+        Route::get('/edit/{id}',[StateController::class,'edit'])->name('sa.edit');
 
-    Route::get('/delete/{id}',[StreetController::class,'delete'])->name('st.delete');
+        Route::post('/update/{id}',[StateController::class,'update'])->name('sa.update');
+
+        Route::get('/delete/{id}',[StateController::class,'delete'])->name('sa.delete');
+
+
+    });
+
+    Route::prefix('street')->group(function(){
+        Route::get('/',[StreetController::class,'index'])->name('st.index');
+
+        Route::get('/create',[StreetController::class,'create'])->name('st.create');
+
+        Route::post('/store',[StreetController::class,'store'])->name('st.store');
+
+        Route::get('/edit/{id}',[StreetController::class,'edit'])->name('st.edit');
+
+        Route::post('/update/{id}',[StreetController::class,'update'])->name('st.update');
+
+        Route::get('/delete/{id}',[StreetController::class,'delete'])->name('st.delete');
+
+
+    });
 
 
 });

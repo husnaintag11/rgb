@@ -39,7 +39,7 @@
 
                                     <td>{{ $category->name}}</td>
                                     <td>{{ $category->state_id}}</td>
-                                    <td><a class="btn btn-outline-primary"
+                                    <td><a class="btn btn-outline-info"
                                             href="{{route('sta.edit',$category->id)}}">Edit </a>
                                         <a class="btn btn-outline-danger"
                                             href="{{route('sta.delete',$category->id)}}">Delete </a></td>
