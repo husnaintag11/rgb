@@ -1,13 +1,6 @@
 @extends('admin.adminmaster')
 @section('content')
 
-
-
-
-
-
-
-
 <div class="container-fluid py-4">
     <div class="row">
         <div class="col-12">
@@ -40,7 +33,7 @@
 
                                     <td>{{ $category->name}}</td>
                                     <td>{{ $category->category_id}}</td>
-                                    <td><a class="btn btn-outline-primary"
+                                    <td><a class="btn btn-outline-info"
                                             href="{{route('sub_cat.edit',$category->id)}}">Edit </a>
                                         <a class="btn btn-outline-danger"
                                             href="{{route('sub_cat.delete',$category->id)}}">Delete </a></td>

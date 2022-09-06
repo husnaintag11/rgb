@@ -21,7 +21,7 @@
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
                             <div class="container">
-                                <a class="btn btn-success" href="{{route('add.create')}}">Create</a>
+                                <a class="btn btn-success" href="{{route('address.create')}}">Create</a>
 
                             </div>
                             <thead>
@@ -40,9 +40,9 @@
                                     <td>{{ $category->name}}</td>
                                     <td>{{ $category->street_id}}</td>
                                     <td><a class="btn btn-outline-primary"
-                                            href="{{route('add.edit',$category->id)}}">Edit</a>
+                                            href="{{route('address.edit',$category->id)}}">Edit</a>
                                         <a class="btn btn-outline-danger"
-                                            href="{{route('add.delete',$category->id)}}">Delete</a></td>
+                                            href="{{route('address.delete',$category->id)}}">Delete</a></td>
                                 </tr>
 
                                 @endforeach

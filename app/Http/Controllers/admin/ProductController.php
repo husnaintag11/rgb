@@ -23,7 +23,7 @@ public function store(Request $request)
 
     $data=$request->all();
     Product::create($data);
-return redirect()->route('pro.index');
+return redirect()->route('prdct.index');
 
 }
 
@@ -38,7 +38,7 @@ $Category=Product::find($id);
 
 $data=$request->all();
 $Category->update($data);
-return redirect()->route('pro.index');
+return redirect()->route('prdct.index');
 
 
 
@@ -50,7 +50,7 @@ $Category=Product::find($id);
 
 //$data=$request->all();
 $Category->delete();
-return redirect()->route('pro.index');
+return redirect()->route('prdct.index');
 
 }
 }

@@ -1,6 +1,6 @@
 @extends('admin.adminmaster')
 @section('content')
-<form action="{{ isset($Category)? route ('add.update',$Category->id) :route ('add.store') }}" method="post">
+<form action="{{ isset($Category)? route ('address.update',$Category->id) :route ('address.store') }}" method="post">
     @csrf
     <div class="text-center">
 

@@ -45,31 +45,27 @@ Route::get('template', [AdminCategoriesController::class, 'template']);
 Route::get('tpy', [AdminCategoriesController::class, 'tpy']);
 Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
+
+
+
+
+
+
 Route::prefix('admin')->group(function(){
 
 
-Route::get('icon', [AdminCategoriesController::class, 'icon']);
-Route::get(' map', [AdminCategoriesController::class, 'map']);
-Route::get('notification', [AdminCategoriesController::class, 'notification']);
-Route::get('profile', [AdminCategoriesController::class, 'profile']);
-Route::get('rtl', [AdminCategoriesController::class, 'rtl']);
 
+    Route::get('/dashboard', [AdminCategoriesController::class, 'dashboard'])->name('dashboard.index');
 
-Route::get('template', [AdminCategoriesController::class, 'template']);
-Route::get('tpy', [AdminCategoriesController::class, 'tpy']);
-Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
+    Route::get('/bill', [AdminCategoriesController::class, 'billing']);
 
-    Route::get('dash', [AdminCategoriesController::class, 'dashboard']);
+    Route::get('/sign_in', [AdminCategoriesController::class, 'sign_in']);
 
-    Route::get('bill', [AdminCategoriesController::class, 'billing']);
+    Route::get('/sign_up', [AdminCategoriesController::class, 'sign_up']);
 
-    Route::get('sign_in', [AdminCategoriesController::class, 'sign_in']);
+    Route::get('/profile', [AdminCategoriesController::class, 'profile']);
 
-    Route::get('sign_up', [AdminCategoriesController::class, 'sign_up']);
-
-    Route::get('profile', [AdminCategoriesController::class, 'profile']);
-
-    Route::prefix('categories')->group(function(){
+ Route::prefix('categories')->group(function(){
         Route::get('/',[CategoryController::class,'index'])->name('cat.index');
 
         Route::get('/create',[CategoryController::class,'create'])->name('cat.create');
@@ -88,7 +84,7 @@ Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
 
 
-    Route::prefix('sub_categories')->group(function(){
+   Route::prefix('sub_categories')->group(function(){
         Route::get('/',[Sub_CategoryController::class,'index'])->name('sub_cat.index');
 
         Route::get('/create',[Sub_CategoryController::class,'create'])->name('sub_cat.create');
@@ -124,33 +120,33 @@ Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
 
     Route::prefix('address')->group(function(){
-        Route::get('/',[AddressController::class,'index'])->name('add.index');
+        Route::get('/',[AddressController::class,'index'])->name('address.index');
 
-        Route::get('/create',[AddressController::class,'create'])->name('add.create');
+        Route::get('/create',[AddressController::class,'create'])->name('address.create');
 
-        Route::post('/store',[AddressController::class,'store'])->name('add.store');
+        Route::post('/store',[AddressController::class,'store'])->name('address.store');
 
-        Route::get('/edit/{id}',[AddressController::class,'edit'])->name('add.edit');
+        Route::get('/edit/{id}',[AddressController::class,'edit'])->name('address.edit');
 
-        Route::post('/update/{id}',[AddressController::class,'update'])->name('add.update');
+        Route::post('/update/{id}',[AddressController::class,'update'])->name('address.update');
 
-        Route::get('/delete/{id}',[AddressController::class,'delete'])->name('add.delete');
+        Route::get('/delete/{id}',[AddressController::class,'delete'])->name('address.delete');
 
 
     });
 
     Route::prefix('product')->group(function(){
-        Route::get('/',[ProductController::class,'index'])->name('pro.index');
+        Route::get('/',[ProductController::class,'index'])->name('prdct.index');
 
-        Route::get('/create',[ProductController::class,'create'])->name('pro.create');
+        Route::get('/create',[ProductController::class,'create'])->name('prdct.create');
 
-        Route::post('/store',[ProductController::class,'store'])->name('pro.store');
+        Route::post('/store',[ProductController::class,'store'])->name('prdct.store');
 
-        Route::get('/edit/{id}',[ProductController::class,'edit'])->name('pro.edit');
+        Route::get('/edit/{id}',[ProductController::class,'edit'])->name('prdct.edit');
 
-        Route::post('/update/{id}',[ProductController::class,'update'])->name('pro.update');
+        Route::post('/update/{id}',[ProductController::class,'update'])->name('prdct.update');
 
-        Route::get('/delete/{id}',[ProductController::class,'delete'])->name('pro.delete');
+        Route::get('/delete/{id}',[ProductController::class,'delete'])->name('prdct.delete');
 
 
     });

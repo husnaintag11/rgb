@@ -3,11 +3,24 @@
 
 <form action="{{ route ('sub_cat.store') }}" method="post" enctype="multipart/form-data">
     @csrf
-    <div class="text-center ">
-        <h2>Sub_Category</h2>
-        <input type="text" name="name" placeholder="Enter the name">
+    <div class="text-center">
+        <h3>Sub_Categorous</h3>
+
+    </div>
+    <h5>Name</h5>
+    <div class="text-center">
+
+
+        <input class="shadow-info mb-5 rounded" style="width:1050px" type="text" name="name"
+            placeholder="Enter the name">
         <br>
-        <input type="text" name="category_id" placeholder="Enter the category_id">
+    </div>
+    <h5>Category_id</h5>
+    <div class="text-center">
+
+
+        <input class="shadow-info mb-5 rounded" style="width:1050px" type="text" name="category_id"
+            placeholder="Enter the category_id">
         <br>
 
 

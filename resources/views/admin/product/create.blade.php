@@ -1,6 +1,6 @@
 @extends('admin.adminmaster')
 @section('content')
-<form action="{{ route ('pro.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route ('prdct.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="text-center ">
         <h2>Product</h2>

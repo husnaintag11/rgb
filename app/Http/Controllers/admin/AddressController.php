@@ -23,7 +23,7 @@ class AddressController extends Controller
 
         $data=$request->all();
         Adress::create($data);
-    return redirect()->route('add.index');
+    return redirect()->route('address.index');
 
     }
 
@@ -38,7 +38,7 @@ class AddressController extends Controller
 
     $data=$request->all();
     $Category->update($data);
-    return redirect()->route('add.index');
+    return redirect()->route('address.index');
 
 
 
@@ -50,7 +50,7 @@ class AddressController extends Controller
 
     //$data=$request->all();
     $Category->delete();
-    return redirect()->route('add.index');
+    return redirect()->route('address.index');
 
     }
 }
