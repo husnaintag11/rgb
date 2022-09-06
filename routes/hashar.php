@@ -34,16 +34,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::get('icon', [AdminCategoriesController::class, 'icon']);
-Route::get(' map', [AdminCategoriesController::class, 'map']);
-Route::get('notification', [AdminCategoriesController::class, 'notification']);
-Route::get('profile', [AdminCategoriesController::class, 'profile']);
-Route::get('rtl', [AdminCategoriesController::class, 'rtl']);
-
-
-Route::get('template', [AdminCategoriesController::class, 'template']);
-Route::get('tpy', [AdminCategoriesController::class, 'tpy']);
-Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
 
 
@@ -52,6 +42,22 @@ Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
 
 Route::prefix('admin')->group(function(){
+
+    Route::get('icon', [AdminCategoriesController::class, 'icon']);
+
+    Route::get(' map', [AdminCategoriesController::class, 'map']);
+
+    Route::get('notification', [AdminCategoriesController::class, 'notification']);
+
+    Route::get('profile', [AdminCategoriesController::class, 'profile']);
+
+    Route::get('rtl', [AdminCategoriesController::class, 'rtl']);
+
+    Route::get('template', [AdminCategoriesController::class, 'template']);
+
+    Route::get('tpy', [AdminCategoriesController::class, 'tpy']);
+
+    Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
 
 
