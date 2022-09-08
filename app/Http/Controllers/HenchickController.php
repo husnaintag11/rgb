@@ -55,6 +55,14 @@ class HenchickController extends Controller
         return view('desihenchick');
     }
 
+    public function car()
+
+    {
+
+        return view('cardview');
+    }
+
+
 
 
 

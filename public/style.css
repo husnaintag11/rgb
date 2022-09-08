@@ -46,4 +46,12 @@ body{
     left: 16px;
   }
 
+.line{
+
+    width: 0px;
+
+    height: 500px;
+    border-left: 5px solid;
+
+}
 
