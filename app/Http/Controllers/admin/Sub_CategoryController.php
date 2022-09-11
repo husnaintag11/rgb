@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 use App\Models\SubCategory;
+use App\Models\Category;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,12 +12,14 @@ class Sub_CategoryController extends Controller
     public function index(Request $request )
     {
         $categories=SubCategory::get();
-        return view('admin..sub_category.sub_index',compact('categories'));
+
+
+        return view('admin..sub_category.sub_index', compact('categories'));
     }
     public function create()
     {
-
-        return view('admin..sub_category.sub_create');
+        $categories=Category::get();
+        return view('admin..sub_category.sub_create',compact('categories'));
     }
     public function store(Request $request)
     {

@@ -4,6 +4,7 @@
     @csrf
     <div class="text-center ">
         <h2>Street</h2>
+
         <input type="text" name="name" placeholder="Enter the name">
         <br>
         <input type="text" name="city_id" placeholder="Enter the city_id">

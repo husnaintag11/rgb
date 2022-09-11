@@ -21,7 +21,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Sub_Category</th>
+                                    <th>Category</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -32,7 +32,7 @@
                                     <td>{{ ++$key}}</td>
 
                                     <td>{{ $category->name}}</td>
-                                    <td>{{ $category->category_id}}</td>
+                                    <td>{{ $category->category_name}}</td>
                                     <td><a class="btn btn-outline-info"
                                             href="{{route('sub_cat.edit',$category->id)}}">Edit </a>
                                         <a class="btn btn-outline-danger"

@@ -24,27 +24,31 @@
                                 <a class="btn btn-success" href="{{route('cat.create')}}">Create</a>
 
                             </div>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($categories as $key=> $category)
-                                <tr>
-                                    <td>{{ ++$key}}</td>
 
-                                    <td>{{ $category->name}}</td>
-                                    <td><a class="btn btn-outline-info"
-                                            href="{{route('cat.edit',$category->id)}}">Edit </a>
-                                        <a class="btn btn-outline-danger"
-                                            href="{{route('cat.delete',$category->id)}}">Delete </a></td>
-                                </tr>
 
-                                @endforeach
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($categories as $key=> $category)
+                                    <tr>
+                                        <td>{{ ++$key}}</td>
 
+                                        <td>{{ $category->name}}</td>
+                                        <td><a class="btn btn-outline-info"
+                                                href="{{route('cat.edit',$category->id)}}">Edit
+                                            </a>
+                                            <a class="btn btn-outline-danger"
+                                                href="{{route('cat.delete',$category->id)}}">Delete </a></td>
+                                    </tr>
+
+                                    @endforeach
+
+                                </tbody>
 
 
                         </table>
