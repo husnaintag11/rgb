@@ -6,12 +6,14 @@
         <h3>Categorous</h3>
 
     </div>
-    <div class="text-center">
 
-        <h3>Name</h3>
-        <input class="shadow-info mb-5 rounded" style="width:1050px" type="text" name="name" value="{{isset($Category)?$Category->name:''}}" placeholder="Enter the name">
-        <br>
-        <button type="submit" class="btn btn-primary">Save</button>
+
+    <h5>Name</h5>
+    <div class="text-center ">
+    <input class="shadow-info mb-5 rounded" style="width:1050px" type="text" name="name"
+        value="{{isset($Category)?$Category->name:''}}" placeholder="Enter the name">
+    <br>
+    <button type="submit" class="btn btn-outline-info">Save</button>
     </div>
 </form>
 @endsection
