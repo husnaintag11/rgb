@@ -1,7 +1,8 @@
 @extends('admin.adminmaster')
 @section('content')
 
-<form action="{{ isset($sub_category->name)? route('sub_cat.update',$sub_category->id):route('sub_cat.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ isset($sub_category->name)? route('sub_cat.update',$sub_category->id):route('sub_cat.store') }}"
+    method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="text-center">
@@ -22,7 +23,8 @@
             <select name="category_id" class="form-select" id="inlineFormSelectPref">
                 @foreach ($categories as $category )
 
-                <option {{$sub_category->category_id==$category->id?'selected':''}} value="{{$category->id}}">{{$category->name}}</option>
+                <option {{$sub_category->category_id==$category->id?'selected':''}} value="{{$category->id}}">
+                    {{$category->name}}</option>
 
                 @endforeach
             </select>
