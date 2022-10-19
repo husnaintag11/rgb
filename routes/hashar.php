@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\StreetController;
 
+use App\Http\Controllers\adminv2\AdminController;
+use App\Http\Controllers\admin\StreetController;
 use App\Http\Controllers\admin\StateController;
 use App\Http\Controllers\admin\CityController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CountryController;
 use App\Http\Controllers\admin\AddressController;
 use App\Http\Controllers\admin\Sub_CategoryController;
-use App\Http\Controllers\admin\AdminCategoriesController;
 use App\Http\Controllers\admin\CategoryController;
 
 /*
@@ -33,37 +33,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::prefix('admin')->group(function(){
-
-    Route::get('icon', [AdminCategoriesController::class, 'icon']);
-
-    Route::get(' map', [AdminCategoriesController::class, 'map']);
-
-    Route::get('notification', [AdminCategoriesController::class, 'notification']);
-
-    Route::get('profile', [AdminCategoriesController::class, 'profile']);
-
-    Route::get('rtl', [AdminCategoriesController::class, 'rtl']);
-
-    Route::get('template', [AdminCategoriesController::class, 'template']);
-
-    Route::get('tpy', [AdminCategoriesController::class, 'tpy']);
-
-    Route::get('v_r', [AdminCategoriesController::class, 'v_r']);
 
 
 
-    Route::get('/dashboard', [AdminCategoriesController::class, 'dashboard'])->name('dashboard.index');
+Route::prefix('adminv2')->group(function(){
 
-    Route::get('/bill', [AdminCategoriesController::class, 'billing']);
 
-    Route::get('/sign_in', [AdminCategoriesController::class, 'sign_in']);
+ Route::get('/index',[AdminController::class,'index']);
 
-    Route::get('/sign_up', [AdminCategoriesController::class, 'sign_up']);
-
-    Route::get('/profile', [AdminCategoriesController::class, 'profile']);
-
- Route::prefix('categories')->group(function(){
+    Route::prefix('categories')->group(function(){
         Route::get('/',[CategoryController::class,'index'])->name('cat.index');
 
         Route::get('/create',[CategoryController::class,'create'])->name('cat.create');

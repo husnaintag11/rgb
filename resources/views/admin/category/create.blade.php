@@ -1,21 +1,24 @@
-@extends('admin.adminmaster')
+@extends('adminv2.adminv2master')
 @section('content')
-<form action="{{ route ('cat.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route ('cat.store') }}"   method="post" enctype="multipart/form-data">
     @csrf
+    <h4>Category Form</h4>
 
-<div class="text-center">
-    <h3>Category</h3>
-</div>
+    <p class="card-description">
+        Add Category
+    </p>
 
-    <h5>Name</h5>
-
-    <div class="text-center ">
-
-        <input class="shadow-info mb-5 rounded" style="width:1050px" type="text" name="name"
-            placeholder="Enter the name">
-        <button type="submit" class="btn btn-outline-info">Save</button>
+    <div class="form-group">
+        <input class="form-control" type="text" name="name" placeholder="Enter the name">
     </div>
+    <br>
+    <button type="submit" class="btn btn-primary mr-2">save</button>
+
 </form>
+
+
+
+
 
 
 @endsection
