@@ -29,7 +29,8 @@ return redirect()->route('cat.index');
 public function edit($id)
 {
 $Category=Category::find($id);
-return view('admin..category.edit',compact('Category'));
+$category=new Category;
+return view('admin..category.create',compact('Category'));
 }
 public function update(Request $request,$id){
 

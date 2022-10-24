@@ -30,10 +30,11 @@ class AddressController extends Controller
     public function edit($id)
     {
     $Category=Adress::find($id);
-    return view('admin..address.edit',compact('Category'));
+
+    return view('admin..address.create',compact('Category'));
     }
     public function update(Request $request,$id){
-
+    $adresses=new Adress;
     $Category=Adress::find($id);
 
     $data=$request->all();
