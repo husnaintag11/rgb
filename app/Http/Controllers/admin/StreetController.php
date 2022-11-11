@@ -29,7 +29,8 @@ class StreetController extends Controller
     public function edit($id)
     {
     $Category=Street::find($id);
-    return view('admin..street.edit',compact('Category'));
+    $streets=new Street;
+    return view('admin..street.create',compact('Category'));
     }
     public function update(Request $request,$id){
 

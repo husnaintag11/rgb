@@ -30,7 +30,8 @@ class StateController extends Controller
     public function edit($id)
     {
     $Category=State::find($id);
-    return view('admin..state.edit',compact('Category'));
+    $states=new State;
+    return view('admin..state.create',compact('Category'));
     }
     public function update(Request $request,$id){
 

@@ -1,18 +1,25 @@
-@extends('admin.adminmaster')
+@extends('adminv2.adminv2master')
 @section('content')
-<form action="{{ route ('sta.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ isset($Category)? route ('sta.update',$Category->id) :route ('cat.store') }}" method="post"
+    enctype="multipart/form-data">
     @csrf
-    <div class="text-center ">
-        <h2>City</h2>
-        <input type="text" name="name" placeholder="Enter the name">
+    <h4>City</h4>
+    <p class="card-description">
+        Add City
+    </p>
+    <div class="form-group">
+
+        <input class="form-control" type="text" value="{{isset($Category)?$Category->name:''}}" name="name"
+            placeholder="Enter the name">
         <br>
-        <input type="text" name="state_id" placeholder="Enter the state_id">
+        <input class="form-control" type="text" name="state_id" value="{{isset($Category)?$Category->state_id:''}}"
+            placeholder="Enter the state_id">
         <br>
-
-
-
-        <button type="submit" class="btn btn-outline-info">Save</button>
     </div>
+    <br>
+    <button type="submit" class="btn btn-primary mr-2">save</button>
+
+
 </form>
 
 

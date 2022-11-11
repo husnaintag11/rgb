@@ -29,7 +29,8 @@ class CountryController extends Controller
     public function edit($id)
     {
     $Category=Country::find($id);
-    return view('admin..country.edit',compact('Category'));
+    $countries= new Country;
+    return view('admin..country.create',compact('Category'));
     }
     public function update(Request $request,$id){
 

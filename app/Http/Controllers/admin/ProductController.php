@@ -30,7 +30,8 @@ return redirect()->route('prdct.index');
 public function edit($id)
 {
 $Category=Product::find($id);
-return view('admin..product.edit',compact('Category'));
+$products= new Product;
+return view('admin..product.create',compact('Category'));
 }
 public function update(Request $request,$id){
 
