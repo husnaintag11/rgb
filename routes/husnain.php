@@ -55,7 +55,6 @@ Route::get('/englishgamechick', [App\Http\Controllers\HenchickController::class,
 Route::get('/shamoaseelchick', [App\Http\Controllers\HenchickController::class, 'shamochick']);
 Route::get('/goldenmesrichick', [App\Http\Controllers\HenchickController::class, 'mesrichick']);
 Route::get('/desihenchick', [App\Http\Controllers\HenchickController::class, 'desichick']);
-
 Route::get('/cardview', [App\Http\Controllers\HenchickController::class, 'car']);
 
 
