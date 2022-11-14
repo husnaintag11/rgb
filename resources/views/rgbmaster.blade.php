@@ -18,8 +18,8 @@
 
 <body>
 
-    <div class="  container bg-primary ">
-        <h1 class="py-2 text-center"> RGB</h1>
+    <div class="  container  ">
+
         <div class="row py-3">
             <div class="col">
 
@@ -107,9 +107,9 @@
                     </li>
 
 
-                    <li class="nav-item"><a href="" class="nav-link"><i class="bx bx-plus-medical"></i>HOSPITALS</a>
-                    </li>
-                    <li class="nav-item"><a href="" class="nav-link"><i class="fa-solid fa-bird"></i>HOSPITALS</a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="bx bx-plus-medical"></i>HOSPITALS</a></li>
+
+                    <li class="nav-item"><a href="" class="nav-link"><i class='bx bxs-cart'></i>Add to Cart</a></li>
 
 
 
@@ -135,7 +135,7 @@
         <a href=""><img src="rgbpics/INSTAGRAM.jpg" alt="" width="300px" height="250px"></a>
         <a href=""><img src="rgbpics/Whatsapp.jpg" alt="" width="150px" height="150px"></a>
 
-        <h1>JOIN OUR INSTAGRAM PAGE</h1>
+        <h1>JOIN OUR INSTA AND WATTSUP PAGES</h1>
 
 
     </div>
