@@ -33,7 +33,7 @@
             <h6> <span class="badge rounded-pill bg-primary">Silver sbright</span></h6>
 
                 <div class="mt-4 info">
-                    <h6><b>Information</b></h6>
+                    <h6><b>Description</b></h6>
 
                     <span class="text1 mt-2 d-block">This hens is silver sbright.And its Male breader</span>
 
@@ -50,7 +50,7 @@
                     <hr class="mt-5">
                     <h6> <span class="badge rounded-pill bg-primary">Price</span></h6>
 
-                    <span>RS.2500 PRK</span>
+                    <p>RS.3000PKR</p>
 
 
 
@@ -73,9 +73,10 @@
             <h5>Delivery</h5>
             <h6><i class='bx bx-current-location'>Punjab,Gujranwala,Ali pur chattha road,Dogranwala warraich.</i></h6>
             <hr class="mt-5">
-            <h5>Standard delivery</h5>
-<h6><i class='bx bxs-car'> 7 Days</i> </h6>
+            <h5>Services</h5>
+<h6><i class='bx bxs-car'> 7 Days Delivery Services</i> </h6>
 <h6><i class='bx bxs-backpack'>No Return Pakage avaliable</i></h6>
+<h6><i class='bx bxs-message-x'>No Wrranty Avaliable</i></h6>
 <hr class="mt-5">
 <h5>Payment Method</h5>
 
@@ -83,7 +84,7 @@
 
 
 
-<h6><b><i class='bx bxs-dollar-circle'>Cash on Delivery Avaliable</i></b></h6>
+<h6><i class='bx bxs-dollar-circle'>Cash on Delivery Avaliable</i></h6>
 
 
                 <div class="mt-3 info">
