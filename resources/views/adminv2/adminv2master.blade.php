@@ -41,16 +41,17 @@
                 </button>
                 <ul class="navbar-nav mr-lg-2">
                     <li class="nav-item nav-search d-none d-lg-block">
-                      <div class="input-group">
-                        <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                          <span class="input-group-text" id="search">
-                            <i class="icon-search"></i>
-                          </span>
+                        <div class="input-group">
+                            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                <span class="input-group-text" id="search">
+                                    <i class="icon-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now"
+                                aria-label="search" aria-describedby="search">
                         </div>
-                        <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-                      </div>
                     </li>
-                  </ul>
+                </ul>
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item dropdown">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
@@ -333,16 +334,17 @@
                             <span class="menu-title">Category</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route ('sub_cat.index')}}">
-                            <i class="icon-grid-2 menu-icon"></i>
-                            <span class="menu-title">sub_Category</span>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{route ('cout.index')}}">
                             <i class="icon-bar-graph menu-icon"></i>
                             <span class="menu-title">Country</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route ('sub_cat.index')}}">
+                            <i class="icon-grid-2 menu-icon"></i>
+                            <span class="menu-title">sub_Category</span>
                         </a>
                     </li>
                     <li class="nav-item">

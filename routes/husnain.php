@@ -10,6 +10,7 @@ use App\Http\Controllers\HenchickController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,34 +29,41 @@ Route::get('/', function () {
 
 
 
-Route::get('/nav', [App\Http\Controllers\NavbarController::class, 'nav']);
-Route::get('/persian', [App\Http\Controllers\CatController::class, 'persi']);
-Route::get('/siamese', [App\Http\Controllers\CatController::class, 'sia']);
-Route::get('/khaomanee', [App\Http\Controllers\CatController::class, 'khao']);
-Route::get('/catkitten', [App\Http\Controllers\CatController::class, 'catk']);
+Route::get('/nav', [NavbarController::class, 'nav']);
+Route::get('/persian', [CatController::class, 'persi']);
+Route::get('/siamese', [CatController::class, 'sia']);
+Route::get('/khaomanee', [CatController::class, 'khao']);
+Route::get('/catkitten', [CatController::class, 'catk']);
 
-Route::get('/germanshaphered', [App\Http\Controllers\DogController::class, 'german']);
-Route::get('/labrador', [App\Http\Controllers\DogController::class, 'lab']);
-Route::get('/pista', [App\Http\Controllers\DogController::class, 'pist']);
+Route::get('/germanshaphered', [DogController::class, 'german']);
+Route::get('/labrador', [DogController::class, 'lab']);
+Route::get('/pista', [DogController::class, 'pist']);
 
-Route::get('/australian', [App\Http\Controllers\BirdController::class, 'aust']);
-Route::get('/raw', [App\Http\Controllers\BirdController::class, 'ra']);
-Route::get('/dove', [App\Http\Controllers\BirdController::class, 'dov']);
-Route::get('/fancypigeon', [App\Http\Controllers\BirdController::class, 'fancy']);
+Route::get('/australian', [BirdController::class, 'aust']);
+Route::get('/raw', [BirdController::class, 'ra']);
+Route::get('/dove', [BirdController::class, 'dov']);
+Route::get('/fancypigeon', [BirdController::class, 'fancy']);
 
-Route::get('/bentom', [App\Http\Controllers\HenController::class, 'ben']);
-Route::get('/goldenbuff', [App\Http\Controllers\HenController::class, 'golden']);
-Route::get('/polish', [App\Http\Controllers\HenController::class, 'pol']);
-Route::get('/milliflower', [App\Http\Controllers\HenController::class, 'milli']);
+Route::get('/bentom', [HenController::class, 'ben']);
+Route::get('/goldenbuff', [HenController::class, 'golden']);
+Route::get('/polish', [HenController::class, 'pol']);
+Route::get('/milliflower', [HenController::class, 'milli']);
 
-Route::get('/polishchick', [App\Http\Controllers\HenchickController::class, 'polchick']);
-Route::get('/goldenbuffchick', [App\Http\Controllers\HenchickController::class, 'golchick']);
-Route::get('/milliflowerchick', [App\Http\Controllers\HenchickController::class, 'millichick']);
-Route::get('/englishgamechick', [App\Http\Controllers\HenchickController::class, 'englishchick']);
-Route::get('/shamoaseelchick', [App\Http\Controllers\HenchickController::class, 'shamochick']);
-Route::get('/goldenmesrichick', [App\Http\Controllers\HenchickController::class, 'mesrichick']);
-Route::get('/desihenchick', [App\Http\Controllers\HenchickController::class, 'desichick']);
-Route::get('/cardview', [App\Http\Controllers\HenchickController::class, 'car']);
+Route::get('/polishchick', [HenchickController::class, 'polchick']);
+Route::get('/goldenbuffchick', [HenchickController::class, 'golchick']);
+Route::get('/milliflowerchick', [HenchickController::class, 'millichick']);
+Route::get('/englishgamechick', [HenchickController::class, 'englishchick']);
+Route::get('/shamoaseelchick', [HenchickController::class, 'shamochick']);
+Route::get('/goldenmesrichick', [HenchickController::class, 'mesrichick']);
+Route::get('/desihenchick', [HenchickController::class, 'desichick']);
+Route::get('/cardview', [HenchickController::class, 'car']);
+
+
+
+Route::post('/add_to_cart', [HenchickController::class, 'add_to_cart']);
+
+
+
 
 
 

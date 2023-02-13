@@ -15,9 +15,11 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
