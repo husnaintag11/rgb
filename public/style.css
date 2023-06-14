@@ -1,11 +1,13 @@
-body{
-    background-color:white;
+body {
+    background-color: white;
 }
-.container{
+
+.container {
     margin-top: 0px !important;
 
 }
-.card{
+
+.card {
 
     border: none;
     outline: none;
@@ -13,40 +15,47 @@ body{
 
     transition: transform .3s;
 }
-.card:hover{
+
+.card:hover {
 
     transform: translate(-15px);
     transition: transform .3s;
 }
-.text{
+
+.text {
 
     font-size: 13px;
     color: darkcyan;
 }
-.info{
+
+.info {
     line-height: 17px;
 }
-.star{
+
+.star {
 
     color: rgb(161, 161, 19);
     font-size: xx-small;
 }
-.cost span{
+
+.cost span {
 
     color: white;
 
 
 }
-.Hen{
+
+.Hen {
     background-color: rgb(0, 153, 255);
 }
+
 .top-left {
     position: absolute;
     top: 8px;
     left: 16px;
-  }
+}
 
-.line{
+.line {
 
     width: 0px;
 
@@ -54,4 +63,5 @@ body{
     border-left: 5px solid;
 
 }
+
 

@@ -7,8 +7,8 @@ use App\Http\Controllers\DogController;
 use App\Http\Controllers\BirdController;
 use App\Http\Controllers\HenController;
 use App\Http\Controllers\HenchickController;
-
-
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\ProfileController;
 
 
 /*
@@ -58,17 +58,21 @@ Route::get('/goldenmesrichick', [HenchickController::class, 'mesrichick']);
 Route::get('/desihenchick', [HenchickController::class, 'desichick']);
 Route::get('/cardview', [HenchickController::class, 'car']);
 
-
+//Add to cart
 
 Route::post('/add_to_cart', [HenchickController::class, 'add_to_cart']);
 
 
+//new home
+    Route::group(['prefix'=>'/'],function() {
+            Route::get('/',[FrontController::class,'index'])->name('/');
+            Route::get('/contant',[FrontController::class,'contant'])->name('contant');
+            Route::get('/about',[FrontController::class,'about'])->name('about');
+            // profile
+            Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
+            Route::post('/profile.update',[ProfileController::class,'update'])->name('profile.update');
+            // Route::get('/edit',[ProfileController::class,'edit'])->name('edit');
 
-
-
-
-
-
-
-
-
+// task
+            Route::get('/task',[FrontController::class,'task'])->name('/task');
+    });

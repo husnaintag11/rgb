@@ -1,0 +1,45 @@
+.owl-prev {
+    position: absolute;
+    left: -20px;
+    /* Adjust the left position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.owl-next {
+    position: absolute;
+    right: -20px;
+    /* Adjust the right position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.owl-prev,
+.owl-next {
+    height: 150px;
+    /* Set the desired height */
+    width: 20px;
+    /* Set the desired width */
+
+}
+
+#slider1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 35px 35px rgba(0, 0, 0, 0.3);
+
+}
+
+.owl-carousel .owl-dots {
+    text-align: center;
+
+}
+
+
+.custom-card:hover {
+    background-color: rgb(228, 241, 246);
+    transition: background-color 0.3s ease;
+}
+
