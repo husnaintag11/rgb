@@ -13,7 +13,7 @@ class ProfileController extends Controller
         return view('home.profile');
     }
      public function update(Request $req) {
-      $user_id=Auth::user()->id;
+      $user_id = Auth::user()->id;
       $user = User ::find($user_id);
       $user ->name = $req->input('name');
       $user ->last_name = $req->input('last_name');
@@ -28,6 +28,7 @@ class ProfileController extends Controller
         if(File::exists($destination)){
             File::delete($destination);
         }
+        $file = time();
         $file = $req->file('profile_image');
         $extention=$file->getClientOriginalExtension();
         $filename = time() . '.' .$extention;

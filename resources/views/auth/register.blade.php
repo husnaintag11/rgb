@@ -8,12 +8,11 @@
 </div>
 <div class="container">
     <div class="row justify-content-center p-5">
-        <div class="col-md-8">
-            <div class="card bg-light">
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="bg-light">
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="Name">{{ __('Name:')}}</label>
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
@@ -45,9 +44,7 @@
                                 <input class="form-check-input" type="radio" name="gender" id="gender-male" value="male"
                                     {{ old('gender') === 'male' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="gender-male">{{ __('Male') }}</label>
-                            </div>
-
-                            <div class="form-check">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input class="form-check-input" type="radio" name="gender" id="gender-female"
                                     value="female" {{ old('gender') === 'female' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="gender-female">{{ __('Female') }}</label>
@@ -86,7 +83,8 @@
                             </span>
                             @enderror
                         </div>
-                        {{-- email --}}
+                    </div>
+                    <div class="col md-6">
                         <div class="form-group">
                             <label for="email">{{ __('E-mail:')}}</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -131,32 +129,26 @@
                             @enderror
                         </div>
 
-
-
-
-
-
-
-
                         {{-- register button --}}
-                        <div class="p-3">
+                        <div class="text-end p-3">
                             <div class="offset">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
-
-
-
-
-
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
+
+
+
+        </form>
+
     </div>
 </div>
+
+
 @endsection
 
 
