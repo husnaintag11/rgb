@@ -64,15 +64,22 @@ Route::post('/add_to_cart', [HenchickController::class, 'add_to_cart']);
 
 
 //new home
-    Route::group(['prefix'=>'/'],function() {
-            Route::get('/',[FrontController::class,'index'])->name('/');
-            Route::get('/contant',[FrontController::class,'contant'])->name('contant');
-            Route::get('/about',[FrontController::class,'about'])->name('about');
-            // profile
-            Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
-            Route::post('/profile.update',[ProfileController::class,'update'])->name('profile.update');
-            // Route::get('/edit',[ProfileController::class,'edit'])->name('edit');
+Route::group(['prefix'=>'/'],function() {
 
-// task
-            Route::get('/task',[FrontController::class,'task'])->name('/task');
-    });
+    Route::get('/',[FrontController::class,'index'])->name('/');
+    Route::get('/contant',[FrontController::class,'contant'])->name('contant');
+    Route::get('/about',[FrontController::class,'about'])->name('about');
+    // profile
+    Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
+    Route::post('/profile.update',[ProfileController::class,'update'])->name('profile.update');
+    // Route::get('/edit',[ProfileController::class,'edit'])->name('edit');
+
+
+    //add listing
+    Route::get('/add_province',[profileController::class,'add_province'])->name('add_province');
+ //city
+ Route::get('/add_city',[profileController::class,'add_city'])->name('add_city');
+    // task
+    Route::get('/task',[FrontController::class,'task'])->name('/task');
+});
+

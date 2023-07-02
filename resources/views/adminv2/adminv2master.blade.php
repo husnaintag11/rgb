@@ -5,8 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pottery Page</title>
+    <title>Pets Stock Bazaar</title>
     <!-- plugins:css -->
+
     <link rel="stylesheet" href="/adminv2/vendors/feather/feather.css">
     <link rel="stylesheet" href="/adminv2/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="/adminv2/vendors/css/vendor.bundle.base.css">
@@ -20,9 +21,6 @@
     <link rel="stylesheet" href="/adminv2/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="/adminv2/images/favicon.png" />
-
-
-
 </head>
 
 <body>
@@ -30,12 +28,17 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo mr-5" href="index"><img src="/adminv2/images/logo.svg" class="mr-2"
-                        alt="logo" /></a>
+                {{--work on  logo design --}}
+                <a class="navbar-brand brand-logo mr-5 " href="index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pets Stock
+                    Bazaar
+                    {{-- <img src="" class="mr-2"
+                        alt="logo" />--}}
+                </a>
+                {{-- merge the logo --}}
                 <a class="navbar-brand brand-logo-mini" href="index"><img src="/adminv2/images/logo-mini.svg"
                         alt="logo" /></a>
             </div>
-            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-right">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="icon-menu"></span>
                 </button>
@@ -52,8 +55,10 @@
                         </div>
                     </li>
                 </ul>
+
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item dropdown">
+                    {{-- notification --}}
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
                             data-toggle="dropdown">
                             <i class="icon-bell mx-0"></i>
@@ -102,17 +107,18 @@
                                 </div>
                             </a>
                         </div>
-                    </li>
+                    </li> --}}
+                    {{-- profile --}}
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="http://127.0.0.1:8000//adminv2/images/faces/face28.jpg" alt="profile" />
+                            <img src="{{asset('images/auth/login-bg.jpg')}}" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                             aria-labelledby="profileDropdown">
-                            <a class="dropdown-item">
+                            {{-- <a class="dropdown-item">
                                 <i class="ti-settings text-primary"></i>
                                 Settings
-                            </a>
+                            </a> --}}
                             <a class="dropdown-item">
                                 <i class="ti-power-off text-primary"></i>
                                 Logout
@@ -320,7 +326,7 @@
             </div>
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
-            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <nav class="sidebar " >
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="index">
@@ -328,23 +334,29 @@
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{route ('cat.index')}}">
                             <i class="icon-columns menu-icon"></i>
                             <span class="menu-title">Category</span>
                         </a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route ('cout.index')}}">
-                            <i class="icon-bar-graph menu-icon"></i>
-                            <span class="menu-title">Country</span>
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route ('sub_cat.index')}}">
                             <i class="icon-grid-2 menu-icon"></i>
                             <span class="menu-title">sub_Category</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('prdct.index')}}">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">Product</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route ('cout.index')}}">
+                            <i class="icon-bar-graph menu-icon"></i>
+                            <span class="menu-title">Country</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -359,12 +371,7 @@
                             <span class="menu-title">City</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('prdct.index')}}">
-                            <i class="icon-paper menu-icon"></i>
-                            <span class="menu-title">Product</span>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('sa.index')}}">
                             <i class="icon-grid menu-icon"></i>

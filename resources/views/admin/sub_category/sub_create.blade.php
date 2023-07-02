@@ -5,18 +5,19 @@
     method="post" enctype="multipart/form-data">
     @csrf
     <div class="col">
-        <h4>Sub-Category Form</h4>
+        <h4>Category Form</h4>
         <p class="card-description">
-            Add Sub-Category
+            Add Category
         </p>
+
         <div class="col-md-6 grid-margin stretch-card form-group">
 
             <input class="form-control" type="text" name="name" placeholder="Enter the name"
                 value="{{$sub_category->name}}">
         </div>
-        <h4>Category Form</h4>
+        <h4>Sub-Category Form</h4>
         <p class="card-description">
-            Add Category
+            Add Sub-Category
         </p>
 
         <div class="  col-md-6 grid-margin stretch-card form-group">

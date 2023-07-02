@@ -35,7 +35,7 @@
 
 
 </head>
-<title>PSB</title>
+<title>Pets Stock Bazaar</title>
 </head>
 
 <body>

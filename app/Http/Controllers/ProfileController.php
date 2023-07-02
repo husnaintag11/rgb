@@ -9,15 +9,17 @@ use Illuminate\Support\Facades\File;
 
 class ProfileController extends Controller
 {
-    public function profile (){
+    public function profile(){
         return view('home.profile');
     }
-     public function update(Request $req) {
+
+    public function update(Request $req) {
       $user_id = Auth::user()->id;
       $user = User ::find($user_id);
       $user ->name = $req->input('name');
       $user ->last_name = $req->input('last_name');
       $user ->gender = $req->input('gender');
+
       $user ->phone = $req->input('phone');
       $user ->address = $req->input('address');
       $user ->date_of_birth = $req->input('date_of_birth');
@@ -36,14 +38,18 @@ class ProfileController extends Controller
         $user->profile_image = $filename;
       }
       $user->update();
+
       return redirect()->back()->with('success', 'Profile updated successfully.');
+    }
+
+    public function add_province()
+    {
+        return view('home.add_province');
+    }
+    public function add_city()
+    {
+        return view('home.add_city');
     }
 
 
 }
-
-
-
-
-
-

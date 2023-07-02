@@ -28,6 +28,13 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
+                                    {{-- <th>Price</th>
+                                    <th>Age</th>
+                                    <th>Description</th>
+                                    <th>Category Name</th>
+                                    <th>Sub Category Name</th>
+                                    <th>Province Name</th>
+                                    <th>City Name</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -35,12 +42,17 @@
                                 @foreach ($categories as $key=> $category)
                                 <tr>
                                     <td>{{ ++$key}}</td>
-
+                                    {{-- <td>{{null}}</td>
+                                    <td>{{null}}</td>
+                                    <td>{{null}}</td>
+                                    <td>{{null}}</td>
+                                    <td>{{null}}</td>
+                                    <td>{{null}}</td>
+                                    <td>{{null}}</td> --}}
                                     <td>{{ $category->name}}</td>
-                                    <td><a class="btn btn-info"
-                                            href="{{route('prdct.edit',$category->id)}}">Edit </a>
-                                        <a class="btn btn-danger"
-                                            href="{{route('prdct.delete',$category->id)}}">Delete </a></td>
+                                    <td><a class="btn btn-info" href="{{route('prdct.edit',$category->id)}}">Edit </a>
+                                        <a class="btn btn-danger" href="{{route('prdct.delete',$category->id)}}">Delete
+                                        </a></td>
                                 </tr>
 
                                 @endforeach
