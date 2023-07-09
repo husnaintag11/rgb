@@ -54,4 +54,15 @@ $Category->delete();
 return redirect()->route('sta.index');
 
 }
+public function add_city(Request $request )
+{
+    $categories=City::get();
+    return view('home.add_city',compact('categories'));
+}
+
+public function listing()  {
+return view('home.listing');
+
+}
+
 }

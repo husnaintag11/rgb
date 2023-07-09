@@ -11,8 +11,8 @@ use App\Http\Controllers\admin\CountryController;
 use App\Http\Controllers\admin\AddressController;
 use App\Http\Controllers\admin\Sub_CategoryController;
 use App\Http\Controllers\admin\CategoryController;
-
-
+use App\Models\City;
+use App\Models\State;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,6 +87,8 @@ Route::prefix('adminv2')->group(function(){
 
         Route::get('/edit/{id}',[CountryController::class,'edit'])->name('cout.edit');
 
+
+
         Route::post('/update/{id}',[CountryController::class,'update'])->name('cout.update');
 
         Route::get('/delete/{id}',[CountryController::class,'delete'])->name('cout.delete');
@@ -132,10 +134,12 @@ Route::prefix('adminv2')->group(function(){
 
         Route::get('/create',[CityController::class,'create'])->name('sta.create');
 
+
+
         Route::post('/store',[CityController::class,'store'])->name('sta.store');
 
         Route::get('/edit/{id}',[CityController::class,'edit'])->name('sta.edit');
-
+        Route::post('/filter-cities', [CityController::class, 'filterCities'])->name('filter-cities');
         Route::post('/update/{id}',[CityController::class,'update'])->name('sta.update');
 
         Route::get('/delete/{id}',[CityController::class,'delete'])->name('sta.delete');
@@ -178,3 +182,18 @@ Route::prefix('adminv2')->group(function(){
 
 
 });
+
+Route::group(['prefix'=>'/'],function() {
+    Route::get('/add_country',[CountryController::class,'add_country'])->name('add_country');
+
+
+    Route::get('/add_state',[StateController::class,'add_state'])->name('add_state');
+
+    Route::get('/add_city',[CityController::class,'add_city'])->name('add_city');
+
+    Route::get('listing',[CityController::class,'listing'])->name('listing');
+
+
+});
+
+

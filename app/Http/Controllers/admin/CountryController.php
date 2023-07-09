@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 use App\Models\Country;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class CountryController extends Controller
         $categories=Country::get();
         return view('admin..country.index',compact('categories'));
     }
+
     public function create()
     {
 
@@ -32,6 +34,7 @@ class CountryController extends Controller
     $countries= new Country;
     return view('admin..country.create',compact('Category'));
     }
+
     public function update(Request $request,$id){
 
     $Category=Country::find($id);
@@ -53,4 +56,12 @@ class CountryController extends Controller
     return redirect()->route('cout.index');
 
     }
+    // create listing
+    public function add_country()
+    {
+        $categories = Country::all();
+
+        return view('home.create_listing', compact('categories'));
+    }
+
 }

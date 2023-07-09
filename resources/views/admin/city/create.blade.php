@@ -1,6 +1,6 @@
 @extends('adminv2.adminv2master')
 @section('content')
-<form action="{{ isset($Category)? route ('sta.update',$Category->id) :route ('cat.store') }}" method="post"
+<form action="{{ isset($Category)? route ('sta.update',$Category->id) :route ('sta.store') }}" method="post"
     enctype="multipart/form-data">
     @csrf
     <h4>City</h4>

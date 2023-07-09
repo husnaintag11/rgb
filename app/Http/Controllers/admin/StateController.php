@@ -13,6 +13,8 @@ class StateController extends Controller
         $categories=State::get();
         return view('admin..state.index',compact('categories'));
     }
+
+
     public function create()
     {
 
@@ -53,5 +55,11 @@ class StateController extends Controller
     $Category->delete();
     return redirect()->route('sa.index');
 
+    }
+    public function add_state()
+    {
+        $categories = State::all();
+
+        return view('home.add_state', compact('categories'));
     }
 }

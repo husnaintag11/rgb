@@ -21,10 +21,10 @@
             </div>
 
         </div>
-        {{-- Make Add --}}
+
         {{-- make listing --}}
         <div class="p-2 text-end">
-            <a type="submit" class="btn btn-primary" href="{{ route('add_province')}}">Make listing</a>
+            <a type="submit" class="btn btn-primary" href="{{ route('add_country')}}">listing Create</a>
         </div>
 
         {{-- image --}}

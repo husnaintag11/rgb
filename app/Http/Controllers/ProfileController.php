@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -42,14 +43,6 @@ class ProfileController extends Controller
       return redirect()->back()->with('success', 'Profile updated successfully.');
     }
 
-    public function add_province()
-    {
-        return view('home.add_province');
-    }
-    public function add_city()
-    {
-        return view('home.add_city');
-    }
 
 
 }

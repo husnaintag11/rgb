@@ -13,22 +13,39 @@ class CategoryController extends Controller {
         $categories = Category::get();
         return view('admin..category.index', compact('categories'));
     }
-    public
-    function create() {
+    public function create() {
 
         return view('admin..category.create');
     }
-    public
-    function store(Request $request) {
+    public function store(Request $request) {
 
         $data = $request ->all();
         Category::create($data);
         return redirect() -> route('cat.index');
+        // image
 
+
+
+        // if($request->has('img')){
+        //     $file_name = time();      //return timespan
+
+        //       $picture = $request->img;
+        //      // $file_name = rand();  // randum generate
+        //       $file_name = sha1($file_name);  // algorithum different string generate
+
+        //         $ext = $picture->getClientOriginalExtention();
+        //         $file_name = $file_name.".".$ext;
+        //         $picture -> move(public_path()."/uploads/", $file_name);
+
+        //         $image_path = '/uploads/'.$file_name;
+
+        //     }
+        //     $data['image']=$image_path;
+        //     return "<img src='".$image_path."'>";
+        //     Category::create($data);
     }
 
-    public
-    function edit($id) {
+    public function edit($id) {
         $Category = Category::find($id);
         $category = new Category;
         return view('admin..category.create', compact('Category'));
@@ -52,7 +69,7 @@ class CategoryController extends Controller {
         $Category->delete();
         return redirect()->route('cat.index');
 
-        }
+    }
 
 
 

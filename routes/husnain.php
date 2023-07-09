@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\CatController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\BirdController;
 use App\Http\Controllers\HenController;
 use App\Http\Controllers\HenchickController;
 use App\Http\Controllers\FrontController;
+
 use App\Http\Controllers\ProfileController;
 
 
@@ -72,14 +74,20 @@ Route::group(['prefix'=>'/'],function() {
     // profile
     Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
     Route::post('/profile.update',[ProfileController::class,'update'])->name('profile.update');
+
+
+
     // Route::get('/edit',[ProfileController::class,'edit'])->name('edit');
-
-
     //add listing
-    Route::get('/add_province',[profileController::class,'add_province'])->name('add_province');
- //city
- Route::get('/add_city',[profileController::class,'add_city'])->name('add_city');
-    // task
+   // Route::get('/add_province',[profileController::class,'add_province'])->name('add_province');
+    //create_listing
+     // task
     Route::get('/task',[FrontController::class,'task'])->name('/task');
+
+
 });
+//CreateListing
+// Route::group(['prefix'=>'/'],function() {
+
+// });
 
