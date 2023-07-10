@@ -24,7 +24,7 @@
 
         {{-- make listing --}}
         <div class="p-2 text-end">
-            <a type="submit" class="btn btn-primary" href="{{ route('add_country')}}">listing Create</a>
+            <a type="submit" class="btn btn-primary" href="{{ route('add_listing')}}">listing Create</a>
         </div>
 
         {{-- image --}}

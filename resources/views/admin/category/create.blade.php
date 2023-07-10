@@ -4,13 +4,7 @@
     enctype="multipart/form-data">
     @csrf
     <h4>Category Form</h4>
-    <p class="card-description">
-        Add Image
-    </p>
-    <div class="form-group">
-        <input class="form-control" type="file" value="" name="image"
-            placeholder="Enter the Image">
-    </div>
+    <
     <br>
     <p class="card-description">
         Add Category

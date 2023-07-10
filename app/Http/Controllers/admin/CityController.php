@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Models\City;
+
 use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
     public function index(Request $request )
 {
-    $categories=City::get();
-    return view('admin..city.index',compact('categories'));
+    $city=DB::table('cities')->get();
+    $country=DB::table('countries')->get();
+    $state=DB::table('states')->get();
+    return view('admin..city.index',compact('city','country','state'));
 }
 public function create()
 {

@@ -9,7 +9,7 @@ use App\Http\Controllers\BirdController;
 use App\Http\Controllers\HenController;
 use App\Http\Controllers\HenchickController;
 use App\Http\Controllers\FrontController;
-
+use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ProfileController;
 
 
@@ -66,7 +66,7 @@ Route::post('/add_to_cart', [HenchickController::class, 'add_to_cart']);
 
 
 //new home
-Route::group(['prefix'=>'/'],function() {
+Route::prefix('/')->group(function(){
 
     Route::get('/',[FrontController::class,'index'])->name('/');
     Route::get('/contant',[FrontController::class,'contant'])->name('contant');
@@ -75,19 +75,9 @@ Route::group(['prefix'=>'/'],function() {
     Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
     Route::post('/profile.update',[ProfileController::class,'update'])->name('profile.update');
 
-
-
-    // Route::get('/edit',[ProfileController::class,'edit'])->name('edit');
-    //add listing
-   // Route::get('/add_province',[profileController::class,'add_province'])->name('add_province');
-    //create_listing
-     // task
     Route::get('/task',[FrontController::class,'task'])->name('/task');
-
-
 });
-//CreateListing
-// Route::group(['prefix'=>'/'],function() {
 
-// });
-
+Route::prefix('/profile')->group(function(){
+    Route::get('/add_listing',[ListingController::class,'add_listing'])->name('add_listing');
+});

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\State;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,8 +10,8 @@ class StateController extends Controller
 {
     public function index(Request $request )
     {
-        $categories=State::get();
-        return view('admin..state.index',compact('categories'));
+        $state=DB::table('states')->get();
+        return view('admin..state.index',compact('state'));
     }
 
 

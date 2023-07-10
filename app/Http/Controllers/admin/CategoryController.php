@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\admin;
+use Illuminate\Support\Facades\DB;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,7 +11,8 @@ class CategoryController extends Controller {
 
 
     public function index(Request $request) {
-        $categories = Category::get();
+        $categories = DB::table('categories')->get();
+        //$sub_categories=DB::table('sub_categories')->get();
         return view('admin..category.index', compact('categories'));
     }
     public function create() {

@@ -27,12 +27,13 @@
                             </thead>
                             <tbody>
 
-                                @foreach ($categories as $key=> $category)
+                                @foreach ($sub_categories as $key=> $category)
                                 <tr>
                                     <td>{{ ++$key}}</td>
 
                                     <td>{{ $category->name}}</td>
-                                    <td>{{ $category->category_name}}</td>
+
+                                    <td>{{ $category->category_id}}</td>
                                     <td><a class="btn btn-info"
                                             href="{{route('sub_cat.edit',$category->id)}}">Edit </a>
                                         <a class="btn btn-danger"

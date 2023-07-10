@@ -28,7 +28,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $key=> $category)
+                                @foreach ($country as $key=> $category)
                                 <tr>
                                     <td>{{ ++$key}}</td>
 

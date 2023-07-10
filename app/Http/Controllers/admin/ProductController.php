@@ -20,10 +20,33 @@ public function create()
 }
 public function store(Request $request)
 {
+    $data = $request->validate([
+        'image' => 'required|image',
+        'age' => 'required|integer',
+        'price' => 'required|integer',
+        'type' => 'required|string',
+        'description' => 'required|string',
+    ]);
 
     $data=$request->all();
     Product::create($data);
-return redirect()->route('prdct.index');
+
+if($request->has('img')){
+    $file_name = time();      //return timespan
+
+      $picture = $request->img;
+     // $file_name = rand();  // randum generate
+      $file_name = sha1($file_name);  // algorithum different string generate
+
+        $ext = $picture->etClientOriginalExtention();
+        $file_name = $file_name.".".$ext;
+        $picture -> move(public_path()."/uploads/",$file_name);
+
+        $image_path = '/uploads/'.$file_name;
+
+    }
+
+return redirect()->route('prdct.index',);
 
 }
 
@@ -55,3 +78,27 @@ return redirect()->route('prdct.index');
 
 }
 }
+
+// $validatedData = $request->validate([
+//     'image' => 'required|image',
+//     'age' => 'required|integer',
+//     'type' => 'required|string',
+//     'description' => 'required|string',
+// ]);
+
+
+
+
+// // Handle the image upload
+// if ($request->hasFile('image')) {
+//     $image = $request->file('image');
+//     $imagePath = $image->store('images', 'public');
+// }
+
+// // Create a new record in the database
+// YourModel::create([
+//     'image' => $imagePath,
+//     'age' => $validatedData['age'],
+//     'type' => $validatedData['type'],
+//     'description' => $validatedData['description'],
+// ]);

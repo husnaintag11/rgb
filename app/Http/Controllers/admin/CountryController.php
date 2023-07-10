@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 use App\Models\Country;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -10,8 +10,8 @@ class CountryController extends Controller
 {
     public function index(Request $request )
     {
-        $categories=Country::get();
-        return view('admin..country.index',compact('categories'));
+        $country=DB::table('countries')->get();
+        return view('admin..country.index',compact('country'));
     }
 
     public function create()
@@ -57,11 +57,6 @@ class CountryController extends Controller
 
     }
     // create listing
-    public function add_country()
-    {
-        $categories = Country::all();
 
-        return view('home.create_listing', compact('categories'));
-    }
 
 }

@@ -33,7 +33,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $key=> $category)
+                                @foreach ($state as $key=> $category)
                                 <tr>
                                     <td>{{ ++$key}}</td>
 

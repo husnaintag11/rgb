@@ -183,17 +183,6 @@ Route::prefix('adminv2')->group(function(){
 
 });
 
-Route::group(['prefix'=>'/'],function() {
-    Route::get('/add_country',[CountryController::class,'add_country'])->name('add_country');
 
-
-    Route::get('/add_state',[StateController::class,'add_state'])->name('add_state');
-
-    Route::get('/add_city',[CityController::class,'add_city'])->name('add_city');
-
-    Route::get('listing',[CityController::class,'listing'])->name('listing');
-
-
-});
 
 
