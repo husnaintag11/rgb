@@ -30,8 +30,8 @@
     {{-- owl js --}}
     <script src="{{asset('owl_carousal/js/jquery.min.js')}}"></script>
     <script src="{{asset('owl_carousal/js/owl.carousel.min.js')}}"></script>
-
-
+{{-- country --}}
+    <meta name="_token" content="{{ csrf_token() }}">
 
 
 </head>
