@@ -22,23 +22,14 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-
                                     <th>Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $key=> $category)
+                                @foreach ($category as $key=> $category)
                                 <tr>
                                     <td>{{ ++$key}}</td>
-
-
-
-                                    {{-- <td><img src="{{asset('/uploads/' . $category->pubic_path) }}" ></td> --}}
-
-
-
-
                                     <td>{{ $category->name}}</td>
                                     <td><a class="btn btn-info" href="{{route('cat.edit',$category->id)}}">Edit</a>
                                         <a class="btn btn-danger" href="{{route('cat.delete',$category->id)}}">Delete

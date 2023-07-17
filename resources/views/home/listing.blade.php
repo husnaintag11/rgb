@@ -1,10 +1,8 @@
 @extends('home.master')
 @section('content')
-{{-- <form action="">
 
 
-</form> --}}
-<form action="{{ isset($Category)? route ('profile.update',$Category->id) :route ('prdct.store') }}" method="post"
+<form action="{{ isset($Category)? route ('prdct.update',$Category->id) :route ('listing.store') }}" method="post"
     enctype="multipart/form-data">
     @csrf
     <div class="col-lg-12 bg-dark">
@@ -14,81 +12,70 @@
     </div>
 
 
-
     <p class="card-description">
-        Name
+        Add Product Name
     </p>
 
     <div class="form-group">
         <input class="form-control" type="text" value="{{isset($Category)?$Category->name:''}}" name="name"
             placeholder="Enter the name">
     </div>
-    <p class="card-group">
-        Add image
-    </p>
 
-    <div class="form-group">
-        <input class="form-control" type="file" name="image" id="image" accept="image/*" required>
+    <p class="card-description">
+        Add Image
+    </p>
+    <div>
+        <div class="form-group">
+            <input class="form-control" type="file" id="image" name="image">
+        </div>
+
+    </div>
+    <p class="card-description">
+        Multi Image
+    </p>
+    <div>
+        <div class="form-group">
+            <input class="form-control" type="file" id="multi_image" name="multi_image">
+        </div>
+
     </div>
     <p class="card-description">
         Add Age
     </p>
+    <div>
+        <div class="form-group">
+            <input class="form-control" type="number" id="age" name="age" value="{{ old('age') }}" required>
+        </div>
+    </div>
+    <p class="card-description">
+        Add Price
+    </p>
+    <div>
+        <div class="form-group">
+            <input class="form-control" type="number" id="price" name="price" value="{{ old('price') }}" required>
+        </div>
 
-    <div class="form-group">
-        <input class="form-control" type="number" name="age" id="age" required>
+    </div>
+    <p class="card-description">
+        Add type
+    </p>
+    <div>
+        <div class="form-group">
+            <input class="form-control" type="text" id="type" name="type" value="{{ old('type') }}" required>
+        </div>
+
     </div>
     <p class="card-description">
         Add Description
     </p>
+    <div>
+        <div class="form-group">
+            <textarea class="form-control" id="description" name="description"
+                required>{{ old('description') }}</textarea>
+        </div>
 
-    <div class="form-group">
-        <textarea class="form-control" name="description" id="description" required></textarea>
     </div>
-    <p class="card-group">
-        Add Price
-    </p>
-
-    <div class="form-group">
-        <input class="form-control" type="text" name="price" placeholder="Enter the Price">
-    </div>
-    <p class="card-description">
-        Add Type
-    </p>
-
-    <div class="form-group">
-        <input class="form-control" type="text" name="type" id="type" required>
-    </div>
-    {{-- Ctegory --}}
-    {{-- <p class="card-description">
-        Add Category
-    </p>
-
-    <div class="form-group">
-
-        <input class="form-control" type="text" name="name" placeholder="Enter the name"
-            value="{{$sub_category->name}}">
-    </div>
-    <h4>Sub-Category Form</h4>
-    <p class="card-description">
-        Add Sub-Category
-    </p>
-
-    <div class="form-group">
-
-        <select class="form-control" name="category_id" class="form-select" id="inlineFormSelectPref">
-            @foreach ($categories as $category )
-
-            <option {{$sub_category->category_id==$category->id?'selected':''}} value="{{$category->id}}">
-                {{$category->name}}</option>
-
-            @endforeach
-        </select>
-
-
-    </div> --}}
-    {{-- country state city --}}
-
-
+    {{-- country state and cite street --}}
     <p class="card-description">
         Add Country
     </p>
@@ -111,9 +98,7 @@
     <div class="form-group">
         <select id="state" class="form-control">
             <option value="" selected>Choose State</option>
-            {{-- @foreach($state as $state)
-            <option value="{{ $state->id }}">{{ $state->name }}</option>
-            @endforeach --}}
+
         </select>
     </div>
 
@@ -126,9 +111,7 @@
     <div class="form-group">
         <select id="city" class="form-control">
             <option value="" selected>Choose City</option>
-            {{-- @foreach($city as $city)
-            <option value="{{ $city->id }}">{{ $city->name }}</option>
-            @endforeach --}}
+
         </select>
     </div>
 
@@ -138,22 +121,16 @@
     <div class="form-group">
         <select id="street" class="form-control">
             <option value="" selected>Choose Street</option>
-            {{-- @foreach($city as $city)
-            <option value="{{ $city->id }}">{{ $city->name }}</option>
-            @endforeach --}}
+
         </select>
     </div>
 
-
-
     <br>
+    <div class="text-right"> <button type="submit" class="btn btn-primary mr-2">save</button></div>
 
-    <button type="submit" class="btn btn-primary mr-2">save</button>
 </form>
-<br>
 
-
-{{-- country cities and state --}}
+{{-- js country cities and state --}}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -161,16 +138,17 @@
 </script>
 
 
-
+{{-- country state city and street jquery --}}
 <script>
+    // token generate
     $.ajaxSetup({
-         headers: {
+        headers: {
             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-         }
-   });
+        }
+    });
 
-   $(document).ready(function(){
-        $("#country").change(function(){
+    $(document).ready(function () {
+        $("#country").change(function () {
             var country_id = $(this).val();
 
             if (country_id == "") {
@@ -178,16 +156,17 @@
             }
 
             $.ajax({
-                url: '{{ url("/fetch-states/") }}/'+country_id,
+                url: '{{ url("/fetch-states/") }}/' + country_id,
                 type: 'post',
                 dataType: 'json',
-                success: function(response) {
+                success: function (response) {
                     $('#state').find('option:not(:first)').remove();
                     $('#city').find('option:not(:first)').remove();
 
                     if (response['states'].length > 0) {
-                        $.each(response['states'], function(key,value){
-                            $("#state").append("<option value='"+value['id']+"'>"+value['name']+"</option>")
+                        $.each(response['states'], function (key, value) {
+                            $("#state").append("<option value='" + value['id'] +
+                                "'>" + value['name'] + "</option>")
                         });
                     }
                 }
@@ -195,7 +174,7 @@
         });
 
 
-        $("#state").change(function(){
+        $("#state").change(function () {
             var state_id = $(this).val();
 
             console.log(state_id);
@@ -205,22 +184,23 @@
             }
 
             $.ajax({
-                url: '{{ url("/fetch-cities/") }}/'+state_id,
+                url: '{{ url("/fetch-cities/") }}/' + state_id,
                 type: 'post',
                 dataType: 'json',
-                success: function(response) {
+                success: function (response) {
                     $('#city').find('option:not(:first)').remove();
 
                     if (response['cities'].length > 0) {
-                        $.each(response['cities'], function(key,value){
-                            $("#city").append("<option value='"+value['id']+"'>"+value['name']+"</option>")
+                        $.each(response['cities'], function (key, value) {
+                            $("#city").append("<option value='" + value['id'] +
+                                "'>" + value['name'] + "</option>")
                         });
                     }
                 }
             });
         });
 
-        $("#city").change(function(){
+        $("#city").change(function () {
             var city_id = $(this).val();
 
             console.log(city_id);
@@ -230,25 +210,22 @@
             }
 
             $.ajax({
-                url: '{{ url("/fetch-streets/") }}/'+city_id,
+                url: '{{ url("/fetch-streets/") }}/' + city_id,
                 type: 'post',
                 dataType: 'json',
-                success: function(response) {
+                success: function (response) {
                     $('#street').find('option:not(:first)').remove();
 
                     if (response['streets'].length > 0) {
-                        $.each(response['streets'], function(key,value){
-                            $("#street").append("<option value='"+value['id']+"'>"+value['name']+"</option>")
+                        $.each(response['streets'], function (key, value) {
+                            $("#street").append("<option value='" + value['id'] +
+                                "'>" + value['name'] + "</option>")
                         });
                     }
                 }
             });
         });
     });
-
-
-
-
 
 </script>
 

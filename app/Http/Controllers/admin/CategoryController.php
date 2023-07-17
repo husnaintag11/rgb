@@ -8,12 +8,10 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller {
 
-
-
     public function index(Request $request) {
-        $categories = DB::table('categories')->get();
-        //$sub_categories=DB::table('sub_categories')->get();
-        return view('admin..category.index', compact('categories'));
+        $category = DB::table('categories')->get();
+
+        return view('admin..category.index', compact('category'));
     }
     public function create() {
 
@@ -24,27 +22,6 @@ class CategoryController extends Controller {
         $data = $request ->all();
         Category::create($data);
         return redirect() -> route('cat.index');
-        // image
-
-
-
-        // if($request->has('img')){
-        //     $file_name = time();      //return timespan
-
-        //       $picture = $request->img;
-        //      // $file_name = rand();  // randum generate
-        //       $file_name = sha1($file_name);  // algorithum different string generate
-
-        //         $ext = $picture->getClientOriginalExtention();
-        //         $file_name = $file_name.".".$ext;
-        //         $picture -> move(public_path()."/uploads/", $file_name);
-
-        //         $image_path = '/uploads/'.$file_name;
-
-        //     }
-        //     $data['image']=$image_path;
-        //     return "<img src='".$image_path."'>";
-        //     Category::create($data);
     }
 
     public function edit($id) {

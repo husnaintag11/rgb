@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Country,State,City};
+use App\Models\{Country,Product};
 
 
 
@@ -18,11 +18,43 @@ class ListingController extends Controller
        $country=DB::table('countries')->get();
        $state=DB::table('states')->get();
        $city=DB::table('cities')->get();
-       $category=DB::table('categories')->get();
-       $sub_category=DB::table('sub_categories')->get();
+    //    $category=DB::table('categories')->get();
+    //    $sub_categories=DB::table('sub_categories')->get();
        $data['country']=Country::get(['name','id']);
 
-        return view('home.listing',compact('data','country','city','state','category','sub_category'));
+        return view('home.listing',compact('data','country','city','state'));
+    }
+
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'age' => 'required|integer',
+            'price' => 'required|integer',
+            'type' => 'required',
+            'description' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',]);
+
+        $imagePath = null;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/uploads/thumbimage/'), $imageName);
+            $imagePath = '/uploads/thumbimage/' . $imageName;
+        }
+
+        $product = Product::create([
+            'name' => $validatedData['name'],
+            'age' => $validatedData['age'],
+            'type' => $validatedData['type'],
+            'price' => $validatedData['price'],
+            'description' => $validatedData['description'],
+            'image' => $imagePath,
+        ]);
+
+        return redirect()->route('profile', $product->id);
     }
 
 
@@ -30,7 +62,7 @@ class ListingController extends Controller
 // work
 
 
-public function index(){
+public function country(){
     $countries = DB::table('countries')->orderBy('name','ASC')->get();
     $data['countries'] = $countries;
     return view('home.listing',$data);

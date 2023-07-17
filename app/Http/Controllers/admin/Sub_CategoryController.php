@@ -15,14 +15,14 @@ class Sub_CategoryController extends Controller
         $sub_categories=DB::table('sub_categories')->get();
 
 
-        return view('admin..sub_category.sub_index', compact('sub_categories'));
+        return view('admin..sub_category.sub_index', compact('sub_categories',));
     }
     public function create()
     {
-        $categories=Category::get();
-        $sub_category=new SubCategory;
+        $category=Category::get();
+        $sub_categories=new SubCategory;
 
-        return view('admin.sub_category.sub_create',compact('categories','sub_category'));
+        return view('admin.sub_category.sub_create',compact('category','sub_categories'));
     }
     public function store(Request $request)
     {
@@ -35,9 +35,9 @@ class Sub_CategoryController extends Controller
 
     public function edit($id)
     {
-        $categories=Category::get();
-    $sub_category=SubCategory::find($id);
-    return view('admin.sub_category.sub_create',compact('sub_category','categories'));
+        $category=Category::get();
+       $sub_category=SubCategory::find($id);
+    return view('admin.sub_category.sub_create',compact('sub_category','category'));
     }
     public function update(Request  $request,$id){
 

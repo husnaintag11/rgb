@@ -1,10 +1,6 @@
 @extends('home.master')
 @section('content')
 
-
-
-
-
 <div class="container">
 
 

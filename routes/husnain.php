@@ -80,7 +80,7 @@ Route::prefix('/')->group(function(){
 
 Route::prefix('/')->group(function(){
     Route::get('/add_listing',[ListingController::class,'add_listing'])->name('add_listing');
-
+    Route::post('/store',[ListingController::class,'store'])->name('listing.store');
     // Route::get('/country',[ListingController::class,'country'])->name('country');
     // Route::post('/state/{id}',[ListingController::class,'state'])->name('state');
     // Route::get('/city',[ListingController::class,'city'])->name('city');
@@ -88,7 +88,7 @@ Route::prefix('/')->group(function(){
 
 });
 // countries
-Route::get('/create',[ListingController::class,'index']);
+Route::get('/create',[ListingController::class,'country']);
 Route::post('/fetch-states/{id}',[ListingController::class,'fetchStates']);
 Route::post('/fetch-cities/{id}',[ListingController::class,'fetchCities']);
 Route::post('/fetch-streets/{id}',[ListingController::class,'fetchStreets']);

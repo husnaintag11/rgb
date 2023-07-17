@@ -9,12 +9,11 @@
         <p class="card-description">
             Add Category
         </p>
-
-        <div class="col-md-6 grid-margin stretch-card form-group">
-
-            <input class="form-control" type="text" name="name" placeholder="Enter the name"
-                value="{{$sub_category->name}}">
+        <div class="form-group">
+            <input class="form-control" type="text" value="{{isset($Category)?$Category->name:''}}" name="name"
+                placeholder="Enter the name">
         </div>
+
         <h4>Sub-Category Form</h4>
         <p class="card-description">
             Add Sub-Category
@@ -23,10 +22,10 @@
         <div class="  col-md-6 grid-margin stretch-card form-group">
 
             <select class="form-control" name="category_id" class="form-select" id="inlineFormSelectPref">
-                @foreach ($categories as $category )
+                @foreach ($sub_categories as $category )
 
-                <option {{$sub_category->category_id==$category->id?'selected':''}} value="{{$category->id}}">
-                    {{$category->name}}</option>
+                {{-- <option {{$sub_categories->category_id==$category->id?'selected':''}} value="{{$category->id}}">
+                    {{$category->name}}</option> --}}
 
                 @endforeach
             </select>

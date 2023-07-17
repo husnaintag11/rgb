@@ -5,100 +5,79 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     public function index(Request $request )
 {
-    $categories=Product::get();
-    return view('admin..product.index',compact('categories'));
+
+    $products=DB::table('products')->get();
+    return view('admin..product.index',compact('products'));
 }
 public function create()
 {
 
     return view('admin..product.create');
 }
-public function store(Request $request)
-{
-    $data = $request->validate([
-        'image' => 'required|image',
-        'age' => 'required|integer',
-        'price' => 'required|integer',
-        'type' => 'required|string',
-        'description' => 'required|string',
-    ]);
 
-    $data=$request->all();
-    Product::create($data);
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'age' => 'required|integer',
+            'price' => 'required|integer',
+            'type' => 'required',
+            'description' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',]);
 
-if($request->has('img')){
-    $file_name = time();      //return timespan
+        $imagePath = null;
 
-      $picture = $request->img;
-     // $file_name = rand();  // randum generate
-      $file_name = sha1($file_name);  // algorithum different string generate
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/uploads/thumbimage/'), $imageName);
+            $imagePath = '/uploads/thumbimage/' . $imageName;
+        }
 
-        $ext = $picture->etClientOriginalExtention();
-        $file_name = $file_name.".".$ext;
-        $picture -> move(public_path()."/uploads/",$file_name);
+        $product = Product::create([
+            'name' => $validatedData['name'],
+            'age' => $validatedData['age'],
+            'type' => $validatedData['type'],
+            'price' => $validatedData['price'],
+            'description' => $validatedData['description'],
+            'image' => $imagePath,
+        ]);
 
-        $image_path = '/uploads/'.$file_name;
-
+        return redirect()->route('prdct.index', $product->id);
     }
 
-return redirect()->route('prdct.index',);
 
-}
+
+
 
 public function edit($id)
 {
-$Category=Product::find($id);
+$product=Product::find($id);
 $products= new Product;
-return view('admin..product.create',compact('Category'));
+return view('admin..product.create',compact('product'));
 }
 public function update(Request $request,$id){
 
-$Category=Product::find($id);
+$product=Product::find($id);
 
 $data=$request->all();
-$Category->update($data);
+$product->update($data);
 return redirect()->route('prdct.index');
-
-
-
 }
 
 public function delete(Request $request,$id){
 
-$Category=Product::find($id);
+$product=Product::find($id);
 
 //$data=$request->all();
-$Category->delete();
+$product->delete();
 return redirect()->route('prdct.index');
 
 }
 }
-
-// $validatedData = $request->validate([
-//     'image' => 'required|image',
-//     'age' => 'required|integer',
-//     'type' => 'required|string',
-//     'description' => 'required|string',
-// ]);
-
-
-
-
-// // Handle the image upload
-// if ($request->hasFile('image')) {
-//     $image = $request->file('image');
-//     $imagePath = $image->store('images', 'public');
-// }
-
-// // Create a new record in the database
-// YourModel::create([
-//     'image' => $imagePath,
-//     'age' => $validatedData['age'],
-//     'type' => $validatedData['type'],
-//     'description' => $validatedData['description'],
-// ]);

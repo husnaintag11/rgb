@@ -1,10 +1,9 @@
 @extends('adminv2.adminv2master')
 @section('content')
-<form action="{{ isset($Category)? route ('cat.update',$Category->id) :route ('cat.store') }}" method="post"
-    enctype="multipart/form-data">
+<form action="{{ isset($Category)? route ('cat.update',$Category->id) :route ('cat.store') }}" method="post">
     @csrf
     <h4>Category Form</h4>
-    <
+
     <br>
     <p class="card-description">
         Add Category

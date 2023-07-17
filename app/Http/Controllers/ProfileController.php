@@ -20,7 +20,6 @@ class ProfileController extends Controller
       $user ->name = $req->input('name');
       $user ->last_name = $req->input('last_name');
       $user ->gender = $req->input('gender');
-
       $user ->phone = $req->input('phone');
       $user ->address = $req->input('address');
       $user ->date_of_birth = $req->input('date_of_birth');

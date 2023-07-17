@@ -17,7 +17,7 @@ class Category extends Model
 
 ];
 protected $appends = [
-    'subcategories'
+    'sub_categories'
 
 ];
 public function getSubcategoriesAttribute()

@@ -33,7 +33,7 @@
 
                                     <td>{{ $category->name}}</td>
 
-                                    <td>{{ $category->category_id}}</td>
+                                    <td>{{ $category->category_name}}</td>
                                     <td><a class="btn btn-info"
                                             href="{{route('sub_cat.edit',$category->id)}}">Edit </a>
                                         <a class="btn btn-danger"
