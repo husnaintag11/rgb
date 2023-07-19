@@ -18,8 +18,8 @@ class ListingController extends Controller
        $country=DB::table('countries')->get();
        $state=DB::table('states')->get();
        $city=DB::table('cities')->get();
-    //    $category=DB::table('categories')->get();
-    //    $sub_categories=DB::table('sub_categories')->get();
+    // $category=DB::table('categories')->get();
+    //  $sub_categories=DB::table('sub_categories')->get();
        $data['country']=Country::get(['name','id']);
 
         return view('home.listing',compact('data','country','city','state'));
@@ -54,7 +54,7 @@ class ListingController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect()->route('profile', $product->id);
+        return redirect()->route('profile', $product->id)->with('message','Listing add successfully');
     }
 
 

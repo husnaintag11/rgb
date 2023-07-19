@@ -1,7 +1,10 @@
 @extends('home.master')
 @section('content')
-
+@if(session('message'))
+    <div class="alert alert-success">{{ session('message')}}</div>
+@endif
 <div class="col-md-12 bg-dark p-4">
+
     <div class="text-center text-white">
         <h2>Profile</h2>
     </div>

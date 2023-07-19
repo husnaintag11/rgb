@@ -25,6 +25,15 @@
 
     </div>
     <p class="card-description">
+        Multi Image
+    </p>
+    <div>
+        <div class="form-group">
+            <input class="form-control" type="file" id="multi_image" name="multi_image[]" multiple>
+        </div>
+
+    </div>
+    <p class="card-description">
         Add Age
     </p>
     <div>

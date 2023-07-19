@@ -2,14 +2,12 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NavbarController;
-use App\Http\Controllers\CatController;
-use App\Http\Controllers\DogController;
-use App\Http\Controllers\BirdController;
-use App\Http\Controllers\HenController;
-use App\Http\Controllers\HenchickController;
+use App\Http\Controllers\Multi_ImageController;
+
+
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ListingController;
+
 use App\Http\Controllers\ProfileController;
 
 
@@ -31,34 +29,10 @@ Route::get('/', function () {
 
 
 
-Route::get('/nav', [NavbarController::class, 'nav']);
-Route::get('/persian', [CatController::class, 'persi']);
-Route::get('/siamese', [CatController::class, 'sia']);
-Route::get('/khaomanee', [CatController::class, 'khao']);
-Route::get('/catkitten', [CatController::class, 'catk']);
 
-Route::get('/germanshaphered', [DogController::class, 'german']);
-Route::get('/labrador', [DogController::class, 'lab']);
-Route::get('/pista', [DogController::class, 'pist']);
 
-Route::get('/australian', [BirdController::class, 'aust']);
-Route::get('/raw', [BirdController::class, 'ra']);
-Route::get('/dove', [BirdController::class, 'dov']);
-Route::get('/fancypigeon', [BirdController::class, 'fancy']);
 
-Route::get('/bentom', [HenController::class, 'ben']);
-Route::get('/goldenbuff', [HenController::class, 'golden']);
-Route::get('/polish', [HenController::class, 'pol']);
-Route::get('/milliflower', [HenController::class, 'milli']);
 
-Route::get('/polishchick', [HenchickController::class, 'polchick']);
-Route::get('/goldenbuffchick', [HenchickController::class, 'golchick']);
-Route::get('/milliflowerchick', [HenchickController::class, 'millichick']);
-Route::get('/englishgamechick', [HenchickController::class, 'englishchick']);
-Route::get('/shamoaseelchick', [HenchickController::class, 'shamochick']);
-Route::get('/goldenmesrichick', [HenchickController::class, 'mesrichick']);
-Route::get('/desihenchick', [HenchickController::class, 'desichick']);
-Route::get('/cardview', [HenchickController::class, 'car']);
 
 //Add to cart
 
@@ -78,9 +52,11 @@ Route::prefix('/')->group(function(){
     Route::get('/task',[FrontController::class,'task'])->name('/task');
 });
 
-Route::prefix('/')->group(function(){
+Route::prefix('/profile')->group(function(){
     Route::get('/add_listing',[ListingController::class,'add_listing'])->name('add_listing');
     Route::post('/store',[ListingController::class,'store'])->name('listing.store');
+
+
     // Route::get('/country',[ListingController::class,'country'])->name('country');
     // Route::post('/state/{id}',[ListingController::class,'state'])->name('state');
     // Route::get('/city',[ListingController::class,'city'])->name('city');
@@ -92,3 +68,5 @@ Route::get('/create',[ListingController::class,'country']);
 Route::post('/fetch-states/{id}',[ListingController::class,'fetchStates']);
 Route::post('/fetch-cities/{id}',[ListingController::class,'fetchCities']);
 Route::post('/fetch-streets/{id}',[ListingController::class,'fetchStreets']);
+// routes/web.php
+Route::get('/store', [Multi_ImageController::class,'store']);

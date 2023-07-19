@@ -6,6 +6,7 @@
     enctype="multipart/form-data">
     @csrf
     <div class="col-lg-12 bg-dark">
+
         <div class="card-header p-4 text-center text-white">
             <h2>{{ __('Add Listing Data') }}</h2>
         </div>
@@ -35,7 +36,7 @@
     </p>
     <div>
         <div class="form-group">
-            <input class="form-control" type="file" id="multi_image" name="multi_image">
+            <input class="form-control" type="file" id="multi_image" name="multi_image[]" multiple>
         </div>
 
     </div>

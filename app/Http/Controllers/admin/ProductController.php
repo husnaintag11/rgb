@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Multi_Image;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,19 +22,21 @@ public function create()
 
     return view('admin..product.create');
 }
+ public function store(Request $request)
+{
 
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
+     $validatedData = $request->validate([
             'name' => 'required',
             'age' => 'required|integer',
             'price' => 'required|integer',
             'type' => 'required',
             'description' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',]);
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+
+        ]);
 
         $imagePath = null;
-
+            // single image on product
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
@@ -47,13 +51,11 @@ public function create()
             'price' => $validatedData['price'],
             'description' => $validatedData['description'],
             'image' => $imagePath,
+
         ]);
 
-        return redirect()->route('prdct.index', $product->id);
-    }
-
-
-
+ return redirect()->route('prdct.index', $product->id)->with('message','Product add successfully');
+}
 
 
 public function edit($id)
