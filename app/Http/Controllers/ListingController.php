@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Country,Product};
+use App\Models\{Country,Product,ProductImage};
 
 
 
@@ -34,10 +34,12 @@ class ListingController extends Controller
             'price' => 'required|integer',
             'type' => 'required',
             'description' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',]);
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
         $imagePath = null;
-
+            // single image on product
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
@@ -52,10 +54,22 @@ class ListingController extends Controller
             'price' => $validatedData['price'],
             'description' => $validatedData['description'],
             'image' => $imagePath,
+
         ]);
 
-        return redirect()->route('profile', $product->id)->with('message','Listing add successfully');
+
+       // return $product->id;
+   // dd($request->all());
+foreach ($request->file('images') as $image) {
+        $path = $image->store('/uploads/multi_image/');
+
+        ProductImage::create([
+            'product_id' => $product->id,
+            'image_path' => $path,
+        ]);
     }
+ return redirect()->route('profile')->with('message','Product add successfully');
+}
 
 
 

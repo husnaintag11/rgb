@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-12">
             @if(session('message'))
-                <div class="alert alert-success">{{ session('message')}}</div>
+            <div class="alert alert-success">{{ session('message')}}</div>
             @endif
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
@@ -28,9 +28,15 @@
                                     <th>Description</th>
                                     <th>Price</th>
                                     <th>Age</th>
-
-                                    <th>Type</th>
-                                    <th>Action</th>
+                                    <th>Type<th>
+                                    <th>Category_id</th>
+                                    <th>Sub_Category_id</th>
+                                    <th>User_id</th>
+                                    <th>Country_id</th>
+                                    <th>State_id<th>
+                                    <th>City_id</th>
+                                    <th>Street_id</th>
+                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,9 +50,17 @@
                                     <td>{{ $product->price}}</td>
                                     <td>{{ $product->age}}</td>
                                     <td>{{ $product->type}}</td>
+                                    <td>{{ Null}}</td>
+                                    <td>{{ null}}</td>
+                                    <td>{{ null}}</td>
+                                    <td>{{ null}}</td>
+                                    <td>{{ null}}</td>
+                                    <td>{{ null}}</td>
+                                    <td>{{null}}</td>
 
                                     <td><a class="btn btn-info" href="{{route('prdct.edit',$product->id)}}">Edit </a>
-                                        <a class="btn btn-danger" href="{{route('prdct.delete',$product->id)}}">Delete</a></td>
+                                        <a class="btn btn-danger"
+                                            href="{{route('prdct.delete',$product->id)}}">Delete</a></td>
                                 </tr>
 
                                 @endforeach

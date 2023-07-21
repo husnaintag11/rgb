@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+
+use App\Models\ProductImage;
 use App\Models\Product;
-use App\Models\Multi_Image;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +22,7 @@ class ProductController extends Controller
 public function create()
 {
 
-    return view('admin..product.create');
+    return view ('admin..product.create');
 }
  public function store(Request $request)
 {
@@ -32,7 +34,7 @@ public function create()
             'type' => 'required',
             'description' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $imagePath = null;
@@ -54,7 +56,18 @@ public function create()
 
         ]);
 
- return redirect()->route('prdct.index', $product->id)->with('message','Product add successfully');
+
+       // return $product->id;
+   // dd($request->all());
+foreach ($request->file('images') as $image) {
+        $path = $image->store('/uploads/multi_image/');
+
+        ProductImage::create([
+            'product_id' => $product->id,
+            'image_path' => $path,
+        ]);
+    }
+ return redirect()->route('prdct.index')->with('message','Product add successfully');
 }
 
 

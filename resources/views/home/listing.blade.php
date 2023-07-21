@@ -36,7 +36,7 @@
     </p>
     <div>
         <div class="form-group">
-            <input class="form-control" type="file" id="multi_image" name="multi_image[]" multiple>
+            <input class="form-control" type="file"  name="images[]" multiple>
         </div>
 
     </div>
