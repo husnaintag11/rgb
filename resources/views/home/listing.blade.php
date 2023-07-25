@@ -36,7 +36,7 @@
     </p>
     <div>
         <div class="form-group">
-            <input class="form-control" type="file"  name="images[]" multiple>
+            <input class="form-control" type="file" name="images[]" multiple>
         </div>
 
     </div>
@@ -76,13 +76,45 @@
         </div>
 
     </div>
+    {{-- category and sub_category --}}
+    <p class="card-description">
+        Add Sub_Category
+    </p>
+
+    <div class="form-group">
+
+        <select name="category_id" class="form-control">
+            @if(!empty($category))
+            @foreach ($category as $category )
+            {{-- <option {{$sub_categories->category_id==$category->id?'selected':''}} value="{{$category->id}}"
+            >{{$category->name}}</option> --}}
+            <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+            @endif
+        </select>
+    </div>
+
+
+    <p class="card-description">
+        Add Category
+    </p>
+
+    <div class="form-group">
+
+        <select name="sub_categories_id" class="form-control">
+
+            <option value="">Select Category</option>
+
+        </select>
+    </div>
+
     {{-- country state and cite street --}}
     <p class="card-description">
         Add Country
     </p>
 
     <div class="form-group">
-        <select id="country" class="form-control ">
+        <select id="country" name="country" class="form-control ">
             <option value="" selected>Choose country</option>
             @if(!empty($country))
             @foreach($country as $data)
@@ -97,7 +129,7 @@
     </p>
 
     <div class="form-group">
-        <select id="state" class="form-control">
+        <select id="state" name="state" class="form-control">
             <option value="" selected>Choose State</option>
 
         </select>
@@ -110,7 +142,7 @@
         Add City
     </p>
     <div class="form-group">
-        <select id="city" class="form-control">
+        <select id="city" name="city" class="form-control">
             <option value="" selected>Choose City</option>
 
         </select>
@@ -120,7 +152,7 @@
         Add Street
     </p>
     <div class="form-group">
-        <select id="street" class="form-control">
+        <select id="street" name="street" class="form-control">
             <option value="" selected>Choose Street</option>
 
         </select>
@@ -226,6 +258,47 @@
                 }
             });
         });
+    });
+
+</script>
+
+
+<script>
+    // token generate
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+        }
+    });
+
+    $(document).ready(function () {
+        $("#category_id").change(function () {
+            var category_id = $(this).val();
+
+            if (category_id == "") {
+                var category_id = 0;
+            }
+
+            $.ajax({
+                url: '{{ url("/category/") }}/' + category_id,
+                type: 'post',
+                dataType: 'json',
+                success: function (response) {
+                    $('#sub_category').find('option:not(:first)').remove();
+
+
+                    if (response['sub_category'].length > 0) {
+                        $.each(response['sub_category'], function (key, value) {
+                            $("#sub_category").append("<option value='" + value[
+                                    'id'] +
+                                "'>" + value['name'] + "</option>")
+                        });
+                    }
+                }
+            });
+        });
+
+
     });
 
 </script>

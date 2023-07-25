@@ -22,15 +22,13 @@
         <div class="  col-md-6 grid-margin stretch-card form-group">
 
             <select class="form-control" name="category_id" class="form-select" id="inlineFormSelectPref">
-                @foreach ($sub_categories as $category )
+                @foreach ($category as $category )
 
-                {{-- <option {{$sub_categories->category_id==$category->id?'selected':''}} value="{{$category->id}}">
-                    {{$category->name}}</option> --}}
+                <option {{$sub_categories->category_id==$category->id?'selected':''}} value="{{$category->id}}" >{{$category->name}}</option>
 
                 @endforeach
+
             </select>
-
-
         </div>
         <br>
         <button type="submit" class="btn btn-primary mr-2">save</button>

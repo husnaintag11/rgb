@@ -12,13 +12,20 @@ class Sub_CategoryController extends Controller
 {
     public function index(Request $request )
     {
-        $sub_categories=DB::table('sub_categories')->get();
+        //return $request;
+        $sub_categories=DB::table('sub_categories')
+        ->leftJoin('categories', 'sub_categories.category_id', '=', 'categories.id')
+        ->select('sub_categories.*','categories.name as category_name')
+        ->get();
+       // return $sub_categories;
+
 
 
         return view('admin..sub_category.sub_index', compact('sub_categories',));
     }
     public function create()
     {
+
         $category=Category::get();
         $sub_categories=new SubCategory;
 

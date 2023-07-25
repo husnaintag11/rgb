@@ -21,8 +21,9 @@
     <link rel="stylesheet" href="/adminv2/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="/adminv2/images/favicon.png" />
+
     {{-- country --}}
-    {{-- <meta name="_token" content="{{ csrf_token() }}"> --}}
+    <meta name="_token" content="{{ csrf_token() }}">
 </head>
 
 <body>

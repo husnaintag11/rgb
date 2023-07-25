@@ -50,9 +50,9 @@
                                     <td>{{ $product->price}}</td>
                                     <td>{{ $product->age}}</td>
                                     <td>{{ $product->type}}</td>
-                                    <td>{{ Null}}</td>
+                                    <td>{{ $product->country_id}}</td>
                                     <td>{{ null}}</td>
-                                    <td>{{ null}}</td>
+                                    <td>{{null}}</td>
                                     <td>{{ null}}</td>
                                     <td>{{ null}}</td>
                                     <td>{{ null}}</td>
