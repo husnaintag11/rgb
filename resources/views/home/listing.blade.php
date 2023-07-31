@@ -77,36 +77,39 @@
 
     </div>
     {{-- category and sub_category --}}
+    {{-- <p class="card-description">
+        Add Sub_Category
+    </p>
+
+    <div class="form-group">
+
+        <select name="category_id" id="category" class="form-control">
+            <option value="" selected>Select Category</option>
+            @if(!empty($category))
+            @foreach ($category as $category )
+
+            <option value="{{ $category->id }}">{{ $category->name }}</option>
+    @endforeach
+    @endif
+    </select>
+    </div>
+
+
     <p class="card-description">
         Add Sub_Category
     </p>
 
     <div class="form-group">
 
-        <select name="category_id" class="form-control">
-            @if(!empty($category))
-            @foreach ($category as $category )
-            {{-- <option {{$sub_categories->category_id==$category->id?'selected':''}} value="{{$category->id}}"
-            >{{$category->name}}</option> --}}
-            <option value="{{ $category->id }}">{{ $category->name }}</option>
-            @endforeach
-            @endif
-        </select>
-    </div>
+        <select name="sub_categories_id" id="sub_category" class="form-control">
 
-
-    <p class="card-description">
-        Add Category
-    </p>
-
-    <div class="form-group">
-
-        <select name="sub_categories_id" class="form-control">
-
-            <option value="">Select Category</option>
+            <option value="">Select Sub_Category</option>
 
         </select>
-    </div>
+    </div> --}}
+<!-- Assuming you have a dropdown to select a category -->
+
+<!-- Display subcategories here -->
 
     {{-- country state and cite street --}}
     <p class="card-description">
@@ -135,9 +138,6 @@
         </select>
     </div>
 
-
-
-
     <p class="card-description">
         Add City
     </p>
@@ -159,18 +159,12 @@
     </div>
 
     <br>
-    <div class="text-right"> <button type="submit" class="btn btn-primary mr-2">save</button></div>
-
+    <div><button type="submit" class="btn btn-primary mr-2">save</button></div>
+<br>
 </form>
-
 {{-- js country cities and state --}}
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-</script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 {{-- country state city and street jquery --}}
 <script>
     // token generate
@@ -258,49 +252,35 @@
                 }
             });
         });
+
+        // On page load, fetch the categories from the server (you can use AJAX here)
+        // $('#categorySelect').on('change', function () {
+        //     var categoryId = $(this).val();
+        //     if (categoryId) {
+        //         $.ajax({
+        //             url: '/categories/' + categoryId + '/sub_categories',
+        //             type: 'GET',
+        //             success: function (data) {
+        //                 var subcategories = data.subcategories;
+        //                 var subcategoryOptions =
+        //                     '<option value="">Select a subcategory</option>';
+        //                 for (var i = 0; i < subcategories.length; i++) {
+        //                     subcategoryOptions += '<option value="' + subcategories[i].id +
+        //                         '">' + subcategories[i].name + '</option>';
+        //                 }
+        //                 $('#subcategorySelect').html(subcategoryOptions);
+        //             }
+        //         });
+        //     } else {
+        //         $('#subcategorySelect').html('<option value="">Select a category first</option>');
+        //     }
+        // });
     });
 
 </script>
 
-
-<script>
-    // token generate
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-        }
-    });
-
-    $(document).ready(function () {
-        $("#category_id").change(function () {
-            var category_id = $(this).val();
-
-            if (category_id == "") {
-                var category_id = 0;
-            }
-
-            $.ajax({
-                url: '{{ url("/category/") }}/' + category_id,
-                type: 'post',
-                dataType: 'json',
-                success: function (response) {
-                    $('#sub_category').find('option:not(:first)').remove();
-
-
-                    if (response['sub_category'].length > 0) {
-                        $.each(response['sub_category'], function (key, value) {
-                            $("#sub_category").append("<option value='" + value[
-                                    'id'] +
-                                "'>" + value['name'] + "</option>")
-                        });
-                    }
-                }
-            });
-        });
-
-
-    });
-
-</script>
 
 @endsection
+
+
+

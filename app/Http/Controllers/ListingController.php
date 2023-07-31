@@ -13,7 +13,7 @@ class ListingController extends Controller
        $country=DB::table('countries')->get();
        $state=DB::table('states')->get();
        $city=DB::table('cities')->get();
-     $category=DB::table('categories')->get();
+       $category=DB::table('categories')->get();
        $sub_categories=DB::table('sub_categories')->get();
        $data['country']=Country::get(['name','id']);
 //
@@ -59,7 +59,7 @@ class ListingController extends Controller
             'state_id'=> $request->state,
             'city_id'=> $request->city,
             'street_id'=> $request->street,
-            'cat_id'=>$request->category,
+            //'cat_id'=>$request->category,
             // user id import in auth
             'user_id' => Auth::id(),
         ]);
@@ -78,14 +78,7 @@ class ListingController extends Controller
 
  return redirect()->route('profile')->with('message','Product add successfully');
 }
-
-
-
-
-
 // work
-
-
 public function country(){
     $countries = DB::table('countries')->orderBy('name','ASC')->get();
     $data['countries'] = $countries;

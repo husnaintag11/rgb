@@ -4,12 +4,19 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Support\Facades\DB;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller {
 
-    public function index(Request $request) {
+    public function index(Request $request,Category $category) {
+
+        // $subcategories = SubCategory::where('category_id', $category->id)->get();
+
+        // return response()->json(['subcategories' => $subcategories]);
+
         $category = DB::table('categories')->get();
+
 
         return view('admin..category.index', compact('category'));
     }

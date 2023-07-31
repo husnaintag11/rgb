@@ -1,7 +1,7 @@
 @extends('home.master')
 @section('content')
 @if(session('message'))
-    <div class="alert alert-success">{{ session('message')}}</div>
+<div class="alert alert-success">{{ session('message')}}</div>
 @endif
 <div class="col-md-12 bg-dark p-4">
 
@@ -10,9 +10,6 @@
     </div>
 </div>
 <br>
-
-
-
 <div class="container">
     <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -73,57 +70,60 @@
 
                         </div>
                         {{-- address --}}
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="address">Address</label>
 
 
                             <textarea id="address" class="form-control @error('address') is-invalid @enderror"
                                 name="address">{{ old('address') }}</textarea>
 
-                            @error('address')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
+                        @error('address')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div> --}}
 
-                    </div>
-                    {{-- gender --}}
-                    <div class="container">
+                </div>
+                {{-- gender --}}
+                {{-- <div class="container">
                         <h6>I am</h6>
 
                         <div class=" p-3 form-group">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="gender" id="gender-male" value="male"
                                     {{ old('gender') === 'male' ? 'checked' : '' }}>
-                                <label class="pr-5 form-check-label" for="gender-male">{{ __('Male') }}</label>
+                <label class="pr-5 form-check-label" for="gender-male">{{ __('Male') }}</label>
 
-                                <input class=" form-check-input" type="radio" name="gender" id="gender-female"
-                                    value="female" {{ old('gender') === 'female' ? 'checked' : '' }}>
-                                <label class="form-check-label" for="gender-female">{{ __('Female') }}</label>
-                            </div>
-                            @error('gender')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-
-                        </div>
-
-                    </div>
-                    {{-- name --}}
-                    <div class="m-4">
-                        <button type="submit" class="btn btn-primary">Create Profile</button>
-                    </div>
-                </div>
-
+                <input class=" form-check-input" type="radio" name="gender" id="gender-female" value="female"
+                    {{ old('gender') === 'female' ? 'checked' : '' }}>
+                <label class="form-check-label" for="gender-female">{{ __('Female') }}</label>
             </div>
-
+            @error('gender')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
 
         </div>
 
+</div> --}}
+{{-- name --}}
+<div class="m-4">
+    <button type="submit" class="btn btn-primary">Save</button>
+</div>
+</div>
 
-    </form>
+</div>
+
+
+</div>
+
+{{-- data --}}
+
+</form>
+<label>Listing Data</label>
+
 </div>
 
 <br>
