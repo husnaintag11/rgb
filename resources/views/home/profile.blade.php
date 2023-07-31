@@ -122,7 +122,7 @@
 {{-- data --}}
 
 </form>
-<label>Listing Data</label>
+<h2 class="text-center"><b>Your Listing List</h2>
 
 </div>
 

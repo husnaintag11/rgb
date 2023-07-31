@@ -29,6 +29,13 @@ public function create()
 }
  public function store(Request $request )
 {
+    //save in url
+    $name=strtolower($request->name);
+    $url=str_replace('','-',$name);
+    $url=$url.'-t'.time().'-r'.rand();
+    $product='$url'.$url;
+
+
 
 
     $imagePath = null;
@@ -47,6 +54,7 @@ public function create()
             'price' => $request->price,
             'description' => $request->description,
             'image' => $imagePath,
+            'url' => $url,
 
 
         ]);
@@ -58,6 +66,7 @@ public function create()
         ProductImage::create([
             'product_id' => $product->id,
             'image_path' => $path,
+
         ]);
         }
  return redirect()->route('prdct.index')->with('message','Product add successfully');
