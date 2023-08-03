@@ -6,16 +6,16 @@
 <div class="col-md-12 bg-dark p-4">
 
     <div class="text-center text-white">
-        <h2>Profile</h2>
+        <h2>{{ Auth::user()->name }}</h2>
     </div>
 </div>
 <br>
 <div class="container">
-    <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('profile.update') }}" method="POST" id="profile_setup_frm" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-md-12 bg-dark p-2">
-                <div class="text-white text-center">
+                <div class="text-white text-center" >
                     <h4>Change Profile</h4>
                 </div>
             </div>
@@ -31,13 +31,19 @@
         <div class="row">
             <div class="col-md-5 p-4">
                 <div class="form-group">
-                    <label for="image">Profile Image:</label>
 
                     <div class="p-3 container">
-                        <img src="{{asset('uploads/profile/'.Auth::user()->profile_image)}}" width="300px"
-                            height="300px" alt="Image">
+                        {{-- profile image --}}
+                        @if (Auth::user()->profile_image)
+                        <img src="{{asset('uploads/profile/'.Auth::user()->profile_image)}}" class="rounded-circle shadow-6-strong"
+                            width="200px" height="200px" alt="Image">
+                        @else
+                        <img src="{{asset("uploads/profile/admin.png")}}" class="rounded-circle shadow-4-strong" width="160px"
+                            height="160px" id="image_preview_container" alt="Image">
+                        @endif
+
                     </div>
-                    <input type="file" name="profile_image" class="p-3 form-control-file">
+                 <input type="file" name="profile_image" id="profile_image" class="form-control">
                 </div>
             </div>
 
@@ -55,6 +61,7 @@
                             <label for="last_name">Last Name:</label>
                             <input type="text" name="last_name" id="name" class="form-control"
                                 value="{{ Auth::user()->last_name }}" required>
+
                         </div>
                         {{-- phone number --}}
                         <div class="form-group ">
@@ -110,7 +117,7 @@
 </div> --}}
 {{-- name --}}
 <div class="m-4">
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" id="btn" class="btn btn-primary">Save</button>
 </div>
 </div>
 
@@ -127,4 +134,5 @@
 </div>
 
 <br>
+
 @endsection

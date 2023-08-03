@@ -13,14 +13,17 @@ class ProductController extends Controller
 {
     public function index(Request $request )
 {
-    // $products=DB::table('products')->get();
+
     $products = Product::join('countries', 'products.country_id', '=', 'countries.id')
         ->join('states', 'products.state_id', '=', 'states.id')
         ->join('cities', 'products.city_id', '=', 'cities.id')
         ->join('streets', 'products.street_id', '=', 'streets.id')
         ->join('users','products.user_id','=','users.id')
+        //->join('categories','products.cat_id','=','categories.id')
         ->select('products.*', 'countries.name as country_name', 'states.name as state_name', 'cities.name as city_name', 'streets.name as street_name','users.name as user_name')
         ->get();
+
+
     return view('admin..product.index',compact('products'));
 }
 public function create()
@@ -29,13 +32,11 @@ public function create()
 }
  public function store(Request $request )
 {
+
     //save in url
-    $name=strtolower($request->name);
-    $url=str_replace('','-',$name);
-    $url=$url.'-t'.time().'-r'.rand();
-    $product='$url'.$url;
-
-
+    // $name=strtolower($request->name);
+    // $url=str_replace('','-',$name);
+    // $url=$url.'-t'.time().'-r'.rand();
 
 
     $imagePath = null;
@@ -54,11 +55,9 @@ public function create()
             'price' => $request->price,
             'description' => $request->description,
             'image' => $imagePath,
-            'url' => $url,
-
-
+            //'url' => $url,
         ]);
-       // return $product->id;
+       //return $product->id;
      // dd($request->all());
      //multi_image
        foreach ($request->file('images') as $image) {

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Profile;
+use Dotenv\Validator;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +17,8 @@ class ProfileController extends Controller
         return view('home.profile');
     }
 
-    public function update(Request $req) {
+    public function update(Request $req)
+     {
       $user_id = Auth::user()->id;
       $user = User ::find($user_id);
       $user ->name = $req->input('name');
@@ -46,3 +49,4 @@ class ProfileController extends Controller
 
 
 }
+

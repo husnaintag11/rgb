@@ -14,30 +14,31 @@ class ListingController extends Controller
        $state=DB::table('states')->get();
        $city=DB::table('cities')->get();
        $category=DB::table('categories')->get();
-       $sub_categories=DB::table('sub_categories')->get();
+       //$sub_categories=DB::table('sub_categories')->get();
        $data['country']=Country::get(['name','id']);
 //
 
-    $products = Product::select('products.*', 'users.name as user_name','countries.name as country_name', 'states.name as state_name', 'cities.name as city_name', 'streets.name as street_name')
+    $products = Product::select('products.*', 'users.name as user_name','countries.name as country_name', 'states.name as state_name', 'cities.name as city_name', 'streets.name as street_name','categories.name as category_name')
     ->leftJoin('countries', 'products.country_id', '=', 'countries.id')
     ->leftJoin('states', 'products.state_id', '=', 'states.id')
     ->leftJoin('cities', 'products.city_id', '=', 'cities.id')
     ->leftJoin('streets', 'products.street_id', '=', 'streets.id')
     ->leftJoin('users', 'products.user_id', '=', 'users.id')
-//    ->leftJoin('categories','products.cat_id','=','cat_id')
-//    ->leftJoin('sub_categories','products.sub_cat_id','=','sub_cat.id')
+    ->leftJoin('categories','products.cat_id','=','categories.id')
+   // ->leftJoin('sub_categories','products.sub_cat_id','=','sub_cat.id')
     ->get();
 
     //   $jsonData = $products->toJson();
     //      return "$jsonData";
-        return view ('home.listing',compact('data','country','city','state','category','sub_categories'));
+
+        return view('home.listing',compact('data','category','country','state','city'));
     }
 
 
 
     public function store(Request $request)
     {
-      // return $request;
+      //return $request;
 
         $imagePath = null;
             // single image on product
@@ -59,7 +60,7 @@ class ListingController extends Controller
             'state_id'=> $request->state,
             'city_id'=> $request->city,
             'street_id'=> $request->street,
-            //'cat_id'=>$request->category,
+            'cat_id'=>$request->category,
             // user id import in auth
             'user_id' => Auth::id(),
         ]);

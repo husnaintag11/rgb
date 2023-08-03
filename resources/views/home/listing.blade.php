@@ -77,7 +77,7 @@
 
     </div>
     {{-- category and sub_category --}}
-    {{-- <p class="card-description">
+    <p class="card-description">
         Add Sub_Category
     </p>
 
@@ -85,17 +85,17 @@
 
         <select name="category_id" id="category" class="form-control">
             <option value="" selected>Select Category</option>
-            @if(!empty($category))
+
             @foreach ($category as $category )
 
             <option value="{{ $category->id }}">{{ $category->name }}</option>
-    @endforeach
-    @endif
-    </select>
+            @endforeach
+
+        </select>
     </div>
 
 
-    <p class="card-description">
+    {{-- <p class="card-description">
         Add Sub_Category
     </p>
 
@@ -107,9 +107,9 @@
 
         </select>
     </div> --}}
-<!-- Assuming you have a dropdown to select a category -->
+    <!-- Assuming you have a dropdown to select a category -->
 
-<!-- Display subcategories here -->
+    <!-- Display subcategories here -->
 
     {{-- country state and cite street --}}
     <p class="card-description">
@@ -160,7 +160,7 @@
 
     <br>
     <div><button type="submit" class="btn btn-primary mr-2">save</button></div>
-<br>
+    <br>
 </form>
 {{-- js country cities and state --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -281,6 +281,3 @@
 
 
 @endsection
-
-
-

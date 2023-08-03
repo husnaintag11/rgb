@@ -30,9 +30,10 @@
     {{-- owl js --}}
     <script src="{{asset('owl_carousal/js/jquery.min.js')}}"></script>
     <script src="{{asset('owl_carousal/js/owl.carousel.min.js')}}"></script>
-{{-- country --}}
+    {{-- country --}}
     <meta name="_token" content="{{ csrf_token() }}">
-
+    {{-- profile_image --}}
+    {{-- <meta name="scrf-token" content="{{ csrf_token() }}"> --}}
 
 </head>
 <title>Pets Stock Bazaar</title>
@@ -64,22 +65,33 @@
                     @guest
                     @if (Route::has('login'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket"></i> {{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket"></i>
+                            {{ __('Login') }}</a>
                     </li>
                     @endif
 
                     @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}"><i class="fa-solid fa-registered"></i> {{ __('Register') }}</a>
+                        <a class="nav-link" href="{{ route('register') }}"><i class="fa-solid fa-registered"></i>
+                            {{ __('Register') }}</a>
                     </li>
                     @endif
                     @else
                     <li class="nav-item dropdown">
+                        <li>
+                            @if (Auth::user()->profile_image)
+                            <img src="{{asset('uploads/profile/'.Auth::user()->profile_image)}}" class="rounded-circle shadow-6-strong"
+                                width="40px" height="40px" alt="Image">
+                            @else
+                            <img src="{{asset("uploads/profile/admin.png")}}" class="rounded-circle shadow-4-strong" width="40px"
+                                height="40px" id="image_preview_container" alt="Image">
+                            @endif
+                        </li>
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
-                        </a>
 
+                        </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('profile')}}">My Profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -137,11 +149,12 @@
                             </div>
                             <ul>
 
-                                <span><i class="fa-solid fa-location-dot"></i>  location </span>
+                                <span><i class="fa-solid fa-location-dot"></i> location </span>
                                 <br>
-                                <span><i class="fa-solid fa-phone-volume"></i>  mobile number </span>
-                               <br>
-                                <span><a href="#"><i class="fa-sharp fa-solid fa-envelopes-bulk"></i>  info@gmail.com</a></span>
+                                <span><i class="fa-solid fa-phone-volume"></i> mobile number </span>
+                                <br>
+                                <span><a href="#"><i class="fa-sharp fa-solid fa-envelopes-bulk"></i>
+                                        info@gmail.com</a></span>
 
 
                             </ul>
@@ -173,13 +186,17 @@
                             <div>
 
                                 <ul>
-                                   <span> <a href=""><i class="fa-brands fa-square-whatsapp"></i><label>WhatsApp<label></a></span>
-                                   <br>
-                                   <span><a href=""><i class="fa-brands fa-square-facebook"></i><label>Facebook<label></a></span>
-                                   <br>
-                                   <span><a href=""><i class="fa-brands fa-instagram"></i><label>   Instagram</label></a></span>
+                                    <span> <a href=""><i
+                                                class="fa-brands fa-square-whatsapp"></i><label>WhatsApp<label></a></span>
                                     <br>
-                                   <span> <a href=""><i class="fa-brands fa-twitter"></i><label> Twitter</label></a></span>
+                                    <span><a href=""><i
+                                                class="fa-brands fa-square-facebook"></i><label>Facebook<label></a></span>
+                                    <br>
+                                    <span><a href=""><i class="fa-brands fa-instagram"></i><label>
+                                                Instagram</label></a></span>
+                                    <br>
+                                    <span> <a href=""><i class="fa-brands fa-twitter"></i><label>
+                                                Twitter</label></a></span>
 
                                 </ul>
                             </div>

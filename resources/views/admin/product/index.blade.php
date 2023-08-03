@@ -30,6 +30,7 @@
                                     <th>Age</th>
                                     <th>Type</th>
                                     <th>User_Name</th>
+                                    <th>Category_Name</th>
                                     <th>Country_Name</th>
                                     <th>State_Name</th>
                                     <th>City_Name</th>
@@ -49,6 +50,7 @@
                                     <td>{{$product->age}}</td>
                                     <td>{{$product->type}}</td>
                                     <td>{{$product->user_name }}</td>
+                                    <td>{{$product->category_id}}</td>
                                     <td>{{$product->country_name}}</td>
                                     <td>{{$product->state_name}}</td>
                                     <td>{{$product->city_name}}</td>
