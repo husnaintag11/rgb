@@ -49,10 +49,13 @@ Route::prefix('/')->group(function(){
     Route::get('/task',[FrontController::class,'task'])->name('/task');
 });
 
+
+
 Route::prefix('/profile')->group(function(){
     Route::get('/add_listing',[ListingController::class,'add_listing'])->name('add_listing');
     Route::post('/store',[ListingController::class,'store'])->name('listing.store');
-
+    Route::get('/detail',[ListingController::class,'detail'])->name('details');
+   // Route::get('/redirect', [ListingController::class, 'redirect'])->name('redirect');
 
 
 

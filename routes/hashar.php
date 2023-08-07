@@ -63,6 +63,8 @@ Route::prefix('adminv2')->group(function(){
    Route::prefix('sub_categories')->group(function(){
         Route::get('/',[Sub_CategoryController::class,'index'])->name('sub_cat.index');
 
+        Route::get('GetSubCatAgainstMainCatEdit/{id}',[Sub_CategoryController::class,'GetSubCatAgainstMainCatEdit']);
+
         Route::get('/create',[Sub_CategoryController::class,'create'])->name('sub_cat.create');
 
         Route::post('/store',[Sub_CategoryController::class,'store'])->name('sub_cat.store');

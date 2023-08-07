@@ -29,12 +29,13 @@
                                     <th>Price</th>
                                     <th>Age</th>
                                     <th>Type</th>
-                                    <th>User_Name</th>
-                                    <th>Category_Name</th>
-                                    <th>Country_Name</th>
-                                    <th>State_Name</th>
-                                    <th>City_Name</th>
-                                    <th>Street_Name</th>
+                                    <th>User-Name</th>
+                                    <th>Category-Name</th>
+                                    <th>Sub-Category_Name</th>
+                                    <th>Country-Name</th>
+                                    <th>State-Name</th>
+                                    <th>City-Name</th>
+                                    <th>Street-Name</th>
                                     {{-- <th>Action<th> --}}
 
                                 </tr>
@@ -50,7 +51,8 @@
                                     <td>{{$product->age}}</td>
                                     <td>{{$product->type}}</td>
                                     <td>{{$product->user_name }}</td>
-                                    <td>{{$product->category_id}}</td>
+                                    <td>{{$product->category_name}}</td>
+                                    <td>{{$product->sub_category_name}}</td>
                                     <td>{{$product->country_name}}</td>
                                     <td>{{$product->state_name}}</td>
                                     <td>{{$product->city_name}}</td>

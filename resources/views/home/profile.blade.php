@@ -15,7 +15,7 @@
         @csrf
         <div class="row">
             <div class="col-md-12 bg-dark p-2">
-                <div class="text-white text-center" >
+                <div class="text-white text-center">
                     <h4>Change Profile</h4>
                 </div>
             </div>
@@ -35,15 +35,15 @@
                     <div class="p-3 container">
                         {{-- profile image --}}
                         @if (Auth::user()->profile_image)
-                        <img src="{{asset('uploads/profile/'.Auth::user()->profile_image)}}" class="rounded-circle shadow-6-strong"
-                            width="200px" height="200px" alt="Image">
+                        <img src="{{asset('uploads/profile/'.Auth::user()->profile_image)}}"
+                            class="rounded-circle shadow-6-strong" width="200px" height="200px" alt="Image">
                         @else
-                        <img src="{{asset("uploads/profile/admin.png")}}" class="rounded-circle shadow-4-strong" width="160px"
-                            height="160px" id="image_preview_container" alt="Image">
+                        <img src="{{asset("uploads/profile/admin.png")}}" class="rounded-circle shadow-4-strong"
+                            width="160px" height="160px" id="image_preview_container" alt="Image">
                         @endif
 
                     </div>
-                 <input type="file" name="profile_image" id="profile_image" class="form-control">
+                    <input type="file" name="profile_image" id="profile_image" class="form-control">
                 </div>
             </div>
 
@@ -76,63 +76,68 @@
                             @enderror
 
                         </div>
-                        {{-- address --}}
-                        {{-- <div class="form-group">
-                            <label for="address">Address</label>
+
+                    </div>
 
 
-                            <textarea id="address" class="form-control @error('address') is-invalid @enderror"
-                                name="address">{{ old('address') }}</textarea>
-
-                        @error('address')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div> --}}
-
+                    <div class="m-4">
+                        <button type="submit" id="btn" class="btn btn-primary">Save</button>
+                    </div>
                 </div>
-                {{-- gender --}}
-                {{-- <div class="container">
-                        <h6>I am</h6>
-
-                        <div class=" p-3 form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" id="gender-male" value="male"
-                                    {{ old('gender') === 'male' ? 'checked' : '' }}>
-                <label class="pr-5 form-check-label" for="gender-male">{{ __('Male') }}</label>
-
-                <input class=" form-check-input" type="radio" name="gender" id="gender-female" value="female"
-                    {{ old('gender') === 'female' ? 'checked' : '' }}>
-                <label class="form-check-label" for="gender-female">{{ __('Female') }}</label>
             </div>
-            @error('gender')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-
         </div>
 
-</div> --}}
-{{-- name --}}
-<div class="m-4">
-    <button type="submit" id="btn" class="btn btn-primary">Save</button>
-</div>
-</div>
 
+    </form>
 </div>
 
 
-</div>
+
 
 {{-- data --}}
 
-</form>
+
 <h2 class="text-center"><b>Your Listing List</h2>
 
-</div>
 
+<div class="container">
+    <div class="row">
+        @foreach ($products as $product )
+        <div class="col-sm-3  ">
+            <div class="card">
+
+                <a href="/profile/detail"><img src="{{$product->image}}" class="card-arrow" alt="Arrow Picture" alt="" height="200px"
+                        width="260px"></a>
+
+                <div class="card-body">
+                    <a href="#">
+                        <h5>{{$product->name}}</h5>
+                    </a>
+                 <span class="text-dark" >{{$product->category_name}}</span>
+                    <br>
+                    <span class="text-danger ">Price On call</span>
+                    <br>
+                    <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbsp{{$product->country_name}}</span>
+                    <br>
+                    <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbsp{{$product->type}}</span>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+
+                    </small>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+        @endforeach
+    </div>
+</div>
 <br>
 
 @endsection

@@ -32,8 +32,6 @@
     <script src="{{asset('owl_carousal/js/owl.carousel.min.js')}}"></script>
     {{-- country --}}
     <meta name="_token" content="{{ csrf_token() }}">
-    {{-- profile_image --}}
-    {{-- <meta name="scrf-token" content="{{ csrf_token() }}"> --}}
 
 </head>
 <title>Pets Stock Bazaar</title>

@@ -19,7 +19,7 @@
 
     <div class="form-group">
         <input class="form-control" type="text" value="{{isset($Category)?$Category->name:''}}" name="name"
-            placeholder="Enter the name">
+            placeholder="Enter the name" required>
     </div>
 
     <p class="card-description">
@@ -27,7 +27,7 @@
     </p>
     <div>
         <div class="form-group">
-            <input class="form-control" type="file" id="image" name="image">
+            <input class="form-control" type="file" id="image" name="image" required>
         </div>
 
     </div>
@@ -36,7 +36,7 @@
     </p>
     <div>
         <div class="form-group">
-            <input class="form-control" type="file" name="images[]" multiple>
+            <input class="form-control" type="file" name="images[]" multiple   required>
         </div>
 
     </div>
@@ -77,39 +77,38 @@
 
     </div>
     {{-- category and sub_category --}}
-    <p class="card-description">
-        Add Sub_Category
-    </p>
-
     <div class="form-group">
-
-        <select name="category_id" id="category" class="form-control">
-            <option value="" selected>Select Category</option>
-
+        <label for="">Choose Category</label>
+        <select name="category" id="sub_category_name" class="form-control @error('category') is-invalid @enderror" required>
+            <option value="">select Category</option>
             @foreach ($category as $category )
 
             <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
 
         </select>
+
+        @error('category')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+
     </div>
 
-
-    {{-- <p class="card-description">
-        Add Sub_Category
-    </p>
-
     <div class="form-group">
-
-        <select name="sub_categories_id" id="sub_category" class="form-control">
-
-            <option value="">Select Sub_Category</option>
-
+        <label for="">Choose Sub-Category</label>
+        <select name="subcategory" id="sub_category" class="form-control @error('subcategory') is-invalid @enderror" required>
+            <option value="">select</option>
         </select>
-    </div> --}}
-    <!-- Assuming you have a dropdown to select a category -->
 
-    <!-- Display subcategories here -->
+        @error('subcategory')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+
 
     {{-- country state and cite street --}}
     <p class="card-description">
@@ -117,11 +116,11 @@
     </p>
 
     <div class="form-group">
-        <select id="country" name="country" class="form-control ">
+        <select id="country" name="country" required class="form-control  ">
             <option value="" selected>Choose country</option>
             @if(!empty($country))
             @foreach($country as $data)
-            <option value="{{ $data->id }}">{{ $data->name }}</option>
+            <option value="{{ $data->id }} ">{{ $data->name }}</option>
             @endforeach
             @endif
         </select>
@@ -132,7 +131,7 @@
     </p>
 
     <div class="form-group">
-        <select id="state" name="state" class="form-control">
+        <select id="state" name="state" required  class="form-control">
             <option value="" selected>Choose State</option>
 
         </select>
@@ -142,7 +141,7 @@
         Add City
     </p>
     <div class="form-group">
-        <select id="city" name="city" class="form-control">
+        <select id="city" name="city" required  class="form-control">
             <option value="" selected>Choose City</option>
 
         </select>
@@ -152,7 +151,7 @@
         Add Street
     </p>
     <div class="form-group">
-        <select id="street" name="street" class="form-control">
+        <select id="street" required  name="street" class="form-control">
             <option value="" selected>Choose Street</option>
 
         </select>
@@ -252,29 +251,29 @@
                 }
             });
         });
-
-        // On page load, fetch the categories from the server (you can use AJAX here)
-        // $('#categorySelect').on('change', function () {
-        //     var categoryId = $(this).val();
-        //     if (categoryId) {
-        //         $.ajax({
-        //             url: '/categories/' + categoryId + '/sub_categories',
-        //             type: 'GET',
-        //             success: function (data) {
-        //                 var subcategories = data.subcategories;
-        //                 var subcategoryOptions =
-        //                     '<option value="">Select a subcategory</option>';
-        //                 for (var i = 0; i < subcategories.length; i++) {
-        //                     subcategoryOptions += '<option value="' + subcategories[i].id +
-        //                         '">' + subcategories[i].name + '</option>';
-        //                 }
-        //                 $('#subcategorySelect').html(subcategoryOptions);
-        //             }
-        //         });
-        //     } else {
-        //         $('#subcategorySelect').html('<option value="">Select a category first</option>');
-        //     }
-        // });
+        //category
+        $('#sub_category_name').on('change', function () {
+            let id = $(this).val();
+            $('#sub_category').empty();
+            $('#sub_category').append(`<option value="0" disabled selected>Processing...</option>`);
+            $.ajax({
+                type: 'GET',
+                url: '/adminv2/sub_categories/GetSubCatAgainstMainCatEdit/' + id,
+                success: function (response) {
+                    var response = JSON.parse(response);
+                    console.log(response);
+                    $('#sub_category').empty();
+                    $('#sub_category').append(
+                        `<option value="0" disabled selected>Select Sub Category*</option>`
+                        );
+                    response.forEach(element => {
+                        $('#sub_category').append(
+                            `<option value="${element['id']}">${element['name']}</option>`
+                            );
+                    });
+                }
+            });
+        });
     });
 
 </script>

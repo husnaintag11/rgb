@@ -23,6 +23,12 @@ class Sub_CategoryController extends Controller
 
         return view('admin..sub_category.sub_index', compact('sub_categories',));
     }
+
+
+  public function GetSubCatAgainstMainCatEdit($id){
+        echo json_encode(DB::table('sub_categories')->where('category_id', $id)->get());
+    }
+
     public function create()
     {
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Category;
 use App\Models\ProductImage;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -19,12 +19,15 @@ class ProductController extends Controller
         ->join('cities', 'products.city_id', '=', 'cities.id')
         ->join('streets', 'products.street_id', '=', 'streets.id')
         ->join('users','products.user_id','=','users.id')
-        //->join('categories','products.cat_id','=','categories.id')
-        ->select('products.*', 'countries.name as country_name', 'states.name as state_name', 'cities.name as city_name', 'streets.name as street_name','users.name as user_name')
+        ->join('categories','products.cat_id','=','categories.id')
+        ->leftjoin('sub_categories as sub','products.subcat_id','=','sub.id')
+        ->select('products.*', 'countries.name as country_name', 'states.name as state_name', 'cities.name as city_name', 'streets.name as street_name','users.name as user_name'
+        ,'categories.name as category_name',
+        'sub.name as sub_category_name')
         ->get();
 
 
-    return view('admin..product.index',compact('products'));
+    return view ('admin..product.index',compact('products'));
 }
 public function create()
 {
@@ -55,7 +58,7 @@ public function create()
             'price' => $request->price,
             'description' => $request->description,
             'image' => $imagePath,
-            //'url' => $url,
+
         ]);
        //return $product->id;
      // dd($request->all());
