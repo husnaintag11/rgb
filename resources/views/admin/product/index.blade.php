@@ -58,11 +58,11 @@
                                     <td>{{$product->city_name}}</td>
                                     <td>{{$product->street_name}}</td>
 
-                                    {{-- <td>
-                                    <a class="btn btn-info" href="{{route('prdct.edit',$product->id)}}">Edit </a>
+                                    <td>
+                                    {{-- <a class="btn btn-info" href="{{route('prdct.edit',$product->id)}}">Edit </a> --}}
 
                                     <a class="btn btn-danger" href="{{route('prdct.delete',$product->id)}}">Delete</a>
-                                    </td> --}}
+                                    </td>
                                 </tr>
 
                                 @endforeach

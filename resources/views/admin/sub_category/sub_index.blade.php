@@ -22,6 +22,7 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Category</th>
+                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -34,6 +35,7 @@
                                     <td>{{ $sub_category->name}}</td>
 
                                     <td>{{ $sub_category->category_name}}</td>
+                                    <td><img src="{{$sub_category->image}}"></td>
                                     <td><a class="btn btn-info"
                                             href="{{route('sub_cat.edit',$sub_category->id)}}">Edit </a>
                                         <a class="btn btn-danger"

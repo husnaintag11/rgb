@@ -58,160 +58,43 @@
     </div>
 </div>
 {{-- scroll images --}}
-<div class="container" style="width: 980px; height :10px">
 
-    <div class="row">
+<div class="col-12 col-md-12 p-1">
+    <div class=" card container p-4">
+        <div class="owl-carousel owl-theme " id="slider1">
 
-        <div class="col-12 col-md-12">
-
-            <div class="owl-carousel owl-theme" id="slider1">
-                <div class="card container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
+            @foreach ($sub_category as $sub_category)
+            <div class="card container" style="height: 9.3rem">
+                <div class="item">
+                    <img src="{{ $sub_category->image}}"
+                        height="120px" width="120px">
+                    <span  class="text-center ml-5 p-5">{{$sub_category->name}}</span>
                 </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-title text-dark text-small" href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card  container" style="height: 9.3rem">
-                    <div class="item">
-                        <img src="rgbpics/Cat2.jpg" class="card-img-right" alt="Image 1">
-
-                        <h6 class="text-center ">
-                            <a class="card-text  " href="#"><span class="red-text">Animal</span></a>
-                            <br>
-                            <small class=" text-muted">11&nbsp ads</small>
-                        </h6>
-                    </div>
-                </div>
-
-
             </div>
-
+            @endforeach
 
         </div>
     </div>
+
 </div>
-<br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
 {{-- varifield items --}}
 
-<div class="container ">
+<div class="container  p-4">
 
-    <div class="row align-items-center">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+    <div class="row align-items-center p-1 m-2">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 ">
             <div>
                 <div>
                     <div class="text-danger">
@@ -920,13 +803,12 @@
 {{-- js --}}
 <script>
     $(document).ready(function () {
+
+
         $('#slider1').owlCarousel({
-            items: 4,
-            loop: true,
             dots: false,
-
+            loop: true,
             margin: 0,
-
             nav: true,
             responsive: {
                 0: {
@@ -939,10 +821,30 @@
                     items: 5
                 }
             }
-
         });
+        // $('#slider1').owlCarousel({
+        //     items: 4,
+        //     loop: true,
+        //     dots: false,
+
+        //     margin: 0,
+
+        //     nav: true,
+        //     responsive: {
+        //         0: {
+        //             items: 1
+        //         },
+        //         600: {
+        //             items: 3
+        //         },
+        //         1000: {
+        //             items: 5
+        //         }
+        //     }
 
     })
+
+
     $(document).ready(function () {
         $('#slider2').owlCarousel({
             items: 4,

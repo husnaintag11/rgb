@@ -34,14 +34,41 @@ class Sub_CategoryController extends Controller
 
         $category=Category::get();
         $sub_categories=new SubCategory;
+       //$sub_categories=DB::table('sub_categories')->get();
 
         return view('admin.sub_category.sub_create',compact('category','sub_categories'));
     }
     public function store(Request $request)
     {
 
-        $data=$request->all();
+        $data = $request->validate([
+            'name' => 'required',
+            'category_id' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
+        ]);
+
+
+        if($request->has('image')){
+            $file_name = time();      //return timespan
+
+              $picture = $request->image;
+             // $file_name = rand();  // randum generate
+              $file_name = sha1($file_name);  // algorithum different string generate
+
+                $ext = $picture->getClientOriginalExtension();
+                $file_name = $file_name.".".$ext;
+                $picture -> move(public_path()."/uploads/subcategory/",$file_name);
+
+                $image_path = '/uploads/subcategory/'.$file_name;
+               $data['image'] = $image_path;
+            }
         SubCategory::create($data);
+
+
+        // $data=$request->all();
+        //  SubCategory::create($data);
+
+      // return $request;
     return redirect()->route('sub_cat.index');
 
     }

@@ -60,7 +60,7 @@ public function create()
             'image' => $imagePath,
 
         ]);
-       //return $product->id;
+       //return $request;
      // dd($request->all());
      //multi_image
        foreach ($request->file('images') as $image) {

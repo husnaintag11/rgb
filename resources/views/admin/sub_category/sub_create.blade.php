@@ -5,6 +5,17 @@
     method="post" enctype="multipart/form-data">
     @csrf
     <div class="col">
+        {{-- image --}}
+        <p class="card-description">
+            Add Sub-Category Image
+        </p>
+        <div>
+            <div class="form-group">
+                <input class="form-control"  type="file" id="image" name="image">
+            </div>
+
+        </div>
+
         <h4>Category Form</h4>
         <p class="card-description">
             Add Category
@@ -24,12 +35,14 @@
             <select class="form-control" name="category_id" class="form-select" id="inlineFormSelectPref">
                 @foreach ($category as $category )
 
-                <option {{$sub_categories->category_id==$category->id?'selected':''}} value="{{$category->id}}" >{{$category->name}}</option>
+                <option {{$sub_categories->category_id==$category->id?'selected':''}} value="{{$category->id}}">
+                    {{$category->name}}</option>
 
                 @endforeach
 
             </select>
         </div>
+
         <br>
         <button type="submit" class="btn btn-primary mr-2">save</button>
 

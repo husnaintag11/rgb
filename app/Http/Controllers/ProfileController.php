@@ -19,6 +19,8 @@ class ProfileController extends Controller
         ->join('cities', 'products.city_id', '=', 'cities.id')
         ->join('streets', 'products.street_id', '=', 'streets.id')
         ->join('users','products.user_id','=','users.id')
+        //where used then data based login in user id
+        ->where('products.user_id',Auth::id())
         ->join('categories','products.cat_id','=','categories.id')
         ->leftjoin('sub_categories as sub','products.subcat_id','=','sub.id')
         ->select('products.*', 'countries.name as country_name', 'states.name as state_name', 'cities.name as city_name', 'streets.name as street_name','users.name as user_name'

@@ -2,7 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ProfileController;
@@ -37,6 +37,7 @@ Route::post('/add_to_cart', [HenchickController::class, 'add_to_cart']);
 
 
 //new home
+Auth::routes();
 Route::prefix('/')->group(function(){
 
     Route::get('/',[FrontController::class,'index'])->name('/');
