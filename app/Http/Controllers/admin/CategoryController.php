@@ -26,8 +26,30 @@ class CategoryController extends Controller {
     }
     public function store(Request $request) {
 
-        $data = $request ->all();
+        $data = $request->validate([
+            'name' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
+        ]);
+
+
+        if($request->has('image')){
+            $file_name = time();      //return timespan
+
+              $picture = $request->image;
+             // $file_name = rand();  // randum generate
+              $file_name = sha1($file_name);  // algorithum different string generate
+
+                $ext = $picture->getClientOriginalExtension();
+                $file_name = $file_name.".".$ext;
+                $picture -> move(public_path()."/uploads/category/",$file_name);
+
+                $image_path = '/uploads/category/'.$file_name;
+               $data['image'] = $image_path;
+            }
         Category::create($data);
+
+        // $data = $request ->all();
+        // Category::create($data);
         return redirect() -> route('cat.index');
     }
 
