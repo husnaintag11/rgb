@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 08, 2023 at 07:53 PM
+-- Generation Time: Aug 11, 2023 at 09:28 PM
 -- Server version: 5.7.36
 -- PHP Version: 8.1.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rgb`
+-- Database: `psb`
 --
 
 -- --------------------------------------------------------
@@ -49,17 +49,18 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(3, 'Animal', '2022-11-14 07:06:38', '2023-07-07 04:28:16'),
-(14, 'Bird', '2022-11-15 08:13:38', '2023-06-21 05:28:52'),
-(10, 'Fish', '2022-11-14 07:20:19', '2023-06-21 05:29:43');
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`, `image`) VALUES
+(34, 'Fish', '2023-08-08 15:15:38', '2023-08-08 15:15:38', '/uploads/category/8d5f0ef9eb1a3c00a1b44c6db6180ea4fa0afe6f.jpeg'),
+(33, 'Animal', '2023-08-08 15:15:18', '2023-08-08 15:15:18', '/uploads/category/61e193eb7ebe48451210b51d37348451696ef314.jpg'),
+(35, 'Birds', '2023-08-08 15:15:59', '2023-08-08 15:15:59', '/uploads/category/f191821c6b67157e94c81258a5f1e2a0a1fe3061.jpeg');
 
 -- --------------------------------------------------------
 
@@ -139,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -183,7 +184,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (38, '2023_07_21_150125_create_products_images_table', 21),
 (39, '2023_07_21_154720_create_product_images_table', 22),
 (40, '2023_07_31_101159_add_url_to_products_table', 23),
-(41, '2023_08_08_154201_add_image_to_sub_categories_table', 24);
+(41, '2023_08_08_154201_add_image_to_sub_categories_table', 24),
+(42, '2023_08_08_200629_add_image_to_categories_table', 25);
 
 -- --------------------------------------------------------
 
@@ -256,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `street_id` int(11) DEFAULT NULL,
   `url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=242 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=244 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `products`
@@ -264,7 +266,9 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 INSERT INTO `products` (`id`, `name`, `created_at`, `updated_at`, `image`, `age`, `description`, `price`, `type`, `city_id`, `country_id`, `state_id`, `cat_id`, `subcat_id`, `user_id`, `street_id`, `url`) VALUES
 (240, 'Hen', '2023-08-08 12:45:19', '2023-08-08 12:45:19', '/uploads/thumbimage/1691516719.png', 12, 'hashar', 12022, 'xcz', 2, 1, 3, 3, 51, 24, 2, NULL),
-(241, 'Some Name', '2023-08-08 13:01:11', '2023-08-08 13:01:11', '/uploads/thumbimage/1691517671.png', 12, 'hashar', 12022, 'sdaa', 2, 1, 3, 10, 50, 24, 2, NULL);
+(241, 'Some Name', '2023-08-08 13:01:11', '2023-08-08 13:01:11', '/uploads/thumbimage/1691517671.png', 12, 'hashar', 12022, 'sdaa', 2, 1, 3, 10, 50, 24, 2, NULL),
+(242, 'sparrow', '2023-08-08 15:01:23', '2023-08-08 15:01:23', '/uploads/thumbimage/1691524883.jpg', 12, 'mxa', 12022, 'xcz', 2, 1, 3, 3, 72, 24, 1, NULL),
+(243, 'Product', '2023-08-10 05:13:25', '2023-08-10 05:13:25', '/uploads/thumbimage/1691662404.jpeg', 12, 'this dog is army dog', 3500, 'hello', 2, 1, 3, 33, NULL, 24, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -281,13 +285,15 @@ CREATE TABLE IF NOT EXISTS `product_images` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `product_images_product_id_foreign` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=153 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=155 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `product_images`
 --
 
 INSERT INTO `product_images` (`id`, `product_id`, `image_path`, `created_at`, `updated_at`) VALUES
+(154, 243, 'uploads/multi_image//KFHuk4zOuKFK7qKDAAGyjE6LVCvq9PcEMGvkUXOp.jpg', '2023-08-10 05:13:25', '2023-08-10 05:13:25'),
+(153, 242, 'uploads/multi_image//iOi37L67xZe9NBPnNuQhzfF0QN4fbnD1EHvyVjnr.jpg', '2023-08-08 15:01:23', '2023-08-08 15:01:23'),
 (152, 241, 'uploads/multi_image//ouAw3nS00MrlpZ5MrAZjrJ9ocHRldFGY6grBKLX7.jpg', '2023-08-08 13:01:11', '2023-08-08 13:01:11'),
 (151, 241, 'uploads/multi_image//c6BeJCLO703zbF3Aimh0PUYG5vLA1Ugmw1xcHsga.jpg', '2023-08-08 13:01:11', '2023-08-08 13:01:11'),
 (150, 240, 'uploads/multi_image//aN3GT2LUtVO7MTSpbrXlXbQaMmE0v8aSroWN5SvH.jpg', '2023-08-08 12:45:19', '2023-08-08 12:45:19'),
@@ -366,20 +372,20 @@ CREATE TABLE IF NOT EXISTS `sub_categories` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=82 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `sub_categories`
 --
 
 INSERT INTO `sub_categories` (`id`, `name`, `category_id`, `created_at`, `updated_at`, `image`) VALUES
-(74, 'Sparrow', 14, '2023-08-08 14:44:54', '2023-08-08 14:44:54', '/uploads/subcategory/bcba1521598b87373f02cdec7178bde525a71760.jpg'),
-(73, 'parrot', 14, '2023-08-08 14:44:19', '2023-08-08 14:44:19', '/uploads/subcategory/02392134ef20438c8555124a21a8a96a59820977.jpeg'),
-(72, 'Lion', 3, '2023-08-08 14:43:36', '2023-08-08 14:43:36', '/uploads/subcategory/f0a4955f79773b6d67c497789e63292b42c0f944.jpeg'),
-(71, 'Goat', 3, '2023-08-08 14:42:56', '2023-08-08 14:42:56', '/uploads/subcategory/3c0d851fb74c5659c045752a64979e1c7b8f67fa.jpg'),
-(70, 'Fish', 10, '2023-08-08 14:42:15', '2023-08-08 14:42:15', '/uploads/subcategory/c1a3caac4e37067770180e983dae0b9491d4abd7.jpeg'),
-(69, 'Dog', 3, '2023-08-08 14:41:35', '2023-08-08 14:41:35', '/uploads/subcategory/6779bd933d7819b6ec983f252166fc23838f67dc.jpeg'),
-(68, 'Cat', 3, '2023-08-08 14:40:59', '2023-08-08 14:40:59', '/uploads/subcategory/aac8d9e811685d55b7c5b0cadcdc83524af829f6.jpg');
+(78, 'Goat', 33, '2023-08-10 05:24:32', '2023-08-10 05:24:32', '/uploads/subcategory/6604913680ca9f0996d1a4f7f6533308dbc515fa.jpg'),
+(77, 'Fish', 34, '2023-08-10 05:23:56', '2023-08-10 05:23:56', '/uploads/subcategory/4443d612bc9a1f0f032cc4c31de06f0b4c46de7e.jpeg'),
+(75, 'Dog', 33, '2023-08-10 05:22:42', '2023-08-10 05:22:42', '/uploads/subcategory/b9d581d96ad4dece9a6ba8e7326edff1265d2171.jpeg'),
+(76, 'Cat', 33, '2023-08-10 05:23:20', '2023-08-10 05:23:20', '/uploads/subcategory/83e8019bccaafa8a800ff2d5e5fee98b2565c56c.jpg'),
+(79, 'Lion', 33, '2023-08-10 05:25:11', '2023-08-10 05:25:11', '/uploads/subcategory/56796e7d393877dd034f80dc04c91fe6d17669a3.jpeg'),
+(80, 'Parrot', 35, '2023-08-10 05:25:51', '2023-08-10 05:25:51', '/uploads/subcategory/6b59270e8a267fec3c9d253228beac706fb248b1.jpeg'),
+(81, 'Sparrow', 35, '2023-08-10 05:26:34', '2023-08-10 05:26:34', '/uploads/subcategory/f9e9a2cb877d63f3656f10e6e272438132cbd8c2.jpg');
 
 -- --------------------------------------------------------
 

@@ -38,12 +38,7 @@
                                         <option value="">BIRDS</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-12">
-                                    <select name="" class="form-control mt-3" id="">
-                                        <option value="">ANIMAL</option>
-                                        <option value="">BIRDS</option>
-                                    </select>
-                                </div>
+
                                 <div class="col-lg-3 mt-3">
                                     <a class="btn btn-danger" href="">Search </a>
                                 </div>
@@ -59,8 +54,8 @@
 </div>
 {{-- scroll images --}}
 
-<div class="col-12 col-md-12 p-1">
-    <div class=" card container p-4">
+<div class="col-12 col-md-12 ">
+    <div class=" card container ">
         <div class="owl-carousel owl-theme " id="slider1">
 
             @foreach ($sub_category as $sub_category)
@@ -70,6 +65,10 @@
                         height="120px" width="120px">
                     <span  class="text-center ml-5 p-5">{{$sub_category->name}}</span>
                 </div>
+                <div class="card-footer">
+
+                </div>
+
             </div>
             @endforeach
 
@@ -77,21 +76,38 @@
     </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-<br><br>
+<br><br><br><br><br><br>
 {{-- varifield items --}}
 
-<div class="container  p-4">
+
+<div class="">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="https://a-z-animals.com/media/2022/01/red-eared-slider-turtle.jpg" height="350px" width="350px" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://a-z-animals.com/media/2022/01/red-eared-slider-turtle.jpg" height="350px" width="350px" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://a-z-animals.com/media/2022/01/red-eared-slider-turtle.jpg" height="350px" width="350px" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+</div>
+
+
+
+
+{{-- <div class="container  p-4">
 
     <div class="row align-items-center p-1 m-2">
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 ">
@@ -126,7 +142,7 @@
 
     <hr>
 
-</div>
+</div> --}}
 
 <br><br>
 {{-- featuer add --}}
