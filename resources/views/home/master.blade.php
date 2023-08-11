@@ -93,7 +93,7 @@
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('profile')}}">My Profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                                         document.getElementById('logout-form').submit();"><i class="ti-power-off text-primary"></i>
                                 {{ __('Logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -107,10 +107,6 @@
 
                 </ul>
 
-                <!-- Left Side Of Navbar -->
-
-
-                <!-- Right Side Of Navbar -->
 
 
             </div>

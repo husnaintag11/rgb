@@ -387,6 +387,12 @@
                             <span class="menu-title">Street</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route ('slider.index')}}">
+                            <i class="icon-columns menu-icon"></i>
+                            <span class="menu-title">Slider</span>
+                        </a>
+                    </li>
                 </ul>
 
             </nav>

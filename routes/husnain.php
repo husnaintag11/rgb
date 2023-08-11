@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\DasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,11 +31,12 @@ Route::get('/', function () {
 
 
 
-//Add to cart
-
-Route::post('/add_to_cart', [HenchickController::class, 'add_to_cart']);
 
 
+//
+//Dashboard
+
+//Route::get('/',[DasController::class,'index'])->name('/');
 //new home
 Auth::routes();
 Route::prefix('/')->group(function(){

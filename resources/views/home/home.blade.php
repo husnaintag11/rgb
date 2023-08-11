@@ -61,9 +61,8 @@
             @foreach ($sub_category as $sub_category)
             <div class="card container" style="height: 9.3rem">
                 <div class="item">
-                    <img src="{{ $sub_category->image}}"
-                        height="120px" width="120px">
-                    <span  class="text-center ml-5 p-5">{{$sub_category->name}}</span>
+                    <img src="{{ $sub_category->image}}" height="120px" width="120px">
+                    <span class="text-center ml-5 p-5">{{$sub_category->name}}</span>
                 </div>
                 <div class="card-footer">
 
@@ -78,31 +77,22 @@
 </div>
 <br><br><br><br><br><br>
 {{-- varifield items --}}
+<div class="col-12 col-md-12 ">
 
-
-<div class="">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="https://a-z-animals.com/media/2022/01/red-eared-slider-turtle.jpg" height="350px" width="350px" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="https://a-z-animals.com/media/2022/01/red-eared-slider-turtle.jpg" height="350px" width="350px" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="https://a-z-animals.com/media/2022/01/red-eared-slider-turtle.jpg" height="350px" width="350px" alt="Third slide">
-          </div>
+    <div class="owl-carousel owl-theme" id="slider10">
+        <div class="item">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-pet-shop-facebook-cover-template_23-2150330785.jpg?w=996&t=st=1691791481~exp=1691792081~hmac=45bb29f17902fbf50dd9f8106930ebfe93c8659dbf6d92d95a3b8a749ea1ceea"  height="350px" width="350px">
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+        <div class="item">
+            <img src="https://img.freepik.com/premium-psd/poster-your-business-with-cute-puppy-wooden-cage-as-background_634423-2962.jpg?w=826" height="350px" width="350px">
+        </div>
+        <div class="item">
+            <img src="https://img.freepik.com/free-photo/charming-pampered-pets-play-side-by-side-looking-alert-generated-by-ai_188544-13933.jpg?t=st=1691786578~exp=1691790178~hmac=6d76b528489aad1b69986077c0cb6ea72ecae94a0471c184ae63c9ed84f84992&w=826" height="350px" width="350px">
+        </div>
+
+    </div>
 </div>
+
 
 
 
@@ -927,6 +917,27 @@
         });
 
 
+    })
+
+    $(document).ready(function () {
+        $('#slider10').owlCarousel({
+            dots: true,
+            loop: true,
+            autoplay: true,
+            margin: 0,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
     })
 
 </script>
