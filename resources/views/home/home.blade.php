@@ -80,22 +80,28 @@
 <div class="col-12 col-md-12 ">
 
     <div class="owl-carousel owl-theme" id="slider10">
+        @foreach ($sliders as $slider)
         <div class="item">
-            <img src="https://img.freepik.com/free-vector/hand-drawn-pet-shop-facebook-cover-template_23-2150330785.jpg?w=996&t=st=1691791481~exp=1691792081~hmac=45bb29f17902fbf50dd9f8106930ebfe93c8659dbf6d92d95a3b8a749ea1ceea"  height="350px" width="350px">
+
+            <img src="{{$slider->image}}" height="350px" width="350px">
+
+
+
         </div>
-        <div class="item">
+        @endforeach
+        {{-- <div class="item">
             <img src="https://img.freepik.com/premium-psd/poster-your-business-with-cute-puppy-wooden-cage-as-background_634423-2962.jpg?w=826" height="350px" width="350px">
         </div>
         <div class="item">
             <img src="https://img.freepik.com/free-photo/charming-pampered-pets-play-side-by-side-looking-alert-generated-by-ai_188544-13933.jpg?t=st=1691786578~exp=1691790178~hmac=6d76b528489aad1b69986077c0cb6ea72ecae94a0471c184ae63c9ed84f84992&w=826" height="350px" width="350px">
-        </div>
+        </div> --}}
 
     </div>
 </div>
 
 
 
-
+{{-- video data --}}
 
 {{-- <div class="container  p-4">
 
@@ -150,20 +156,21 @@
 <div class="container">
     <div class="owl-carousel owl-theme" id="slider2">
         <div class="card ">
+            @foreach ($products as $product)
             <div class="item ">
-                <img href="#" src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg"
-                    class="card-arrow" alt="Arrow Picture" alt="">
+                <img href="#" src="{{$product->image}}" class="card-arrow" alt="Arrow Picture" alt="" height="200px">
 
                 <div class="card-body">
-                    <a href="#">Animals</a>
+                    <a href="#">{{$product->name}}</a>
                     <br>
-                    <span class="text-dark" href="#">Office From another city</span>
+                    <span class="text-dark" href="#"><span
+                            class=" text-muted ">Type</span>&nbsp&nbsp&nbsp&nbsp{{$product->age}}</span>
                     <br>
-                    <span class="text-danger ">Price On call</span>
+                    <span class="text-danger ">{{$product->price}}</span>
                     <br>
-                    <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                    <br>
-                    <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
+                    <span class=" text-muted "><i
+                            class="fa-solid fa-location-arrow"></i>{{$product->country_name}}</span>
+
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
@@ -173,243 +180,7 @@
 
 
             </div>
-        </div>
-        <div class="card ">
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-                <div class="card-body">
-                    <a href="#">Animals</a>
-                    <br>
-                    <span class="text-dark " href="#">Office From another city</span>
-                    <br>
-                    <span class="text-danger ">Price On call</span>
-                    <br>
-                    <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                    <br>
-                    <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted"></small>
-                </div>
-
-            </div>
-        </div>
-        <div class="card ">
-
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark " href="#">Office From another city</span>
-                <br>
-                <span class="text-danger">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
-
-        </div>
-        <div class="card">
-
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark" href="#">Office From another city</span>
-                <br>
-                <span class="text-danger">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
-
-        </div>
-        <div class="card">
-
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark " href="#">Office From another city</span>
-                <br>
-                <span class="text-danger ">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
-
-        </div>
-        <div class="card">
-
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark " href="#">Office From another city</span>
-                <br>
-                <span class="text-danger">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
-
-        </div>
-        <div class="card">
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark " href="#">Office From another city</span>
-                <br>
-                <span class="text-danger ">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
-
-        </div>
-        <div class="card">
-
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark " href="#">Office From another city</span>
-                <br>
-                <span class="text-danger">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
-
-        </div>
-        <div class="card">
-
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark " href="#">Office From another city</span>
-                <br>
-                <span class="text-danger ">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
-
-        </div>
-        <div class="card">
-
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark " href="#">Office From another city</span>
-                <br>
-                <span class="text-danger ">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
-
-        </div>
-        <div class="card">
-
-            <div class="item">
-                <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark " href="#">Office From another city</span>
-                <br>
-                <span class="text-danger ">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
-
-        </div>
-        <div class="card">
-
-            <div class="item">
-                <img href="#" src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/camera1-255x200.jpg"
-                    alt="">
-
-            </div>
-            <div class="card-body">
-                <a href="#">Animals</a>
-                <br>
-                <span class="text-dark " href="#">Office From another city</span>
-                <br>
-                <span class="text-danger ">Price On call</span>
-                <br>
-                <span class=" text-muted "><i class="fa-solid fa-location-arrow"></i>&nbspIndia</span>
-                <br>
-                <span class="text-muted"><i class="fa-solid fa-calendar-days"></i>&nbspDecember</span>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"></small>
-            </div>
+            @endforeach
 
         </div>
 
@@ -511,98 +282,38 @@
             </div>
             <br><br>
             <div class="container ">
+
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card  ">
 
-                            <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/img-09.jpg"
-                                class="card-img-center" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title text-center">Paris</h6>
-                                <div class="text-center">
-                                    <small class="text-muted text-center">(11&nbspAds)</small>
-                                </div>
+                    @foreach ($city as $category)
 
-                            </div>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div class="col-md-4">
+                    <div class=" col-md-4 mb-4">
+
                         <div class="card">
-                            <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/img-09.jpg"
-                                class="card-img-top" alt="">
+
+                            <img src="{{$category->city_image}}" class="card-img-center" alt="country image" height="180px">
                             <div class="card-body">
-                                <h6 class="card-title text-center">Paris</h6>
+                                <h6 class="card-title text-center">{{$category->city_name}}</h6>
                                 <div class="text-center">
                                     <small class="text-muted text-center">(11&nbspAds)</small>
                                 </div>
 
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/img-10.jpg"
-                                class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title text-center">Paris</h6>
-                                <div class="text-center">
-                                    <small class="text-muted text-center">(11&nbspAds)</small>
-                                </div>
 
-                            </div>
+
+
+
+
                         </div>
+
                     </div>
 
+                    @endforeach
                 </div>
+
             </div>
             <br><br>
-            <div class="container ">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card  ">
 
-                            <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/img-09.jpg"
-                                class="card-img-center" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title text-center">Paris</h6>
-                                <div class="text-center">
-                                    <small class="text-muted text-center">(11&nbspAds)</small>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/img-09.jpg"
-                                class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title text-center">Paris</h6>
-                                <div class="text-center">
-                                    <small class="text-muted text-center">(11&nbspAds)</small>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="https://classipro.theme-zilla.com/wp-content/uploads/2020/12/img-10.jpg"
-                                class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h6 class="card-title text-center">Paris</h6>
-                                <div class="text-center">
-                                    <small class="text-muted text-center">(11&nbspAds)</small>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
             <br><br>
 
         </div>
@@ -723,7 +434,7 @@
                                 <div class="card-body d-flex">
                                     <h6><a href="#" class="card-title ">Animal</a></h6>
                                     <div class=" container d-flex  mx-5 ">
-                                        <small class=" mx-5 text-muted">(11&nbspAds)</small>
+                                        <small class=" mx-3 text-muted">(11&nbspAds)</small>
                                     </div>
                                 </div>
                             </div>
@@ -738,7 +449,7 @@
                                 <div class="card-body d-flex">
                                     <h6><a href="#" class="card-title ">Animal</a></h6>
                                     <div class=" container d-flex  mx-5 ">
-                                        <small class=" mx-5 text-muted">(11&nbspAds)</small>
+                                        <small class=" mx-3 text-muted">(11&nbspAds)</small>
                                     </div>
                                 </div>
                             </div>
@@ -753,7 +464,7 @@
                                 <div class="card-body d-flex">
                                     <h6><a href="#" class="card-title ">Animal</a></h6>
                                     <div class=" container d-flex  mx-5 ">
-                                        <small class=" mx-5 text-muted">(11&nbspAds)</small>
+                                        <small class=" mx-3 text-muted">(11&nbspAds)</small>
                                     </div>
                                 </div>
                             </div>
@@ -768,7 +479,7 @@
                                 <div class="card-body d-flex">
                                     <h6><a href="#" class="card-title ">Animal</a></h6>
                                     <div class=" container d-flex  mx-5 ">
-                                        <small class=" mx-5 text-muted">(11&nbspAds)</small>
+                                        <small class=" mx-3  text-muted">(11&nbspAds)</small>
                                     </div>
                                 </div>
                             </div>
@@ -783,7 +494,7 @@
                                 <div class="card-body d-flex">
                                     <h6><a href="#" class="card-title ">Animal</a></h6>
                                     <div class=" container d-flex  mx-5 ">
-                                        <small class=" mx-5 text-muted">(11&nbspAds)</small>
+                                        <small class=" mx-3  text-muted">(11&nbspAds)</small>
                                     </div>
                                 </div>
                             </div>

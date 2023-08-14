@@ -25,8 +25,36 @@ public function create()
 public function store(Request $request)
 {
 
-    $data=$request->all();
+    $data = $request->validate([
+        'name' => 'required',
+        'state_id' => 'required',
+        'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
+    ]);
+
+
+    if($request->has('image')){
+        $file_name = time();      //return timespan
+
+          $picture = $request->image;
+         // $file_name = rand();  // randum generate
+          $file_name = sha1($file_name);  // algorithum different string generate
+
+            $ext = $picture->getClientOriginalExtension();
+            $file_name = $file_name.".".$ext;
+            $picture -> move(public_path()."/uploads/city/",$file_name);
+
+            $image_path = '/uploads/city/'.$file_name;
+           $data['image'] = $image_path;
+        }
     City::create($data);
+
+
+    // $data=$request->all();
+    //  SubCategory::create($data);
+
+  // return $request;
+    // $data=$request->all();
+
 return redirect()->route('sta.index');
 
 }

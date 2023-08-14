@@ -12,7 +12,7 @@ use App\Http\Controllers\admin\AddressController;
 use App\Http\Controllers\admin\Sub_CategoryController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\SliderController ;
-
+use App\Models\Slider;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ Route::get('/', function () {
 Route::prefix('adminv2')->group(function(){
 
 
- Route::get('/index',[AdminController::class,'index']);
+
 
     Route::prefix('categories')->group(function(){
         Route::get('/',[CategoryController::class,'index'])->name('cat.index');
@@ -181,27 +181,21 @@ Route::prefix('adminv2')->group(function(){
 
 
     });
-// slider
-Route::prefix('slider')->group(function(){
-    Route::get('/',[SliderController::class,'index'])->name('slider.index');
-
-    // Route::get('GetSubCatAgainstMainCatEdit/{id}',[Sub_CategoryController::class,'GetSubCatAgainstMainCatEdit']);
-
-    // Route::get('/create',[Sub_CategoryController::class,'create'])->name('sub_cat.create');
-
-    // Route::post('/store',[Sub_CategoryController::class,'store'])->name('sub_cat.store');
-
-    // Route::get('/edit/{id}',[Sub_CategoryController::class,'edit'])->name('sub_cat.edit');
-
-    // Route::post('/update/{id}',[Sub_CategoryController::class,'update'])->name('sub_cat.update');
-
-    // Route::get('/delete/{id}',[Sub_CategoryController::class,'delete'])->name('sub_cat.delete');
 
 
-});
+   // slider
+
+
+    Route::prefix('slider')->group(function(){
+        Route::get('/',[SliderController::class,'index'])->name('slider.index');
+
+        Route::get('/create',[SliderController::class,'create'])->name('slider.create');
+
+        Route::post('/store',[SliderController::class,'store'])->name('slider.store');
+
+        Route::get('/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
+
+
+    });
 
 });
-
-
-
-

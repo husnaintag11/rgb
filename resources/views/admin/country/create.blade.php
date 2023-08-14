@@ -14,6 +14,7 @@
         <input class="form-control" type="text" value="{{isset($Category)?$Category->name:''}}" name="name"
             placeholder="Enter the name">
     </div>
+
     <br>
     <button type="submit" class="btn btn-primary mr-2">save</button>
 

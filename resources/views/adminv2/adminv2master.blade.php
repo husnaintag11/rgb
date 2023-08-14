@@ -440,6 +440,11 @@
     <script src="/adminv2/js/dashboard.js"></script>
     <script src="/adminv2/js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 </body>
 
 </html>

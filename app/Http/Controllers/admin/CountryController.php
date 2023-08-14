@@ -22,6 +22,9 @@ class CountryController extends Controller
     public function store(Request $request)
     {
 
+
+
+
         $data=$request->all();
         Country::create($data);
     return redirect()->route('cout.index');

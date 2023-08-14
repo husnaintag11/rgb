@@ -29,6 +29,7 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>state_id</th>
+                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -39,6 +40,7 @@
 
                                     <td>{{ $category->name}}</td>
                                     <td>{{ $category->state_id}}</td>
+                                    <td><img src="{{$category->image}}"></td>
                                     <td><a class="btn btn-info"
                                             href="{{route('sta.edit',$category->id)}}">Edit </a>
                                         <a class="btn btn-danger"

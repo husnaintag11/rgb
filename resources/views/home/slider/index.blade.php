@@ -1,9 +1,5 @@
 @extends('adminv2.adminv2master')
 @section('content')
-
-
-
-
 <div class="container-fluid py-4">
     <div class="row">
         <div class="col-12">
@@ -14,35 +10,36 @@
                     </div>
                 </div>
                 <div class="card-body px-0 pb-2">
-                    <div class="table-responsive p-0">
-                        <table class="table align-items-center mb-0">
+                    <div class="p-0">
+                        <table class="table align-items-center mb-0 ">
                             <div class="container">
-                                <a class="btn btn-primary" href="{{route('cout.create')}}">Create</a>
+                                <a class="btn btn-primary" href="{{route('slider.create')}}">Create</a>
 
                             </div>
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-
+                                    <th>Slider Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($country as $key=> $category)
+                                @foreach($sliders as $slider)
                                 <tr>
-                                    <td>{{ ++$key}}</td>
+                                    <div class="card">
+                                        <td><img src="{{ $slider->image }}" alt="Slider Image"
+                                                class="rounded float-left img-thumbnail"
+                                                style="width: 300px ; height:200px"></td>
+                                    </div>
+                                   <td>
+                                    <a class="btn btn-danger" href="{{route('slider.delete',$slider->id)}}">Delete </a></td>
 
-                                    <td>{{ $category->name}}</td>
-
-
-                                    <td><a class="btn btn-info"
-                                            href="{{route('cout.edit',$category->id)}}">Edit </a>
-                                        <a class="btn btn-danger"
-                                            href="{{route('cout.delete',$category->id)}}">Delete </a></td>
                                 </tr>
-
                                 @endforeach
+
+
+                            <tbody>
+
+
 
 
 
@@ -53,7 +50,4 @@
         </div>
     </div>
 </div>
-
-
-
 @endsection

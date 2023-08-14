@@ -16,6 +16,12 @@
             placeholder="Enter the state_id">
         <br>
     </div>
+    <p class="card-description">
+        Add City Image
+    </p>
+    <div class="form-control  m-2">
+        <input type="file" name="image" id="image" accept="image/*" multiple required>
+    </div>
     <br>
     <button type="submit" class="btn btn-primary mr-2">save</button>
 
