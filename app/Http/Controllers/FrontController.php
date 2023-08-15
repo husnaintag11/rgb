@@ -10,31 +10,18 @@ use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
-     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
+
       $sub_category=DB::table('sub_categories')
       ->select('sub_categories.name as name','sub_categories.image as image')
       ->get();
       $sliders=DB::table('sliders')
       ->select('sliders.image as image')
       ->get();
-    //   $products=DB::table('products')
-    //   ->select('products.*')->get();
+     //   $products=DB::table('products')
+     //   ->select('products.*')->get();
       $products = Product::join('countries', 'products.country_id', '=', 'countries.id')
       ->join('states', 'products.state_id', '=', 'states.id')
       ->join('cities', 'products.city_id', '=', 'cities.id')
@@ -73,19 +60,19 @@ class FrontController extends Controller
 
 //task colour
 
-public function task()
-{
-    $cards = Session::get('cards');
+// public function task()
+// {
+//     $cards = Session::get('cards');
 
-    // Generate new card colors if they don't exist in session
-    $colors = ['bg-primary', 'bg-secondary', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info', 'bg-light', 'bg-dark'];
-    $countingWords = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Part I', 'Part II'];
-    $cards = [];
+//     // Generate new card colors if they don't exist in session
+//     $colors = ['bg-primary', 'bg-secondary', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info', 'bg-light', 'bg-dark'];
+//     $countingWords = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Part I', 'Part II'];
+//     $cards = [];
 
-    for ($i = 0; $i < 12; $i++) {
-        $randomColor = Arr::random($colors);
-        $cards[$countingWords[$i]] = $randomColor;
-    }
+//     for ($i = 0; $i < 12; $i++) {
+//         $randomColor = Arr::random($colors);
+//         $cards[$countingWords[$i]] = $randomColor;
+//     }
 
-}
+// }
 }

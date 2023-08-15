@@ -98,48 +98,6 @@
 
     </div>
 </div>
-
-
-
-{{-- video data --}}
-
-{{-- <div class="container  p-4">
-
-    <div class="row align-items-center p-1 m-2">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 ">
-            <div>
-                <div>
-                    <div class="text-danger">
-                        <h2>Items </h2>
-                    </div>
-
-                    <h3>item are compined hen e.t.c<br> lahore and gujranwala</h3>
-                </div>
-                <div>
-                    <p>Elit sed iusmod tempor incididunt utnabore etna dolore agna enimad mini veniam quista
-                        nostrud
-                        exercitation<i> ullamco laboris nisitio</i> aliquip commodo consequat oluptate velit
-                        esse
-                        cillum dolore.</p>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="https://www.youtube.com/embed/QVBpwMrTYoE" frameborder="0" allow="accelerometer; autoplay; en
-                    crypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-                </iframe>
-            </div>
-
-
-        </div>
-    </div>
-
-    <hr>
-
-</div> --}}
-
 <br><br>
 {{-- featuer add --}}
 <div class="container">
@@ -154,9 +112,11 @@
 </div>
 
 <div class="container">
+    @foreach ($products as $product)
     <div class="owl-carousel owl-theme" id="slider2">
+
         <div class="card ">
-            @foreach ($products as $product)
+
             <div class="item ">
                 <img href="#" src="{{$product->image}}" class="card-arrow" alt="Arrow Picture" alt="" height="200px">
 
@@ -180,12 +140,12 @@
 
 
             </div>
-            @endforeach
+
 
         </div>
 
     </div>
-
+    @endforeach
 </div>
 
 
