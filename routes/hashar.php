@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\adminv2\AdminController;
+use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\StreetController;
 use App\Http\Controllers\admin\StateController;
 use App\Http\Controllers\admin\CityController;
@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\Sub_CategoryController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\SliderController ;
 use App\Models\Slider;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,14 +33,14 @@ Route::get('/', function () {
 
 
 
-
+//
 
 
 
 Route::prefix('adminv2')->group(function(){
 
 
-
+    Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
 
     Route::prefix('categories')->group(function(){
         Route::get('/',[CategoryController::class,'index'])->name('cat.index');

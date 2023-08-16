@@ -4,9 +4,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DasController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,13 +34,15 @@ Route::get('/', function () {
 
 
 
-//
-//Dashboard
 
-//Route::get('/',[DasController::class,'index'])->name('/');
-//new home
-Auth::routes();
-Route::prefix('/')->group(function(){
+
+
+//auth
+ Auth::routes();
+ Route::get('/home',[HomeController::class,'index'])->name('/home');
+
+ //home page frontend
+  Route::prefix('/')->group(function(){
 
     Route::get('/',[FrontController::class,'index'])->name('/');
     Route::get('/contant',[FrontController::class,'contant'])->name('contant');
@@ -48,7 +51,7 @@ Route::prefix('/')->group(function(){
     Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
     Route::post('/profile.update',[ProfileController::class,'update'])->name('profile.update');
 
-    Route::get('/task',[FrontController::class,'task'])->name('/task');
+   // Route::get('/task',[FrontController::class,'task'])->name('/task');
 });
 
 
@@ -63,10 +66,10 @@ Route::prefix('/profile')->group(function(){
 
 
 });
+
+
 // countries
 Route::get('/create',[ListingController::class,'country']);
 Route::post('/fetch-states/{id}',[ListingController::class,'fetchStates']);
 Route::post('/fetch-cities/{id}',[ListingController::class,'fetchCities']);
 Route::post('/fetch-streets/{id}',[ListingController::class,'fetchStreets']);
-
-

@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Arr;
 use App\Models\Product;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 
 class FrontController extends Controller
 {
+
 
     public function index()
     {
