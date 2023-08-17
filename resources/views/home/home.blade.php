@@ -112,12 +112,13 @@
 </div>
 
 <div class="container">
-    @foreach ($products as $product)
-    <div class="owl-carousel owl-theme" id="slider2">
 
+    <div class="owl-carousel owl-theme" id="slider2">
+        @foreach ($products as $product)
         <div class="card ">
 
             <div class="item ">
+
                 <img href="#" src="{{$product->image}}" class="card-arrow" alt="Arrow Picture" alt="" height="200px">
 
                 <div class="card-body">
@@ -143,9 +144,9 @@
 
 
         </div>
-
+        @endforeach
     </div>
-    @endforeach
+
 </div>
 
 
@@ -251,7 +252,8 @@
 
                         <div class="card">
 
-                            <img src="{{$category->city_image}}" class="card-img-center" alt="country image" height="180px">
+                            <img src="{{$category->city_image}}" class="card-img-center" alt="country image"
+                                height="180px">
                             <div class="card-body">
                                 <h6 class="card-title text-center">{{$category->city_name}}</h6>
                                 <div class="text-center">
